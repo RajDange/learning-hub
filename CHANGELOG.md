@@ -42,3 +42,4 @@ All nine syllabus files written; validator clean (443 planned lessons, 0 errors)
 - 2026-10-16: pyspark m01 written; it replaced the pyspark sample lesson. PySpark modules are written while research agents gather current sources for fabric, so the fabric-first order is kept for research but not for writing time.
 - 2026-10-16: fabric m01 written from Microsoft Learn sources checked by research agents; it replaced the fabric sample lesson.
 - 2026-10-16: fabric track complete (50 lessons). Several statuses conflicted between Microsoft pages (OneLake security GA, data agent GA, native execution engine wording); lessons state the conflict instead of picking one.
+- 2026-10-16: pyspark track complete (82 lessons). Spark 4.1 real-time mode added to streaming lessons after tools research confirmed it.

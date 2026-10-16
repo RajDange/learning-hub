@@ -569,6 +569,128 @@
        "remember": "Spark's data security lives in the catalog and platform: privileges, row filters, column masks and audit logs, with storage locked to governed compute."
       }
      ]
+    },
+    {
+     "key": "pyspark-m12",
+     "num": "12",
+     "name": "Engineering practices",
+     "file": "content/pyspark/12-engineering-practices.md",
+     "lessons": [
+      {
+       "id": "pyspark-m12-testing-pytest",
+       "title": "Testing PySpark code with pytest",
+       "verified": "",
+       "summary": "PySpark transformations are ordinary Python functions that take and return DataFrames, so they can be unit tested with pytest: - A session-scoped fixture creates one local SparkSession for all tests (starting Spark is sl",
+       "remember": "Write transformations as functions of DataFrames and test them with pytest and a shared local session."
+      },
+      {
+       "id": "pyspark-m12-packaging-config",
+       "title": "Project structure, packaging, configuration and style",
+       "verified": "",
+       "summary": "Production Spark code looks like a normal Python project: - Layout: a package (src/pipeline/) with modules for reading, transforming and writing; thin entry-point scripts or notebooks that call it; tests/ beside it.",
+       "remember": "Put logic in a tested, versioned package, keep notebooks and scripts thin, and drive environments from configuration."
+      },
+      {
+       "id": "pyspark-m12-logging-monitoring-debugging",
+       "title": "Logging, monitoring and debugging",
+       "verified": "",
+       "summary": "Three sources of evidence when a Spark job misbehaves: - Logs: the driver log contains your own Python logging and the main error; executor logs contain task-level errors (and Python worker tracebacks for UDFs).",
+       "remember": "Use the driver log for your messages, the first JVM \"Caused by\" for the real error, and the Spark UI for where time went."
+      },
+      {
+       "id": "pyspark-m12-cicd",
+       "title": "CI/CD for Spark jobs",
+       "verified": "",
+       "summary": "Continuous integration (CI) runs automatically on every pull request: formatting and lint checks, unit tests with a local Spark session, and building the wheel.",
+       "remember": "CI tests and builds on every change; CD deploys the same artefact through environments with configuration and approvals."
+      },
+      {
+       "id": "pyspark-m12-orchestration-airflow",
+       "title": "Orchestrating Spark with Airflow",
+       "verified": "",
+       "summary": "An orchestrator runs jobs in the right order, on schedule, with retries and alerts.",
+       "remember": "Airflow schedules and sequences Spark jobs through operators; the processing still happens on the Spark platform."
+      },
+      {
+       "id": "pyspark-m12-idempotency-retries",
+       "title": "Idempotency, retries and error handling",
+       "verified": "",
+       "summary": "A job is idempotent when running it twice for the same input gives the same result as running it once.",
+       "remember": "Design every job so a rerun replaces or merges its own output; then retries and backfills are safe."
+      }
+     ]
+    },
+    {
+     "key": "pyspark-m13",
+     "num": "13",
+     "name": "Migration and integration",
+     "file": "content/pyspark/13-migration-and-integration.md",
+     "lessons": [
+      {
+       "id": "pyspark-m13-ingestion-patterns",
+       "title": "Ingestion and extraction patterns",
+       "verified": "",
+       "summary": "Getting data out of source systems follows a few patterns: - Full extract: copy the whole table every run.",
+       "remember": "Pick full, incremental, CDC, API or file ingestion per source, land data raw with metadata, and interpret it downstream."
+      },
+      {
+       "id": "pyspark-m13-jdbc-oracle-sqlserver",
+       "title": "Reading Oracle and SQL Server via JDBC",
+       "verified": "",
+       "summary": "Migrations from legacy systems usually start with Spark reading Oracle and SQL Server over JDBC.",
+       "remember": "Partition JDBC reads, push filters to the source, raise fetch size, and pin types explicitly when extracting from Oracle and SQL Server."
+      },
+      {
+       "id": "pyspark-m13-mainframe-flat-files",
+       "title": "Mainframe extracts and flat files",
+       "verified": "",
+       "summary": "Legacy mainframe and midrange systems typically deliver flat files: - Fixed-width records: each field at a fixed position and length, no delimiter.",
+       "remember": "Mainframe files need their copybook: fixed widths, EBCDIC, packed decimals and implied decimals must all be decoded deliberately."
+      },
+      {
+       "id": "pyspark-m13-incremental-loads",
+       "title": "Incremental loads and watermark columns",
+       "verified": "",
+       "summary": "An incremental load processes only data that is new or changed since the last successful run.",
+       "remember": "Read past the stored high-water mark with an overlap, MERGE by key, and move the mark only after a successful write; handle deletes separately."
+      },
+      {
+       "id": "pyspark-m13-backfill-cutover",
+       "title": "Backfill and cutover",
+       "verified": "",
+       "summary": "Moving a workload from a legacy system to a new platform has two data phases: - Backfill: load history into the new platform.",
+       "remember": "Backfill history with the production code, run old and new in parallel with daily reconciliation, then cut over with a rehearsed plan and a rollback window."
+      }
+     ]
+    },
+    {
+     "key": "pyspark-m14",
+     "num": "14",
+     "name": "Newer APIs",
+     "file": "content/pyspark/14-newer-apis.md",
+     "lessons": [
+      {
+       "id": "pyspark-m14-pandas-api-on-spark",
+       "title": "pandas API on Spark",
+       "verified": "",
+       "summary": "The pandas API on Spark (import pyspark.pandas as ps) lets you write pandas-style code that runs distributed on Spark.",
+       "remember": "The pandas API on Spark (formerly Koalas) scales pandas-style code, but indexes and ordering make it less efficient than native DataFrames."
+      },
+      {
+       "id": "pyspark-m14-spark-connect",
+       "title": "Spark Connect",
+       "verified": "",
+       "summary": "Classically, a PySpark program is the driver: your Python process starts a JVM and talks to it directly.",
+       "remember": "Spark Connect turns PySpark into a thin gRPC client of a remote Spark server; DataFrames work, RDD and JVM-dependent APIs do not."
+      },
+      {
+       "id": "pyspark-m14-spark-4",
+       "title": "Notable Spark 4 changes",
+       "verified": "",
+       "summary": "Apache Spark 4.0 was released in May 2025, followed by 4.1 (December 2025) and 4.2 (July 2026).",
+       "remember": "Spark 4 makes ANSI errors the default, adds VARIANT, Python data sources and better Spark Connect, and drops old Java, Scala and Mesos."
+      }
+     ]
     }
    ]
   },

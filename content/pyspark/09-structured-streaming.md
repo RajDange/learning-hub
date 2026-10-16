@@ -29,7 +29,7 @@ query = (parsed.writeStream.format("delta")
 ```
 
 ## Limits and misconceptions
-- Micro-batch latency is typically from under a second to minutes, not single milliseconds. For very low latency, see continuous processing and Flink.
+- Micro-batch latency is typically from under a second to minutes, not single milliseconds. For very low latency, see real-time mode (Spark 4.1+, stateless queries only so far) and Flink.
 - Not every batch operation works on streams: for example, sorting a stream (except after aggregation in complete mode) and some join types are not supported.
 - A streaming query is a long-running application: it needs monitoring, restarts and capacity like any service.
 
@@ -49,7 +49,8 @@ track: pyspark
 - Default (no trigger): start the next batch as soon as the previous one finishes.
 - `processingTime="1 minute"`: run on a fixed interval.
 - `availableNow=True`: process everything available now, in as many batches as needed, then **stop**. This is the modern way to run streaming code as a scheduled incremental batch job; it replaces the older `once=True`.
-- `continuous="1 second"`: **continuous processing**, an experimental low-latency mode (about a millisecond) with at-least-once guarantees, supporting only map-like operations and a few sources and sinks. Rarely used in production.
+- `continuous="1 second"`: **continuous processing**, an older experimental low-latency mode with at-least-once guarantees, supporting only map-like operations. Rarely used in production.
+- **Real-time mode** (Spark 4.1, PySpark support in 4.2): the newer low-latency option, with millisecond latency for **stateless** queries from Kafka to Kafka or foreach sinks, keeping the normal Structured Streaming API. Stateful support is planned for later releases (as of October 2026). Apache recommends it over continuous processing.
 
 **Output modes** decide what is written each batch:
 - **Append**: only new final rows. Required for most file and Delta sinks; aggregations need a watermark to know when a row is final.
