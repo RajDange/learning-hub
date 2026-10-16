@@ -24,3 +24,15 @@
 - `tools/status_notes.md` holds free-text notes that the validator appends to STATUS.md, because STATUS.md itself is generated.
 - Added `.claude/launch.json` so the preview server can be started from the desktop app.
 - Three sample lessons were created (pyspark with a snippet, fabric without code, tools with a Mermaid diagram) to test the parser and the app. They will be deleted when the real first module of each track is written.
+
+## 2026-10-16: Phase B, syllabus
+
+All nine syllabus files written; validator clean (443 planned lessons, 0 errors).
+
+### Choices made during Phase B
+- Lesson counts exceed the targets (planned / target): fabric 50/32, pyspark 82/70, tools 52/40, databricks 38/32, snowflake 38/32, sql 48/35, python 34/30, ml 50/45, ai 51/35. The track outlines list more distinct ideas than the targets allow, and "do not drop any" plus "one idea per lesson" won over the targets. Trivial items were merged (for example rollup and cube into groupBy, compression into file formats, continuous processing into triggers, backpressure into exactly-once).
+- Modules follow the outlines exactly, so some module files will hold fewer than 6 lessons (for example fabric ALM with 3) and a few more than 10 (pyspark performance 11, fabric governance 12, ml classical algorithms 14). Keeping the outline's module boundaries was judged more useful for navigation than the 6 to 10 rule.
+- Eventhouse appears in the fabric storage outline and in Real-Time Intelligence. Its home lesson is `fabric-m05-eventhouse-kql`; the storage choice is covered in `fabric-m10-lakehouse-vs-warehouse`.
+- Cross-platform comparison home: `fabric-m10-fabric-vs-databricks-vs-snowflake`. Databricks and Snowflake each have a shorter "from our side" lesson that links to it.
+- Concept versus tool homes: ML concepts (experiment tracking, feature stores, serving) live in ml; products (MLflow, Feast and so on) in tools; vector search concept in ai, products in tools.
+- Added `.gitattributes` to keep line endings as LF.
