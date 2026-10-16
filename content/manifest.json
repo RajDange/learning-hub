@@ -1235,6 +1235,114 @@
        "remember": "Delta Sharing (now OpenSharing) shares live, read-only data across organisations and platforms without copying it."
       }
      ]
+    },
+    {
+     "key": "databricks-m03",
+     "num": "03",
+     "name": "Data engineering",
+     "file": "content/databricks/03-data-engineering.md",
+     "lessons": [
+      {
+       "id": "databricks-m03-notebooks",
+       "title": "Notebooks and the workspace",
+       "verified": "2026-10",
+       "summary": "Databricks notebooks mix Python, SQL, Scala and R cells (by default one language per notebook, with magic commands to switch), run on attached compute, and show results, charts and Spark job progress inline.",
+       "remember": "Notebooks are for exploration and orchestration of steps; with Git folders they become versioned code, but shared logic belongs in modules."
+      },
+      {
+       "id": "databricks-m03-jobs",
+       "title": "Jobs (Lakeflow Jobs)",
+       "verified": "2026-10",
+       "summary": "Lakeflow Jobs (formerly Databricks Jobs, then Workflows) is Databricks' built-in orchestrator.",
+       "remember": "Lakeflow Jobs orchestrates multi-task workflows on Databricks with triggers, retries, branching and repair runs."
+      },
+      {
+       "id": "databricks-m03-declarative-pipelines",
+       "title": "Declarative pipelines (formerly Delta Live Tables)",
+       "verified": "2026-10",
+       "summary": "Lakeflow Spark Declarative Pipelines (the product formerly called Delta Live Tables, renamed in stages during 2025; Databricks pages also say \"Spark Declarative Pipelines on Lakeflow\") let you declare what tables should ",
+       "remember": "Declarative pipelines (formerly DLT) define streaming tables and materialized views with expectations and AUTO CDC, and Databricks runs the rest."
+      },
+      {
+       "id": "databricks-m03-auto-loader",
+       "title": "Auto Loader",
+       "verified": "2026-10",
+       "summary": "Auto Loader is Databricks' incremental file ingestion source (cloudFiles) for Structured Streaming and declarative pipelines.",
+       "remember": "Auto Loader loads new files exactly once with scalable discovery, schema inference and controlled schema evolution."
+      },
+      {
+       "id": "databricks-m03-ingestion-connectors",
+       "title": "Managed ingestion connectors (Lakeflow Connect)",
+       "verified": "2026-10",
+       "summary": "Lakeflow Connect provides managed connectors that ingest data into Unity Catalog tables without writing pipeline code: - SaaS connectors such as Salesforce, Workday, ServiceNow, Google Analytics, Microsoft Dynamics 365, ",
+       "remember": "Lakeflow Connect is Databricks' managed ingestion for SaaS apps and databases, landing data as governed streaming tables."
+      },
+      {
+       "id": "databricks-m03-medallion-on-databricks",
+       "title": "Medallion architecture on Databricks",
+       "verified": "2026-10",
+       "summary": "On Databricks the medallion layers are usually mapped onto Unity Catalog and Lakeflow: - Catalogs per environment (dev, prod) and sometimes per domain; schemas per layer (bronze, silver, gold), or catalogs per layer in l",
+       "remember": "On Databricks, medallion layers become catalogs or schemas fed by declarative pipelines, with UC grants per layer."
+      }
+     ]
+    },
+    {
+     "key": "databricks-m04",
+     "num": "04",
+     "name": "Delta on Databricks",
+     "file": "content/databricks/04-delta-on-databricks.md",
+     "lessons": [
+      {
+       "id": "databricks-m04-optimization-features",
+       "title": "Delta optimisations on Databricks",
+       "verified": "2026-10",
+       "summary": "On top of open-source Delta, Databricks adds features that keep tables fast with little manual work: - OPTIMIZE compacts small files (and clusters data when clustering is defined).",
+       "remember": "Databricks keeps Delta tables fast with optimized writes, auto compaction, deletion vectors and data skipping, most automatic on managed tables."
+      },
+      {
+       "id": "databricks-m04-liquid-clustering",
+       "title": "Liquid clustering",
+       "verified": "2026-10",
+       "summary": "Liquid clustering organises a Delta table's data by up to four clustering keys (CLUSTER BY (customerid, eventdate)) so that queries filtering on those keys skip most files.",
+       "remember": "Liquid clustering replaces partitioning and Z-order with incremental, changeable clustering keys, chosen automatically if you let it."
+      },
+      {
+       "id": "databricks-m04-predictive-optimization",
+       "title": "Predictive optimization",
+       "verified": "2026-10",
+       "summary": "Predictive optimization runs table maintenance automatically on Unity Catalog managed tables: OPTIMIZE (compaction and clustering), VACUUM (removing old files) and ANALYZE (statistics).",
+       "remember": "Predictive optimization runs OPTIMIZE, VACUUM and ANALYZE for you on managed tables, billed as serverless usage."
+      }
+     ]
+    },
+    {
+     "key": "databricks-m05",
+     "num": "05",
+     "name": "SQL and BI",
+     "file": "content/databricks/05-sql-and-bi.md",
+     "lessons": [
+      {
+       "id": "databricks-m05-sql-warehouses",
+       "title": "SQL warehouses",
+       "verified": "2026-10",
+       "summary": "A SQL warehouse is Databricks compute dedicated to SQL: the SQL editor, dashboards, Genie, BI tools (Power BI, Tableau) and JDBC/ODBC clients.",
+       "remember": "SQL warehouses are Databricks' SQL compute for BI; prefer serverless, scale up for heavy queries and out for concurrency."
+      },
+      {
+       "id": "databricks-m05-dashboards",
+       "title": "AI/BI dashboards",
+       "verified": "2026-10",
+       "summary": "AI/BI dashboards are Databricks' built-in dashboards: datasets defined by SQL over Unity Catalog tables, visualisations (with AI help to create charts), filters and cross-filtering, schedules and subscriptions, and embed",
+       "remember": "AI/BI dashboards give quick governed dashboards on Databricks; enterprise BI still often lives in Power BI or Tableau."
+      },
+      {
+       "id": "databricks-m05-genie",
+       "title": "Genie and natural-language analytics",
+       "verified": "2026-10",
+       "summary": "Genie is Databricks' natural-language analytics.",
+       "remember": "Genie answers business questions by generating SQL over a curated, governed set of tables and metrics; curation decides accuracy."
+      }
+     ]
     }
    ]
   },
