@@ -1379,6 +1379,99 @@
        "remember": "Use the platform's own orchestrator when work lives on one platform; add a separate orchestrator when workflows span many systems."
       }
      ]
+    },
+    {
+     "key": "tools-m06",
+     "num": "06",
+     "name": "Catalog, governance and lineage",
+     "file": "content/tools/06-catalog-governance-lineage.md",
+     "lessons": [
+      {
+       "id": "tools-m06-catalogs-explained",
+       "title": "Technical, business and enterprise data catalogs",
+       "verified": "2026-10",
+       "summary": "\"Catalog\" means three different things, and confusing them causes bad tool decisions: 1.",
+       "remember": "Technical catalogs let engines find and secure tables, discovery catalogs help people find data, and governance suites manage policy across platforms."
+      },
+      {
+       "id": "tools-m06-unity-catalog",
+       "title": "Unity Catalog in the landscape",
+       "verified": "2026-10",
+       "summary": "Unity Catalog exists in two forms: - Databricks Unity Catalog: the governance layer of the Databricks platform.",
+       "remember": "Databricks Unity Catalog is a full governance layer on Databricks; the open-source Unity Catalog is a smaller, engine-neutral catalog server."
+      },
+      {
+       "id": "tools-m06-purview",
+       "title": "Microsoft Purview",
+       "verified": "2026-10",
+       "summary": "Microsoft Purview is Microsoft's family of data governance, security and compliance products.",
+       "remember": "Purview maps and classifies data across the estate, adds business governance with data products and quality, and supplies the labels, DLP and audit that Fabric uses."
+      },
+      {
+       "id": "tools-m06-datahub-openmetadata",
+       "title": "DataHub and OpenMetadata",
+       "verified": "2026-10",
+       "summary": "Two leading open-source metadata platforms for discovery, lineage and governance across many tools: - DataHub (created at LinkedIn, now under LF AI & Data; 1.x releases): an event-driven architecture where metadata chang",
+       "remember": "DataHub and OpenMetadata are open-source, cross-platform catalogs; DataHub is event-driven and extensible, OpenMetadata simpler with built-in quality features."
+      },
+      {
+       "id": "tools-m06-lineage",
+       "title": "Data lineage and OpenLineage",
+       "verified": "2026-10",
+       "summary": "Lineage records how data flows: which jobs read which datasets and wrote which others, and ideally which columns came from which.",
+       "remember": "Lineage comes from engines, parsing or OpenLineage events; combine them to see flows across platforms."
+      },
+      {
+       "id": "tools-m06-enterprise-catalogs",
+       "title": "Enterprise catalogs: Collibra, Alation, Informatica",
+       "verified": "2026-10",
+       "summary": "Commercial governance and catalog platforms aimed at large, multi-platform organisations: - Collibra: governance-led, with strong stewardship workflows, business glossary, policy management and data quality; in 2025 it a",
+       "remember": "Collibra, Alation and Informatica are cross-platform governance suites for formal governance programmes; their value depends on the people and processes behind them."
+      }
+     ]
+    },
+    {
+     "key": "tools-m07",
+     "num": "07",
+     "name": "Data quality and observability",
+     "file": "content/tools/07-data-quality-and-observability.md",
+     "lessons": [
+      {
+       "id": "tools-m07-great-expectations",
+       "title": "Great Expectations",
+       "verified": "2026-10",
+       "summary": "Great Expectations (the open-source library is now called GX Core, version 1.x since August 2024) is a Python framework for testing data.",
+       "remember": "GX Core lets Python pipelines declare expectations about data, validate batches and publish readable results."
+      },
+      {
+       "id": "tools-m07-soda",
+       "title": "Soda",
+       "verified": "2026-10",
+       "summary": "Soda is a data quality tool where checks are written in YAML rather than code.",
+       "remember": "Soda checks data with YAML definitions, and since v4 centres on data contracts verified against each dataset."
+      },
+      {
+       "id": "tools-m07-deequ",
+       "title": "Deequ and PyDeequ",
+       "verified": "2026-10",
+       "summary": "Deequ is an open-source library from AWS Labs, written in Scala on Apache Spark, for \"unit tests for data\".",
+       "remember": "Deequ computes and checks data quality metrics efficiently on Spark, but PyDeequ's JVM dependency limits it on modern Spark Connect platforms."
+      },
+      {
+       "id": "tools-m07-data-observability",
+       "title": "Data observability platforms",
+       "verified": "2026-10",
+       "summary": "Data observability applies monitoring ideas from software to data: instead of writing every rule by hand, a platform watches datasets continuously and alerts on anomalies.",
+       "remember": "Data observability watches freshness, volume, schema, distribution and lineage automatically to catch the problems no test anticipated."
+      },
+      {
+       "id": "tools-m07-data-contracts",
+       "title": "Data contracts",
+       "verified": "2026-10",
+       "summary": "A data contract is an explicit, versioned agreement between a data producer (an application team, a source system owner) and its consumers about a dataset: schema (columns, types, meaning), quality rules, freshness and a",
+       "remember": "A data contract is an enforced, versioned agreement on schema, quality and ownership between producer and consumers."
+      }
+     ]
     }
    ]
   }
