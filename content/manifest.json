@@ -2133,6 +2133,114 @@
        "remember": "Hints override the optimiser for proven problems; they age badly, so prefer statistics, indexing and plan management."
       }
      ]
+    },
+    {
+     "key": "sql-m10",
+     "num": "10",
+     "name": "Programmability",
+     "file": "content/sql/10-programmability.md",
+     "lessons": [
+      {
+       "id": "sql-m10-stored-procedures",
+       "title": "Stored procedures and packages",
+       "verified": "",
+       "summary": "A stored procedure is named code stored and executed in the database, with parameters, variables, control flow, transactions and error handling.",
+       "remember": "Procedures and PL/SQL packages keep logic in the database behind a stable interface; in migrations, translate set-based ones and redesign procedural ones."
+      },
+      {
+       "id": "sql-m10-functions",
+       "title": "User-defined functions",
+       "verified": "",
+       "summary": "User-defined functions (UDFs) return a value or a table and can be used inside queries: - Scalar functions return one value per call.",
+       "remember": "Prefer inline table-valued or inlinable functions; scalar and multi-statement functions can quietly destroy performance."
+      },
+      {
+       "id": "sql-m10-triggers",
+       "title": "Triggers",
+       "verified": "",
+       "summary": "A trigger is code that runs automatically when data changes (DML triggers on INSERT, UPDATE, DELETE) or on schema events (DDL triggers).",
+       "remember": "Triggers run automatically on data changes but hide cost and logic; prefer temporal tables, CDC and constraints, and plan replacements when migrating."
+      },
+      {
+       "id": "sql-m10-dynamic-sql-injection",
+       "title": "Dynamic SQL and SQL injection",
+       "verified": "",
+       "summary": "Dynamic SQL builds statement text at runtime and executes it: spexecutesql or EXEC in T-SQL, EXECUTE IMMEDIATE and DBMSSQL in Oracle, EXECUTE IMMEDIATE in Snowflake.",
+       "remember": "Bind values as parameters, whitelist and quote identifiers, and never concatenate user input into SQL."
+      },
+      {
+       "id": "sql-m10-error-handling",
+       "title": "Error handling",
+       "verified": "",
+       "summary": "Robust database code catches errors, rolls back incomplete work, and reports clearly.",
+       "remember": "Catch, roll back, log, then re-raise; never swallow errors, and use XACTABORT ON in T-SQL transactions."
+      }
+     ]
+    },
+    {
+     "key": "sql-m11",
+     "num": "11",
+     "name": "Analytical patterns",
+     "file": "content/sql/11-analytical-patterns.md",
+     "lessons": [
+      {
+       "id": "sql-m11-cohorts-retention",
+       "title": "Cohorts and retention",
+       "verified": "",
+       "summary": "A cohort is a group of users (or customers, accounts) who started in the same period, for example everyone whose first purchase was in March 2025.",
+       "remember": "Group users by start period, count who is active in each following period, and divide by cohort size."
+      },
+      {
+       "id": "sql-m11-funnels",
+       "title": "Funnels",
+       "verified": "",
+       "summary": "A funnel measures how many users pass through ordered steps, for example: viewed product, added to cart, started checkout, paid.",
+       "remember": "Take each user's first time at each step, require increasing times, and compare step counts."
+      },
+      {
+       "id": "sql-m11-percentiles",
+       "title": "Percentiles and medians",
+       "verified": "",
+       "summary": "Averages hide skew: a few large orders inflate the mean.",
+       "remember": "Use medians and percentiles for skewed data, approximate versions at scale, and never average them across groups."
+      },
+      {
+       "id": "sql-m11-ab-analysis",
+       "title": "A/B test analysis in SQL",
+       "verified": "",
+       "summary": "In an A/B test, users are randomly assigned to a control (A) and a variant (B), and a metric (conversion, revenue per user) is compared.",
+       "remember": "SQL prepares A/B data (one row per assigned user, outcome in window, sample ratio check); the inference needs proper statistics."
+      }
+     ]
+    },
+    {
+     "key": "sql-m12",
+     "num": "12",
+     "name": "Migration SQL",
+     "file": "content/sql/12-migration-sql.md",
+     "lessons": [
+      {
+       "id": "sql-m12-reconciliation",
+       "title": "Reconciliation queries",
+       "verified": "",
+       "summary": "During a migration, reconciliation proves the new system holds the same data and produces the same results as the old one.",
+       "remember": "Compare counts, then aggregates, then partition checksums, then row diffs where checksums differ, after normalising values."
+      },
+      {
+       "id": "sql-m12-dialect-translation",
+       "title": "Translating between Oracle, T-SQL, Spark SQL and Snowflake",
+       "verified": "",
+       "summary": "Most SQL translates directly; the differences cluster in a few areas: Area Oracle T-SQL Spark SQL Snowflake --------------- Row limit FETCH FIRST n ROWS ONLY, ROWNUM TOP (n), OFFSET/FETCH LIMIT n LIMIT n, TOP n NULL repl",
+       "remember": "Syntax converts with tools; behaviour differences (empty strings, dates, division, collation) need deliberate tests."
+      },
+      {
+       "id": "sql-m12-data-type-mapping",
+       "title": "Data type mapping across platforms",
+       "verified": "",
+       "summary": "Type mismatches are a top source of migration bugs.",
+       "remember": "Map types deliberately: Oracle NUMBER needs a chosen precision, Oracle DATE has a time, and timestamps need an explicit time-zone decision."
+      }
+     ]
     }
    ]
   },
