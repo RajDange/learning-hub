@@ -1180,10 +1180,31 @@
      "lessons": [
       {
        "id": "tools-m01-ingestion-styles",
-       "title": "Batch, CDC and streaming ingestion (sample)",
-       "verified": "pending",
-       "summary": "There are three common ways to move data from source systems into an analytics platform: periodic batch copies, change data capture (CDC), and event streaming.",
-       "remember": "Batch copies snapshots, CDC copies changes, streaming copies events."
+       "title": "Batch, CDC and streaming ingestion",
+       "verified": "2026-10",
+       "summary": "There are three basic ways to move data from source systems into an analytics platform: - Batch extraction: copy a full table or the rows changed since a timestamp, on a schedule (hourly, nightly).",
+       "remember": "Batch copies snapshots on a schedule, CDC copies every change from the log, and streaming carries events as they happen."
+      },
+      {
+       "id": "tools-m01-debezium",
+       "title": "Debezium and log-based CDC",
+       "verified": "2026-10",
+       "summary": "Debezium is an open-source CDC platform (from Red Hat, Apache 2.0) that reads database change logs and emits one event per row change, with before and after values and source metadata.",
+       "remember": "Debezium turns database logs into row-change events for Kafka or other targets, at the cost of running and monitoring it yourself."
+      },
+      {
+       "id": "tools-m01-managed-connectors",
+       "title": "Managed connectors: Fivetran, Airbyte and similar",
+       "verified": "2026-10",
+       "summary": "Managed connector platforms sell pre-built, maintained pipelines from hundreds of sources (SaaS apps such as Salesforce and Workday, databases, files, APIs) into warehouses and lakehouses.",
+       "remember": "Managed connectors buy maintained ingestion from many sources; pay attention to row-based pricing and where data flows."
+      },
+      {
+       "id": "tools-m01-azure-data-factory",
+       "title": "Azure Data Factory",
+       "verified": "2026-10",
+       "summary": "Azure Data Factory (ADF) is Azure's cloud data integration and orchestration service.",
+       "remember": "ADF is Azure's established pipeline and copy service with self-hosted and SSIS runtimes; Fabric Data Factory is its successor for new Fabric-based work."
       }
      ]
     }
