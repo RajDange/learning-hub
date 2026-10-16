@@ -3157,6 +3157,92 @@
        "remember": "Measure retrieval (recall, ranking) and generation (faithfulness, relevance, correctness) on a fixed question set, using LLM judges checked against humans."
       }
      ]
+    },
+    {
+     "key": "ai-m06",
+     "num": "06",
+     "name": "Agents",
+     "file": "content/ai/06-agents.md",
+     "lessons": [
+      {
+       "id": "ai-m06-tool-using-agents",
+       "title": "Tool-using agents",
+       "verified": "2026-10",
+       "summary": "An agent is an LLM that runs in a loop, deciding its own next step: it reads the goal and context, chooses a tool to call (or answers), observes the tool result, and repeats until it decides the task is done or a limit i",
+       "remember": "An agent loops: decide, call a tool, observe, repeat; prefer simple workflows unless the task truly needs dynamic steps."
+      },
+      {
+       "id": "ai-m06-planning",
+       "title": "Planning and reasoning patterns",
+       "verified": "2026-10",
+       "summary": "Common patterns for structuring how an LLM system works through a task: - Prompt chaining: fixed sequence of steps, each output feeding the next, with checks between.",
+       "remember": "Use chaining, routing, planning, orchestrator-worker and critique patterns deliberately, choosing the simplest that measurably works."
+      },
+      {
+       "id": "ai-m06-memory",
+       "title": "Agent memory",
+       "verified": "2026-10",
+       "summary": "LLMs are stateless: each call sees only its context.",
+       "remember": "Agents keep short-term memory in the context window and long-term memory in external stores, retrieved selectively and governed like data."
+      },
+      {
+       "id": "ai-m06-mcp",
+       "title": "Model Context Protocol",
+       "verified": "2026-10",
+       "summary": "The Model Context Protocol (MCP) is an open standard for connecting AI applications to tools and data.",
+       "remember": "MCP is the open standard for plugging tools and data into AI applications through servers; it standardises connections, not trust."
+      },
+      {
+       "id": "ai-m06-multi-agent",
+       "title": "Multi-agent patterns",
+       "verified": "2026-10",
+       "summary": "Multi-agent systems split work across several LLM agents with different roles, prompts or tools: - Manager (orchestrator-worker): a central agent delegates sub-tasks to specialist agents (treated as tools) and combines r",
+       "remember": "Use multiple agents (manager or handoff patterns) only when one agent cannot cope; they add cost and coordination risk."
+      },
+      {
+       "id": "ai-m06-failure-modes",
+       "title": "Agent failure modes",
+       "verified": "2026-10",
+       "summary": "Typical ways agents go wrong: - Loops: repeating the same tool call or plan without progress.",
+       "remember": "Agents loop, misuse tools, compound errors and can be hijacked; bound them with limits, least privilege, approvals, validation and tracing."
+      }
+     ]
+    },
+    {
+     "key": "ai-m07",
+     "num": "07",
+     "name": "Adaptation",
+     "file": "content/ai/07-adaptation.md",
+     "lessons": [
+      {
+       "id": "ai-m07-fine-tuning",
+       "title": "Fine-tuning",
+       "verified": "2026-10",
+       "summary": "Fine-tuning continues training a pretrained model on your own examples so its behaviour changes.",
+       "remember": "Fine-tune to change behaviour, format or cost on a narrow task with good examples; use retrieval, not fine-tuning, to add knowledge."
+      },
+      {
+       "id": "ai-m07-lora-peft",
+       "title": "LoRA and parameter-efficient fine-tuning",
+       "verified": "2026-10",
+       "summary": "Full fine-tuning updates every weight of a large model, which needs a lot of GPU memory and produces a full-size copy per task.",
+       "remember": "LoRA and QLoRA fine-tune large models by training small add-on matrices, making adaptation cheap and adapters swappable."
+      },
+      {
+       "id": "ai-m07-distillation",
+       "title": "Distillation",
+       "verified": "2026-10",
+       "summary": "Distillation trains a smaller student model to imitate a larger teacher.",
+       "remember": "Distillation trains a small model on a large model's outputs for one task, cutting cost and latency within the teacher's quality and licence limits."
+      },
+      {
+       "id": "ai-m07-when-not-to-fine-tune",
+       "title": "When not to fine-tune",
+       "verified": "2026-10",
+       "summary": "Providers and practitioners recommend trying simpler options first, in this order: 1.",
+       "remember": "Prompt, constrain, retrieve and switch models before fine-tuning; fine-tune only with an evaluation set showing it helps."
+      }
+     ]
     }
    ]
   },
