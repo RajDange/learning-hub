@@ -341,6 +341,77 @@
        "remember": "An action is a job, shuffles split it into stages, each stage runs one task per partition, and the Spark UI shows where time went."
       }
      ]
+    },
+    {
+     "key": "pyspark-m08",
+     "num": "08",
+     "name": "Lakehouse and table formats",
+     "file": "content/pyspark/08-lakehouse-and-table-formats.md",
+     "lessons": [
+      {
+       "id": "pyspark-m08-delta-lake",
+       "title": "Delta Lake: ACID tables on files",
+       "verified": "",
+       "summary": "Plain Parquet folders have no transactions: a failed write leaves half-written files, readers can see partial results, and you cannot update a row.",
+       "remember": "Delta adds a transaction log to Parquet files, giving ACID writes, schema enforcement, MERGE and time travel on a data lake."
+      },
+      {
+       "id": "pyspark-m08-delta-merge",
+       "title": "MERGE and upserts in Delta",
+       "verified": "",
+       "summary": "MERGE INTO combines insert, update and delete in one atomic operation, driven by a join between a source (new or changed rows) and the target table: - WHEN MATCHED AND condition THEN UPDATE SET ...",
+       "remember": "MERGE applies inserts, updates and deletes atomically from a deduplicated source; limit the target files it touches."
+      },
+      {
+       "id": "pyspark-m08-delta-time-travel-vacuum",
+       "title": "Time travel, restore and vacuum",
+       "verified": "",
+       "summary": "Because Delta never overwrites files in place, older versions of a table remain readable: - Time travel: SELECT FROM t VERSION AS OF 12 or TIMESTAMP AS OF '2025-10-01', or the versionAsOf reader option.",
+       "remember": "Delta keeps old versions until VACUUM removes files beyond the retention window; use time travel as undo, not as backup."
+      },
+      {
+       "id": "pyspark-m08-delta-optimize-clustering",
+       "title": "Compaction, Z-order and liquid clustering",
+       "verified": "",
+       "summary": "Two layout problems slow down Delta tables: 1.",
+       "remember": "Compact small files with OPTIMIZE, and cluster on the columns you filter by, preferring liquid clustering for new tables."
+      },
+      {
+       "id": "pyspark-m08-delta-schema-evolution",
+       "title": "Schema enforcement and evolution",
+       "verified": "",
+       "summary": "Schema enforcement: Delta rejects writes whose columns or types do not match the table, instead of silently corrupting it.",
+       "remember": "Delta enforces the schema by default; allow evolution deliberately, mostly in raw layers."
+      },
+      {
+       "id": "pyspark-m08-delta-change-data-feed",
+       "title": "Change data feed",
+       "verified": "",
+       "summary": "The change data feed (CDF) records row-level changes made to a Delta table.",
+       "remember": "Change data feed exposes each row's insert, update and delete since a version, so downstream jobs process only changes, including deletes."
+      },
+      {
+       "id": "pyspark-m08-iceberg-hudi",
+       "title": "Apache Iceberg and Apache Hudi",
+       "verified": "",
+       "summary": "Delta is one of three widely used open table formats.",
+       "remember": "Iceberg is the most engine-neutral format with catalog-based metadata, Hudi targets upsert-heavy pipelines, and Delta dominates Spark-centred platforms."
+      },
+      {
+       "id": "pyspark-m08-scd-patterns",
+       "title": "Slowly changing dimensions in Spark",
+       "verified": "",
+       "summary": "A slowly changing dimension (SCD) is a dimension table (customer, product) whose attributes change over time.",
+       "remember": "SCD type 1 overwrites, type 2 closes the old row and inserts a new one, and in Delta both are MERGE statements."
+      },
+      {
+       "id": "pyspark-m08-medallion",
+       "title": "Medallion architecture",
+       "verified": "",
+       "summary": "The medallion architecture organises lakehouse data into layers of increasing quality: - Bronze (raw): data as received, append-only, with ingestion metadata (source file, load time).",
+       "remember": "Bronze keeps raw history, silver cleans and conforms, gold serves the business; the value is in clear responsibilities, not the names."
+      }
+     ]
     }
    ]
   },
