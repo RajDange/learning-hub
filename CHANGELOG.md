@@ -49,3 +49,4 @@ All nine syllabus files written; validator clean (443 planned lessons, 0 errors)
 - 2026-10-16: snowflake track complete (38 lessons). 2026 renames noted in lessons (Snowflake Intelligence to CoWork, Cortex Code to CoCo, Horizon Catalog preferred over Open Catalog for new customers).
 - 2026-10-16: sql track complete (48 lessons).
 - 2026-10-16: python track complete (34 lessons).
+- 2026-10-16: ml track complete (50 lessons).

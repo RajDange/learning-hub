@@ -2899,6 +2899,70 @@
        "remember": "PyTorch is tensors on devices, modules with forward methods, data loaders, and autograd plus an optimiser in a loop."
       }
      ]
+    },
+    {
+     "key": "ml-m06",
+     "num": "06",
+     "name": "Stage 5: MLOps",
+     "file": "content/ml/06-mlops.md",
+     "lessons": [
+      {
+       "id": "ml-m06-experiment-tracking",
+       "title": "Experiment tracking",
+       "verified": "",
+       "summary": "Experiment tracking records every training run so results can be compared and reproduced: - Parameters: hyperparameters, feature set version, data snapshot or version.",
+       "remember": "Log parameters, metrics, artefacts, data version and code version for every run so models can be compared and reproduced."
+      },
+      {
+       "id": "ml-m06-model-registry",
+       "title": "Model registry",
+       "verified": "",
+       "summary": "A model registry is the catalogue of trained models intended for use: - Each model has a name and numbered versions, linked to the run that produced them (parameters, metrics, data, code).",
+       "remember": "A model registry versions approved models, marks the serving version with aliases, and links each to its training run and data."
+      },
+      {
+       "id": "ml-m06-batch-vs-online-serving",
+       "title": "Batch vs online serving",
+       "verified": "",
+       "summary": "Two main ways to use a model in production: - Batch scoring: on a schedule, score many records at once and write predictions to a table (nightly churn scores for all customers, weekly demand forecasts).",
+       "remember": "Score in batch unless the decision happens in real time; online serving adds endpoints, online features and higher cost."
+      },
+      {
+       "id": "ml-m06-drift-monitoring",
+       "title": "Drift and model monitoring",
+       "verified": "",
+       "summary": "Models degrade because the world changes.",
+       "remember": "Monitor input drift, prediction drift and data quality as early warnings, and real performance once labels arrive."
+      },
+      {
+       "id": "ml-m06-retraining",
+       "title": "Retraining strategies",
+       "verified": "",
+       "summary": "Models need refreshing as data changes.",
+       "remember": "Retrain on a schedule or trigger, but always compare against the current champion and roll out gradually with rollback."
+      },
+      {
+       "id": "ml-m06-feature-stores",
+       "title": "Feature stores",
+       "verified": "",
+       "summary": "A feature store manages features (inputs to models) as shared, governed data: - Feature definitions written once (for example \"customer purchases in the last 30 days\") and reused by many models.",
+       "remember": "A feature store defines features once, serves point-in-time correct history for training and fresh values online, keeping training and serving consistent."
+      },
+      {
+       "id": "ml-m06-testing-reproducibility",
+       "title": "Testing and reproducibility in ML",
+       "verified": "",
+       "summary": "ML code needs the same engineering discipline as any code, plus some extra checks: Reproducibility - Pin library versions and environments (lock files, containers).",
+       "remember": "Pin environments, fix seeds and version data, and test features, data, model quality and behaviour before promotion."
+      },
+      {
+       "id": "ml-m06-ml-on-platforms",
+       "title": "ML on Spark, Fabric, Databricks and Snowflake",
+       "verified": "",
+       "summary": "How the data platforms support ML (details in each platform track): - Spark MLlib: distributed algorithms (linear models, trees, gradient-boosted trees, ALS, clustering) and pipelines for data too large for one machine.",
+       "remember": "Spark scales feature engineering and some algorithms, while Fabric, Databricks and Snowflake each wrap MLflow-style tracking, registries and scoring around governed data."
+      }
+     ]
     }
    ]
   },
