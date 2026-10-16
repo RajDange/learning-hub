@@ -1135,7 +1135,108 @@
    "key": "databricks",
    "name": "Databricks",
    "planned": 38,
-   "modules": []
+   "modules": [
+    {
+     "key": "databricks-m01",
+     "num": "01",
+     "name": "Platform",
+     "file": "content/databricks/01-platform.md",
+     "lessons": [
+      {
+       "id": "databricks-m01-control-data-plane",
+       "title": "Control plane and compute plane",
+       "verified": "2026-10",
+       "summary": "Databricks splits its architecture in two: - The control plane runs in Databricks' own cloud account: the web application, notebooks service, job scheduler, cluster manager, Unity Catalog services and APIs.",
+       "remember": "The control plane is Databricks' service; compute runs either in your account (classic) or in Databricks' account (serverless), while data stays in object storage."
+      },
+      {
+       "id": "databricks-m01-accounts-workspaces",
+       "title": "Accounts and workspaces",
+       "verified": "2026-10",
+       "summary": "A Databricks account is the top level: it holds identities (users, groups, service principals), single sign-on, billing, Unity Catalog metastores (one per region) and workspaces.",
+       "remember": "The account owns identity, billing and metastores; workspaces are where work happens, and many workspaces can share one governed metastore."
+      },
+      {
+       "id": "databricks-m01-compute-types",
+       "title": "Compute types",
+       "verified": "2026-10",
+       "summary": "Databricks offers several kinds of compute (names as of October 2026): - Serverless compute for notebooks, jobs (Lakeflow Jobs) and pipelines: no cluster configuration, fast start, automatic scaling and upgrades, Photon ",
+       "remember": "Use serverless where its limits are acceptable, jobs compute for configured scheduled work, SQL warehouses for BI, and pick access mode by isolation needs."
+      },
+      {
+       "id": "databricks-m01-runtimes",
+       "title": "Databricks Runtime",
+       "verified": "2026-10",
+       "summary": "The Databricks Runtime (DBR) is the software image on classic compute: Apache Spark plus Databricks improvements, Delta Lake, libraries and system packages.",
+       "remember": "DBR packages Spark, Delta and libraries; pin LTS versions on classic compute and let serverless upgrade itself."
+      },
+      {
+       "id": "databricks-m01-photon",
+       "title": "Photon",
+       "verified": "2026-10",
+       "summary": "Photon is Databricks' native, vectorised query engine written in C++.",
+       "remember": "Photon is a C++ vectorised engine under Spark's planner that speeds up SQL and DataFrame work, but not UDFs, RDDs or stateful streaming."
+      }
+     ]
+    },
+    {
+     "key": "databricks-m02",
+     "num": "02",
+     "name": "Unity Catalog",
+     "file": "content/databricks/02-unity-catalog.md",
+     "lessons": [
+      {
+       "id": "databricks-m02-unity-catalog-overview",
+       "title": "Unity Catalog: metastore, catalogs and schemas",
+       "verified": "2026-10",
+       "summary": "Unity Catalog (UC) is Databricks' governance layer.",
+       "remember": "Unity Catalog governs everything through metastore, catalog, schema and object, addressed as catalog.schema.table."
+      },
+      {
+       "id": "databricks-m02-privileges",
+       "title": "Privileges and ownership",
+       "verified": "2026-10",
+       "summary": "Access in Unity Catalog is granted with SQL GRANT on securables to users, groups and service principals: - Reading a table needs USE CATALOG on its catalog, USE SCHEMA on its schema and SELECT on the table.",
+       "remember": "Reading needs USE CATALOG, USE SCHEMA and SELECT; grants inherit downward, and ABAC policies on governed tags scale row and column protection."
+      },
+      {
+       "id": "databricks-m02-lineage",
+       "title": "Lineage in Unity Catalog",
+       "verified": "2026-10",
+       "summary": "Unity Catalog captures lineage automatically for queries run on UC-enabled compute: table-level and column-level, across all workspaces attached to the metastore, for notebooks, jobs, pipelines, dashboards and models.",
+       "remember": "Unity Catalog records table and column lineage automatically for governed queries, visible in Catalog Explorer and system tables."
+      },
+      {
+       "id": "databricks-m02-volumes",
+       "title": "Volumes",
+       "verified": "2026-10",
+       "summary": "A volume is a Unity Catalog object that governs non-tabular files: CSV drops, JSON, images, PDFs, model artefacts, libraries.",
+       "remember": "Volumes bring governed paths and permissions to files that are not tables."
+      },
+      {
+       "id": "databricks-m02-external-locations",
+       "title": "Storage credentials and external locations",
+       "verified": "2026-10",
+       "summary": "Unity Catalog controls how Databricks reaches cloud storage with two objects: - A storage credential wraps a cloud identity (an Azure managed identity or service principal, an AWS IAM role, a GCP service account) that ca",
+       "remember": "Storage credentials hold the cloud identity, external locations bind it to paths, and UC privileges decide who may use them."
+      },
+      {
+       "id": "databricks-m02-system-tables",
+       "title": "System tables",
+       "verified": "2026-10",
+       "summary": "System tables are read-only tables in the system catalog that expose operational data about your account as data you can query: - system.access.audit: who did what (logins, queries, permission changes).",
+       "remember": "System tables expose audit, lineage, billing, compute and job history as queryable tables."
+      },
+      {
+       "id": "databricks-m02-delta-sharing",
+       "title": "Delta Sharing (OpenSharing)",
+       "verified": "2026-10",
+       "summary": "Delta Sharing is an open protocol, created by Databricks, for sharing live data without copying it.",
+       "remember": "Delta Sharing (now OpenSharing) shares live, read-only data across organisations and platforms without copying it."
+      }
+     ]
+    }
+   ]
   },
   {
    "key": "snowflake",
