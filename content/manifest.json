@@ -3343,6 +3343,78 @@
        "remember": "Fabric, Databricks and Snowflake all offer AI functions, natural-language analytics, vector search and agents inside their governance; check current names and status."
       }
      ]
+    },
+    {
+     "key": "ai-m10",
+     "num": "10",
+     "name": "LLMOps",
+     "file": "content/ai/10-llmops.md",
+     "lessons": [
+      {
+       "id": "ai-m10-deployment",
+       "title": "Deploying LLM applications",
+       "verified": "2026-10",
+       "summary": "Ways to run the model behind an LLM application: - Hosted provider APIs: call a model provider's API directly.",
+       "remember": "Deploy through provider APIs, your cloud platform, your data platform or self-hosted models, choosing by data control, volume and operations capacity."
+      },
+      {
+       "id": "ai-m10-monitoring",
+       "title": "Monitoring LLM applications",
+       "verified": "2026-10",
+       "summary": "LLM applications need monitoring beyond uptime: - Tracing: record each request as a trace of spans: prompt, retrieval results, tool calls, model calls, outputs, latency and token counts.",
+       "remember": "Trace every step, track latency, tokens and cost, sample outputs for automated quality checks, and govern the logs as sensitive data."
+      },
+      {
+       "id": "ai-m10-caching",
+       "title": "Caching",
+       "verified": "2026-10",
+       "summary": "Three kinds of caching reduce LLM cost and latency: - Prompt (prefix) caching at the provider: the model reuses computation for an identical prompt prefix (system prompt, tool definitions, long reference documents).",
+       "remember": "Order prompts static-first to benefit from provider prompt caching; use semantic caching only for generic questions, scoped per user."
+      },
+      {
+       "id": "ai-m10-gateways",
+       "title": "LLM gateways",
+       "verified": "2026-10",
+       "summary": "An LLM gateway sits between applications and model providers, giving one controlled entry point: - Unified API across providers and models (often OpenAI-compatible), so applications can switch models by configuration.",
+       "remember": "An LLM gateway centralises access, quotas, routing, logging, guardrails and caching for all model calls."
+      },
+      {
+       "id": "ai-m10-cost-control",
+       "title": "Cost control",
+       "verified": "2026-10",
+       "summary": "LLM costs grow with usage in ways that are easy to miss: long contexts, agents looping, reasoning tokens, embedding re-runs, and popular features scaling.",
+       "remember": "Measure cost per feature and outcome, enforce budgets and limits, route to the smallest adequate model, and cache and batch."
+      }
+     ]
+    },
+    {
+     "key": "ai-m11",
+     "num": "11",
+     "name": "Reference architectures",
+     "file": "content/ai/11-reference-architectures.md",
+     "lessons": [
+      {
+       "id": "ai-m11-rag-internal-docs",
+       "title": "Reference: RAG over internal documentation",
+       "verified": "2026-10",
+       "summary": "A reference design for an assistant that answers questions from internal documentation (policies, runbooks, data platform docs, wikis): Ingestion pipeline (scheduled or event-driven, incremental): 1.",
+       "remember": "Ingest incrementally with permissions, retrieve hybrid and permission-filtered, rerank, answer only from cited passages, and evaluate continuously."
+      },
+      {
+       "id": "ai-m11-text-to-sql-assistant",
+       "title": "Reference: a text-to-SQL assistant",
+       "verified": "2026-10",
+       "summary": "A reference design for answering business questions over a warehouse or lakehouse: 1.",
+       "remember": "Text-to-SQL needs a semantic layer, retrieved schema context and examples, read-only execution as the user, validation loops and a benchmark."
+      },
+      {
+       "id": "ai-m11-dq-triage-agent",
+       "title": "Reference: an agent that triages data quality issues",
+       "verified": "2026-10",
+       "summary": "A reference design for an agent that helps on-call data engineers with data quality incidents: Inputs: alerts from data quality checks and observability tools (freshness, volume, schema, distribution), pipeline failures,",
+       "remember": "A DQ triage agent gathers evidence through read-only tools, proposes causes and impact, drafts the incident, and leaves fixes to humans."
+      }
+     ]
     }
    ]
   },
