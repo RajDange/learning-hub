@@ -2457,6 +2457,107 @@
        "remember": "Check shape, keys, missing values, distributions, categories and relationships, then turn findings into coded cleaning steps and quality rules."
       }
      ]
+    },
+    {
+     "key": "python-m07",
+     "num": "07",
+     "name": "Performance",
+     "file": "content/python/07-performance.md",
+     "lessons": [
+      {
+       "id": "python-m07-profiling",
+       "title": "Profiling",
+       "verified": "",
+       "summary": "Profiling measures where time and memory actually go, instead of guessing: - cProfile (standard library): counts calls and time per function; view results with snakeviz or pstats.",
+       "remember": "Measure with a profiler first; the slow part is rarely where you guess."
+      },
+      {
+       "id": "python-m07-concurrency",
+       "title": "Threads, processes and async",
+       "verified": "",
+       "summary": "Python offers three ways to do several things at once, suited to different bottlenecks: - Threads (threading, concurrent.futures.ThreadPoolExecutor): good for I/O-bound work (API calls, database queries, file downloads),",
+       "remember": "Threads or asyncio for waiting on I/O, processes for CPU-bound Python, and vectorised libraries already use multiple cores."
+      },
+      {
+       "id": "python-m07-arrow",
+       "title": "Apache Arrow",
+       "verified": "",
+       "summary": "Apache Arrow is a standard in-memory columnar format: a language-independent layout for tables in memory, with typed columns, null bitmaps and efficient strings.",
+       "remember": "Arrow is the shared in-memory columnar format that lets Spark, pandas, Polars and DuckDB exchange data without costly conversion."
+      }
+     ]
+    },
+    {
+     "key": "python-m08",
+     "num": "08",
+     "name": "Engineering",
+     "file": "content/python/08-engineering.md",
+     "lessons": [
+      {
+       "id": "python-m08-config-logging",
+       "title": "Configuration and logging",
+       "verified": "",
+       "summary": "Configuration: separate what changes per environment (paths, table names, URLs, batch sizes) from code.",
+       "remember": "Keep environment settings out of code and validated at startup, and log with levels and context through the logging module."
+      },
+      {
+       "id": "python-m08-pytest",
+       "title": "Testing with pytest",
+       "verified": "",
+       "summary": "pytest is the standard Python test framework.",
+       "remember": "Write plain-assert pytest tests for transformation functions and edge cases, with fixtures for setup and mocks for external systems."
+      },
+      {
+       "id": "python-m08-git",
+       "title": "Git for data work",
+       "verified": "",
+       "summary": "Git tracks changes to files as commits, on branches, in a repository that is shared through a remote (GitHub, Azure DevOps, GitLab).",
+       "remember": "Branch, commit small, review through pull requests, and never commit secrets or data."
+      },
+      {
+       "id": "python-m08-docker-basics",
+       "title": "Docker basics for Python",
+       "verified": "",
+       "summary": "A Dockerfile describes how to build an image for a Python application: 1.",
+       "remember": "A layered Dockerfile installs pinned dependencies, copies code and runs as non-root, so the tested environment is what runs."
+      },
+      {
+       "id": "python-m08-notebooks-vs-scripts",
+       "title": "Notebooks vs scripts",
+       "verified": "",
+       "summary": "Notebooks (Jupyter, VS Code, Databricks, Fabric, Snowflake) mix code, output, charts and text in cells.",
+       "remember": "Explore in notebooks, move logic into tested modules, and keep any production notebook thin."
+      }
+     ]
+    },
+    {
+     "key": "python-m09",
+     "num": "09",
+     "name": "Stats and ML on-ramp",
+     "file": "content/python/09-stats-and-ml-on-ramp.md",
+     "lessons": [
+      {
+       "id": "python-m09-scipy-statsmodels",
+       "title": "SciPy and statsmodels",
+       "verified": "",
+       "summary": "Two libraries for classical statistics in Python: - SciPy (scipy.stats): probability distributions (normal, binomial, Poisson, and many more) with densities, quantiles and random sampling; hypothesis tests (t-tests, chi-",
+       "remember": "SciPy provides distributions and statistical tests; statsmodels fits models with standard errors and confidence intervals."
+      },
+      {
+       "id": "python-m09-scikit-learn",
+       "title": "scikit-learn overview",
+       "verified": "",
+       "summary": "scikit-learn is the standard library for classical machine learning on tabular data.",
+       "remember": "scikit-learn gives every classical model the same fit and predict API, and pipelines keep preprocessing consistent and leak-free."
+      },
+      {
+       "id": "python-m09-pytorch",
+       "title": "PyTorch overview",
+       "verified": "",
+       "summary": "PyTorch is the dominant open-source framework for deep learning (Linux Foundation, originally from Meta).",
+       "remember": "PyTorch provides GPU tensors, automatic gradients and neural network modules; use it for deep learning, and tree models for most tabular data."
+      }
+     ]
     }
    ]
   },
