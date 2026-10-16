@@ -621,6 +621,78 @@
        "remember": "Audit logs say who did what, the metrics app says how busy the capacity is, and the monitoring hub says whether jobs ran."
       }
      ]
+    },
+    {
+     "key": "fabric-m09",
+     "num": "09",
+     "name": "ALM and DevOps",
+     "file": "content/fabric/09-alm-and-devops.md",
+     "lessons": [
+      {
+       "id": "fabric-m09-git-integration",
+       "title": "Git integration",
+       "verified": "2026-10",
+       "summary": "Git integration connects a Fabric workspace to a branch in a Git repository: Azure DevOps, GitHub or GitHub Enterprise (cloud versions only).",
+       "remember": "Git integration versions Fabric item definitions per workspace branch; data and secrets stay out of Git."
+      },
+      {
+       "id": "fabric-m09-deployment-pipelines",
+       "title": "Deployment pipelines",
+       "verified": "2026-10",
+       "summary": "A deployment pipeline promotes content between workspaces that represent stages, such as Development, Test and Production.",
+       "remember": "Deployment pipelines promote item definitions between stage workspaces, with rules and autobinding to point each stage at its own data."
+      },
+      {
+       "id": "fabric-m09-apis-automation",
+       "title": "REST APIs and automation",
+       "verified": "2026-10",
+       "summary": "Everything you do in the Fabric portal can increasingly be automated: - Fabric REST APIs cover workspaces, items and item definitions, Git operations, deployment pipelines, job scheduling, the catalog and admin tasks (do",
+       "remember": "REST APIs, the Fabric CLI, fabric-cicd and Terraform let you create and deploy Fabric content from code with service principals."
+      }
+     ]
+    },
+    {
+     "key": "fabric-m10",
+     "num": "10",
+     "name": "Decisions",
+     "file": "content/fabric/10-decisions.md",
+     "lessons": [
+      {
+       "id": "fabric-m10-lakehouse-vs-warehouse",
+       "title": "Lakehouse vs Warehouse (and Eventhouse)",
+       "verified": "2026-10",
+       "summary": "Fabric offers several stores that all keep data in OneLake.",
+       "remember": "Pick the Lakehouse for Spark teams and all data shapes, the Warehouse for T-SQL teams needing transactions, and the Eventhouse for streaming and time series."
+      },
+      {
+       "id": "fabric-m10-fabric-vs-databricks-vs-snowflake",
+       "title": "Fabric vs Databricks vs Snowflake",
+       "verified": "2026-10",
+       "summary": "The three platforms overlap heavily: all offer lakehouse-style storage on open formats, SQL warehousing, Spark or Spark-like processing, ML and AI features, and governance.",
+       "remember": "Fabric centres on Microsoft and BI, Databricks on engineering and ML, Snowflake on SQL and sharing, and many estates combine them."
+      },
+      {
+       "id": "fabric-m10-capacity-sizing-cost",
+       "title": "Capacity sizing and cost",
+       "verified": "2026-10",
+       "summary": "Sizing a Fabric capacity is iterative: 1.",
+       "remember": "Estimate, prove with the Metrics app, separate risky workloads, reserve the base, and remember viewer licences below F64."
+      },
+      {
+       "id": "fabric-m10-migrating-from-legacy",
+       "title": "Migrating from legacy platforms to Fabric",
+       "verified": "2026-10",
+       "summary": "Typical sources and the Fabric tooling for each: - SQL Server, Synapse dedicated SQL pools (and Teradata metadata, preview) to Warehouse: the Migration Assistant for Fabric Data Warehouse imports a DACPAC, SQL scripts or",
+       "remember": "Fabric's assistants translate code and schema, but a migration still needs a target design, parallel running and reconciliation."
+      },
+      {
+       "id": "fabric-m10-when-not-fabric",
+       "title": "When not to use Fabric",
+       "verified": "2026-10",
+       "summary": "Fabric is not the best answer everywhere.",
+       "remember": "Avoid or limit Fabric where strict network isolation, multi-cloud, infrastructure control, tiny scale or low-latency serving dominate."
+      }
+     ]
     }
    ]
   },
