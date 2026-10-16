@@ -2327,6 +2327,71 @@
        "remember": "Use a src layout with pyproject.toml, tests beside it, and build a wheel that every environment installs."
       }
      ]
+    },
+    {
+     "key": "python-m03",
+     "num": "03",
+     "name": "NumPy",
+     "file": "content/python/03-numpy.md",
+     "lessons": [
+      {
+       "id": "python-m03-numpy-arrays",
+       "title": "NumPy arrays and broadcasting",
+       "verified": "",
+       "summary": "NumPy is the foundation of numerical Python.",
+       "remember": "NumPy arrays are typed blocks of memory processed in C, and broadcasting combines shapes without loops."
+      },
+      {
+       "id": "python-m03-vectorization",
+       "title": "Vectorisation",
+       "verified": "",
+       "summary": "Vectorisation means expressing a computation as operations on whole arrays or columns instead of a Python loop over elements.",
+       "remember": "Replace Python loops with whole-array operations; the speed comes from running in compiled code once instead of the interpreter per element."
+      }
+     ]
+    },
+    {
+     "key": "python-m04",
+     "num": "04",
+     "name": "pandas and Polars",
+     "file": "content/python/04-pandas-and-polars.md",
+     "lessons": [
+      {
+       "id": "python-m04-pandas-core",
+       "title": "pandas DataFrames and indexing",
+       "verified": "",
+       "summary": "pandas is the standard Python library for tabular data on one machine.",
+       "remember": "A DataFrame is labelled columns plus an index; select with loc by label and iloc by position, and avoid chained assignment."
+      },
+      {
+       "id": "python-m04-groupby-merge",
+       "title": "groupby, merge and reshaping",
+       "verified": "",
+       "summary": "pandas' core relational operations: - groupby follows split-apply-combine: split rows by keys, apply an aggregation or transformation per group, combine results.",
+       "remember": "groupby is split-apply-combine, merge is a SQL join (validate the keys), and melt and pivottable reshape between long and wide."
+      },
+      {
+       "id": "python-m04-time-series",
+       "title": "Time series in pandas",
+       "verified": "",
+       "summary": "pandas has rich time-series support: - Parse to datetime64 with pd.todatetime (format and utc=True explicit).",
+       "remember": "Use a UTC DatetimeIndex, resample to change frequency, rolling for moving windows, and shift for period comparisons."
+      },
+      {
+       "id": "python-m04-memory",
+       "title": "Memory use in pandas",
+       "verified": "",
+       "summary": "pandas DataFrames often use far more memory than the file they came from.",
+       "remember": "Shrink pandas memory with correct dtypes, categoricals, Arrow types and reading only needed columns; beyond that, change tools."
+      },
+      {
+       "id": "python-m04-pandas-vs-polars",
+       "title": "pandas vs Polars",
+       "verified": "",
+       "summary": "Polars is a DataFrame library written in Rust on Apache Arrow memory.",
+       "remember": "Polars is a fast, lazy, expression-based DataFrame library; pandas has the broadest ecosystem."
+      }
+     ]
     }
    ]
   },
