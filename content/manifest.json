@@ -4,7 +4,7 @@
   {
    "key": "pyspark",
    "name": "PySpark",
-   "planned": 0,
+   "planned": 82,
    "modules": [
     {
      "key": "pyspark-m01",
@@ -26,7 +26,7 @@
   {
    "key": "fabric",
    "name": "Microsoft Fabric",
-   "planned": 0,
+   "planned": 50,
    "modules": [
     {
      "key": "fabric-m01",
@@ -48,48 +48,48 @@
   {
    "key": "databricks",
    "name": "Databricks",
-   "planned": 0,
+   "planned": 38,
    "modules": []
   },
   {
    "key": "snowflake",
    "name": "Snowflake",
-   "planned": 0,
+   "planned": 38,
    "modules": []
   },
   {
    "key": "sql",
    "name": "SQL",
-   "planned": 0,
+   "planned": 48,
    "modules": []
   },
   {
    "key": "python",
-   "name": "Python",
-   "planned": 0,
+   "name": "Python for Data, ML and AI",
+   "planned": 34,
    "modules": []
   },
   {
    "key": "ml",
    "name": "Machine Learning",
-   "planned": 0,
+   "planned": 50,
    "modules": []
   },
   {
    "key": "ai",
-   "name": "AI",
-   "planned": 0,
+   "name": "AI and Generative AI",
+   "planned": 51,
    "modules": []
   },
   {
    "key": "tools",
    "name": "Tools and Technologies Landscape",
-   "planned": 0,
+   "planned": 52,
    "modules": [
     {
      "key": "tools-m01",
      "num": "01",
-     "name": "Ingestion and cdc",
+     "name": "Ingestion and CDC",
      "file": "content/tools/01-ingestion-and-cdc.md",
      "lessons": [
       {
@@ -104,5 +104,1778 @@
    ]
   }
  ],
- "planned": {}
+ "planned": {
+  "ai-m01-ai-ml-dl-genai": {
+   "title": "AI vs ML vs deep learning vs generative AI",
+   "track": "ai"
+  },
+  "ai-m01-what-llms-can-cannot-do": {
+   "title": "What LLMs can and cannot do",
+   "track": "ai"
+  },
+  "ai-m02-cnns": {
+   "title": "Convolutional neural networks",
+   "track": "ai"
+  },
+  "ai-m02-sequence-models": {
+   "title": "Sequence models before transformers",
+   "track": "ai"
+  },
+  "ai-m02-transfer-learning": {
+   "title": "Transfer learning",
+   "track": "ai"
+  },
+  "ai-m03-tokenization": {
+   "title": "Tokenisation",
+   "track": "ai"
+  },
+  "ai-m03-embeddings": {
+   "title": "Embeddings",
+   "track": "ai"
+  },
+  "ai-m03-attention-transformers": {
+   "title": "Attention and the transformer",
+   "track": "ai"
+  },
+  "ai-m03-pretraining-alignment": {
+   "title": "Pretraining, fine-tuning and alignment",
+   "track": "ai"
+  },
+  "ai-m03-context-windows": {
+   "title": "Context windows",
+   "track": "ai"
+  },
+  "ai-m03-inference-parameters": {
+   "title": "Inference parameters",
+   "track": "ai"
+  },
+  "ai-m04-prompting": {
+   "title": "Prompting",
+   "track": "ai"
+  },
+  "ai-m04-structured-outputs": {
+   "title": "Structured outputs",
+   "track": "ai"
+  },
+  "ai-m04-tool-calling": {
+   "title": "Tool and function calling",
+   "track": "ai"
+  },
+  "ai-m04-cost-latency": {
+   "title": "Cost and latency",
+   "track": "ai"
+  },
+  "ai-m05-rag-overview": {
+   "title": "RAG: retrieval-augmented generation",
+   "track": "ai"
+  },
+  "ai-m05-chunking": {
+   "title": "Chunking and document preparation",
+   "track": "ai"
+  },
+  "ai-m05-vector-search": {
+   "title": "Vector search and indexes",
+   "track": "ai"
+  },
+  "ai-m05-hybrid-search": {
+   "title": "Hybrid search",
+   "track": "ai"
+  },
+  "ai-m05-reranking": {
+   "title": "Reranking",
+   "track": "ai"
+  },
+  "ai-m05-rag-evaluation": {
+   "title": "Evaluating RAG",
+   "track": "ai"
+  },
+  "ai-m06-tool-using-agents": {
+   "title": "Tool-using agents",
+   "track": "ai"
+  },
+  "ai-m06-planning": {
+   "title": "Planning and reasoning patterns",
+   "track": "ai"
+  },
+  "ai-m06-memory": {
+   "title": "Agent memory",
+   "track": "ai"
+  },
+  "ai-m06-mcp": {
+   "title": "Model Context Protocol",
+   "track": "ai"
+  },
+  "ai-m06-multi-agent": {
+   "title": "Multi-agent patterns",
+   "track": "ai"
+  },
+  "ai-m06-failure-modes": {
+   "title": "Agent failure modes",
+   "track": "ai"
+  },
+  "ai-m07-fine-tuning": {
+   "title": "Fine-tuning",
+   "track": "ai"
+  },
+  "ai-m07-lora-peft": {
+   "title": "LoRA and parameter-efficient fine-tuning",
+   "track": "ai"
+  },
+  "ai-m07-distillation": {
+   "title": "Distillation",
+   "track": "ai"
+  },
+  "ai-m07-when-not-to-fine-tune": {
+   "title": "When not to fine-tune",
+   "track": "ai"
+  },
+  "ai-m08-evals": {
+   "title": "Evaluating LLM applications",
+   "track": "ai"
+  },
+  "ai-m08-hallucinations": {
+   "title": "Hallucinations",
+   "track": "ai"
+  },
+  "ai-m08-prompt-injection": {
+   "title": "Prompt injection",
+   "track": "ai"
+  },
+  "ai-m08-guardrails": {
+   "title": "Guardrails",
+   "track": "ai"
+  },
+  "ai-m08-privacy": {
+   "title": "Privacy and data protection",
+   "track": "ai"
+  },
+  "ai-m08-responsible-ai": {
+   "title": "Responsible AI and regulation (verify)",
+   "track": "ai"
+  },
+  "ai-m09-text-to-sql": {
+   "title": "Text-to-SQL",
+   "track": "ai"
+  },
+  "ai-m09-llm-extraction": {
+   "title": "LLM-based extraction",
+   "track": "ai"
+  },
+  "ai-m09-metadata-enrichment": {
+   "title": "Metadata enrichment",
+   "track": "ai"
+  },
+  "ai-m09-dq-triage": {
+   "title": "Data quality triage with LLMs",
+   "track": "ai"
+  },
+  "ai-m09-unstructured-pipelines": {
+   "title": "Unstructured data pipelines",
+   "track": "ai"
+  },
+  "ai-m09-platform-ai-features": {
+   "title": "AI features in Fabric, Databricks and Snowflake (verify)",
+   "track": "ai"
+  },
+  "ai-m10-deployment": {
+   "title": "Deploying LLM applications",
+   "track": "ai"
+  },
+  "ai-m10-monitoring": {
+   "title": "Monitoring LLM applications",
+   "track": "ai"
+  },
+  "ai-m10-caching": {
+   "title": "Caching",
+   "track": "ai"
+  },
+  "ai-m10-gateways": {
+   "title": "LLM gateways",
+   "track": "ai"
+  },
+  "ai-m10-cost-control": {
+   "title": "Cost control",
+   "track": "ai"
+  },
+  "ai-m11-rag-internal-docs": {
+   "title": "Reference: RAG over internal documentation",
+   "track": "ai"
+  },
+  "ai-m11-text-to-sql-assistant": {
+   "title": "Reference: a text-to-SQL assistant",
+   "track": "ai"
+  },
+  "ai-m11-dq-triage-agent": {
+   "title": "Reference: an agent that triages data quality issues",
+   "track": "ai"
+  },
+  "databricks-m01-control-data-plane": {
+   "title": "Control plane and compute plane",
+   "track": "databricks"
+  },
+  "databricks-m01-accounts-workspaces": {
+   "title": "Accounts and workspaces",
+   "track": "databricks"
+  },
+  "databricks-m01-compute-types": {
+   "title": "Compute types",
+   "track": "databricks"
+  },
+  "databricks-m01-runtimes": {
+   "title": "Databricks Runtime",
+   "track": "databricks"
+  },
+  "databricks-m01-photon": {
+   "title": "Photon",
+   "track": "databricks"
+  },
+  "databricks-m02-unity-catalog-overview": {
+   "title": "Unity Catalog: metastore, catalogs and schemas",
+   "track": "databricks"
+  },
+  "databricks-m02-privileges": {
+   "title": "Privileges and ownership",
+   "track": "databricks"
+  },
+  "databricks-m02-lineage": {
+   "title": "Lineage in Unity Catalog",
+   "track": "databricks"
+  },
+  "databricks-m02-volumes": {
+   "title": "Volumes",
+   "track": "databricks"
+  },
+  "databricks-m02-external-locations": {
+   "title": "Storage credentials and external locations",
+   "track": "databricks"
+  },
+  "databricks-m02-system-tables": {
+   "title": "System tables",
+   "track": "databricks"
+  },
+  "databricks-m02-delta-sharing": {
+   "title": "Delta Sharing",
+   "track": "databricks"
+  },
+  "databricks-m03-notebooks": {
+   "title": "Notebooks and the workspace",
+   "track": "databricks"
+  },
+  "databricks-m03-jobs": {
+   "title": "Jobs (Lakeflow Jobs) (verify)",
+   "track": "databricks"
+  },
+  "databricks-m03-declarative-pipelines": {
+   "title": "Declarative pipelines (formerly Delta Live Tables) (verify)",
+   "track": "databricks"
+  },
+  "databricks-m03-auto-loader": {
+   "title": "Auto Loader",
+   "track": "databricks"
+  },
+  "databricks-m03-ingestion-connectors": {
+   "title": "Managed ingestion connectors (Lakeflow Connect) (verify)",
+   "track": "databricks"
+  },
+  "databricks-m03-medallion-on-databricks": {
+   "title": "Medallion architecture on Databricks",
+   "track": "databricks"
+  },
+  "databricks-m04-optimization-features": {
+   "title": "Delta optimisations on Databricks",
+   "track": "databricks"
+  },
+  "databricks-m04-liquid-clustering": {
+   "title": "Liquid clustering",
+   "track": "databricks"
+  },
+  "databricks-m04-predictive-optimization": {
+   "title": "Predictive optimization",
+   "track": "databricks"
+  },
+  "databricks-m05-sql-warehouses": {
+   "title": "SQL warehouses",
+   "track": "databricks"
+  },
+  "databricks-m05-dashboards": {
+   "title": "AI/BI dashboards (verify)",
+   "track": "databricks"
+  },
+  "databricks-m05-genie": {
+   "title": "Genie and natural-language analytics (verify)",
+   "track": "databricks"
+  },
+  "databricks-m06-mlflow-on-databricks": {
+   "title": "MLflow on Databricks",
+   "track": "databricks"
+  },
+  "databricks-m06-feature-store": {
+   "title": "Feature engineering in Unity Catalog",
+   "track": "databricks"
+  },
+  "databricks-m06-model-serving": {
+   "title": "Model serving",
+   "track": "databricks"
+  },
+  "databricks-m06-vector-search": {
+   "title": "Vector search",
+   "track": "databricks"
+  },
+  "databricks-m06-agent-tooling": {
+   "title": "Agent tooling (verify)",
+   "track": "databricks"
+  },
+  "databricks-m07-asset-bundles": {
+   "title": "Databricks Asset Bundles (verify)",
+   "track": "databricks"
+  },
+  "databricks-m07-terraform": {
+   "title": "Terraform for Databricks",
+   "track": "databricks"
+  },
+  "databricks-m07-cicd": {
+   "title": "CI/CD on Databricks",
+   "track": "databricks"
+  },
+  "databricks-m07-cluster-policies": {
+   "title": "Compute policies",
+   "track": "databricks"
+  },
+  "databricks-m07-monitoring": {
+   "title": "Monitoring and observability",
+   "track": "databricks"
+  },
+  "databricks-m07-dbu-cost-model": {
+   "title": "DBUs and the cost model",
+   "track": "databricks"
+  },
+  "databricks-m08-when-databricks": {
+   "title": "When Databricks is the right choice",
+   "track": "databricks"
+  },
+  "databricks-m08-serverless-vs-classic": {
+   "title": "Serverless vs classic compute",
+   "track": "databricks"
+  },
+  "databricks-m08-governance-patterns": {
+   "title": "Governance patterns on Databricks",
+   "track": "databricks"
+  },
+  "fabric-m01-what-is-fabric": {
+   "title": "What Microsoft Fabric is",
+   "track": "fabric"
+  },
+  "fabric-m01-onelake": {
+   "title": "OneLake",
+   "track": "fabric"
+  },
+  "fabric-m01-tenants-capacities-workspaces": {
+   "title": "Tenants, capacities and workspaces",
+   "track": "fabric"
+  },
+  "fabric-m01-licensing-capacity": {
+   "title": "Licensing and capacity units",
+   "track": "fabric"
+  },
+  "fabric-m01-fabric-vs-synapse-adf-premium": {
+   "title": "Fabric vs Synapse, ADF and Power BI Premium",
+   "track": "fabric"
+  },
+  "fabric-m02-lakehouse": {
+   "title": "Lakehouse",
+   "track": "fabric"
+  },
+  "fabric-m02-warehouse": {
+   "title": "Warehouse",
+   "track": "fabric"
+  },
+  "fabric-m02-sql-analytics-endpoint": {
+   "title": "SQL analytics endpoint",
+   "track": "fabric"
+  },
+  "fabric-m02-shortcuts": {
+   "title": "Shortcuts",
+   "track": "fabric"
+  },
+  "fabric-m02-mirroring": {
+   "title": "Mirroring",
+   "track": "fabric"
+  },
+  "fabric-m02-delta-in-fabric": {
+   "title": "Delta format in Fabric",
+   "track": "fabric"
+  },
+  "fabric-m03-pipelines": {
+   "title": "Data Factory pipelines",
+   "track": "fabric"
+  },
+  "fabric-m03-dataflows-gen2": {
+   "title": "Dataflows Gen2",
+   "track": "fabric"
+  },
+  "fabric-m03-copy-job": {
+   "title": "Copy job",
+   "track": "fabric"
+  },
+  "fabric-m03-gateways": {
+   "title": "On-premises and VNet data gateways",
+   "track": "fabric"
+  },
+  "fabric-m04-notebooks": {
+   "title": "Notebooks in Fabric",
+   "track": "fabric"
+  },
+  "fabric-m04-spark-pools": {
+   "title": "Spark pools, environments and runtimes",
+   "track": "fabric"
+  },
+  "fabric-m04-spark-job-definitions": {
+   "title": "Spark job definitions",
+   "track": "fabric"
+  },
+  "fabric-m04-spark-performance-features": {
+   "title": "Spark performance features in Fabric",
+   "track": "fabric"
+  },
+  "fabric-m05-rti-overview": {
+   "title": "Real-Time Intelligence overview",
+   "track": "fabric"
+  },
+  "fabric-m05-eventstreams": {
+   "title": "Eventstreams",
+   "track": "fabric"
+  },
+  "fabric-m05-eventhouse-kql": {
+   "title": "Eventhouse and KQL databases",
+   "track": "fabric"
+  },
+  "fabric-m05-activator": {
+   "title": "Activator",
+   "track": "fabric"
+  },
+  "fabric-m05-real-time-dashboards": {
+   "title": "Real-time dashboards",
+   "track": "fabric"
+  },
+  "fabric-m06-experiments-models": {
+   "title": "Experiments and ML models",
+   "track": "fabric"
+  },
+  "fabric-m06-automl": {
+   "title": "AutoML and ML tooling in Fabric",
+   "track": "fabric"
+  },
+  "fabric-m06-copilot-ai-features": {
+   "title": "Copilot and AI features",
+   "track": "fabric"
+  },
+  "fabric-m07-semantic-models": {
+   "title": "Semantic models",
+   "track": "fabric"
+  },
+  "fabric-m07-direct-lake": {
+   "title": "Direct Lake",
+   "track": "fabric"
+  },
+  "fabric-m07-reports": {
+   "title": "Reports, dashboards and apps",
+   "track": "fabric"
+  },
+  "fabric-m08-governance-overview": {
+   "title": "Governance model in Fabric",
+   "track": "fabric"
+  },
+  "fabric-m08-tenant-settings": {
+   "title": "Tenant settings and admin portal",
+   "track": "fabric"
+  },
+  "fabric-m08-domains": {
+   "title": "Domains",
+   "track": "fabric"
+  },
+  "fabric-m08-workspace-roles": {
+   "title": "Workspace roles",
+   "track": "fabric"
+  },
+  "fabric-m08-item-permissions": {
+   "title": "Item permissions and sharing",
+   "track": "fabric"
+  },
+  "fabric-m08-onelake-security": {
+   "title": "OneLake security",
+   "track": "fabric"
+  },
+  "fabric-m08-sql-granular-security": {
+   "title": "Row, column and object level security",
+   "track": "fabric"
+  },
+  "fabric-m08-sensitivity-labels": {
+   "title": "Sensitivity labels and DLP",
+   "track": "fabric"
+  },
+  "fabric-m08-purview-integration": {
+   "title": "Microsoft Purview and the OneLake catalog",
+   "track": "fabric"
+  },
+  "fabric-m08-lineage-impact": {
+   "title": "Lineage and impact analysis",
+   "track": "fabric"
+  },
+  "fabric-m08-endorsement": {
+   "title": "Endorsement",
+   "track": "fabric"
+  },
+  "fabric-m08-auditing-monitoring": {
+   "title": "Auditing and monitoring",
+   "track": "fabric"
+  },
+  "fabric-m09-git-integration": {
+   "title": "Git integration",
+   "track": "fabric"
+  },
+  "fabric-m09-deployment-pipelines": {
+   "title": "Deployment pipelines",
+   "track": "fabric"
+  },
+  "fabric-m09-apis-automation": {
+   "title": "REST APIs and automation",
+   "track": "fabric"
+  },
+  "fabric-m10-lakehouse-vs-warehouse": {
+   "title": "Lakehouse vs Warehouse (and Eventhouse)",
+   "track": "fabric"
+  },
+  "fabric-m10-fabric-vs-databricks-vs-snowflake": {
+   "title": "Fabric vs Databricks vs Snowflake",
+   "track": "fabric"
+  },
+  "fabric-m10-capacity-sizing-cost": {
+   "title": "Capacity sizing and cost",
+   "track": "fabric"
+  },
+  "fabric-m10-migrating-from-legacy": {
+   "title": "Migrating from legacy platforms to Fabric",
+   "track": "fabric"
+  },
+  "fabric-m10-when-not-fabric": {
+   "title": "When not to use Fabric",
+   "track": "fabric"
+  },
+  "ml-m01-linear-algebra": {
+   "title": "Linear algebra for ML",
+   "track": "ml"
+  },
+  "ml-m01-calculus-gradients": {
+   "title": "Calculus essentials: derivatives and gradients",
+   "track": "ml"
+  },
+  "ml-m01-probability": {
+   "title": "Probability",
+   "track": "ml"
+  },
+  "ml-m01-distributions": {
+   "title": "Distributions",
+   "track": "ml"
+  },
+  "ml-m01-hypothesis-testing": {
+   "title": "Hypothesis testing",
+   "track": "ml"
+  },
+  "ml-m01-confidence-intervals": {
+   "title": "Confidence intervals",
+   "track": "ml"
+  },
+  "ml-m01-optimization": {
+   "title": "Optimisation and gradient descent",
+   "track": "ml"
+  },
+  "ml-m02-problem-framing": {
+   "title": "Framing an ML problem",
+   "track": "ml"
+  },
+  "ml-m02-supervised-unsupervised": {
+   "title": "Supervised, unsupervised and other learning types",
+   "track": "ml"
+  },
+  "ml-m02-bias-variance": {
+   "title": "Bias, variance, overfitting and underfitting",
+   "track": "ml"
+  },
+  "ml-m02-train-val-test": {
+   "title": "Train, validation and test sets",
+   "track": "ml"
+  },
+  "ml-m02-cross-validation": {
+   "title": "Cross-validation",
+   "track": "ml"
+  },
+  "ml-m02-classification-metrics": {
+   "title": "Classification metrics",
+   "track": "ml"
+  },
+  "ml-m02-regression-metrics": {
+   "title": "Regression metrics",
+   "track": "ml"
+  },
+  "ml-m02-data-leakage": {
+   "title": "Data leakage",
+   "track": "ml"
+  },
+  "ml-m03-linear-regression": {
+   "title": "Linear regression",
+   "track": "ml"
+  },
+  "ml-m03-logistic-regression": {
+   "title": "Logistic regression",
+   "track": "ml"
+  },
+  "ml-m03-regularization": {
+   "title": "Regularisation: ridge, lasso, elastic net",
+   "track": "ml"
+  },
+  "ml-m03-knn": {
+   "title": "k-nearest neighbours",
+   "track": "ml"
+  },
+  "ml-m03-naive-bayes": {
+   "title": "Naive Bayes",
+   "track": "ml"
+  },
+  "ml-m03-decision-trees": {
+   "title": "Decision trees",
+   "track": "ml"
+  },
+  "ml-m03-random-forests": {
+   "title": "Random forests",
+   "track": "ml"
+  },
+  "ml-m03-gradient-boosting": {
+   "title": "Gradient boosting",
+   "track": "ml"
+  },
+  "ml-m03-svm": {
+   "title": "Support vector machines",
+   "track": "ml"
+  },
+  "ml-m03-clustering": {
+   "title": "Clustering",
+   "track": "ml"
+  },
+  "ml-m03-pca": {
+   "title": "PCA and dimensionality reduction",
+   "track": "ml"
+  },
+  "ml-m03-anomaly-detection": {
+   "title": "Anomaly detection",
+   "track": "ml"
+  },
+  "ml-m03-forecasting": {
+   "title": "Time series forecasting",
+   "track": "ml"
+  },
+  "ml-m03-recommenders": {
+   "title": "Recommender basics",
+   "track": "ml"
+  },
+  "ml-m04-encoding-scaling": {
+   "title": "Encoding and scaling features",
+   "track": "ml"
+  },
+  "ml-m04-missing-data": {
+   "title": "Missing data",
+   "track": "ml"
+  },
+  "ml-m04-imbalanced-data": {
+   "title": "Imbalanced data",
+   "track": "ml"
+  },
+  "ml-m04-feature-selection": {
+   "title": "Feature engineering and selection",
+   "track": "ml"
+  },
+  "ml-m04-sklearn-pipelines": {
+   "title": "scikit-learn pipelines",
+   "track": "ml"
+  },
+  "ml-m04-hyperparameter-tuning": {
+   "title": "Hyperparameter tuning",
+   "track": "ml"
+  },
+  "ml-m04-interpretability-shap": {
+   "title": "Interpretability and SHAP",
+   "track": "ml"
+  },
+  "ml-m04-calibration": {
+   "title": "Probability calibration",
+   "track": "ml"
+  },
+  "ml-m04-fairness": {
+   "title": "Fairness",
+   "track": "ml"
+  },
+  "ml-m05-neural-network-basics": {
+   "title": "Neurons, layers and activations",
+   "track": "ml"
+  },
+  "ml-m05-backpropagation": {
+   "title": "Backpropagation",
+   "track": "ml"
+  },
+  "ml-m05-training-loops": {
+   "title": "Training loops and regularisation",
+   "track": "ml"
+  },
+  "ml-m05-pytorch-concepts": {
+   "title": "PyTorch concepts",
+   "track": "ml"
+  },
+  "ml-m06-experiment-tracking": {
+   "title": "Experiment tracking",
+   "track": "ml"
+  },
+  "ml-m06-model-registry": {
+   "title": "Model registry",
+   "track": "ml"
+  },
+  "ml-m06-batch-vs-online-serving": {
+   "title": "Batch vs online serving",
+   "track": "ml"
+  },
+  "ml-m06-drift-monitoring": {
+   "title": "Drift and model monitoring",
+   "track": "ml"
+  },
+  "ml-m06-retraining": {
+   "title": "Retraining strategies",
+   "track": "ml"
+  },
+  "ml-m06-feature-stores": {
+   "title": "Feature stores",
+   "track": "ml"
+  },
+  "ml-m06-testing-reproducibility": {
+   "title": "Testing and reproducibility in ML",
+   "track": "ml"
+  },
+  "ml-m06-ml-on-platforms": {
+   "title": "ML on Spark, Fabric, Databricks and Snowflake",
+   "track": "ml"
+  },
+  "pyspark-m01-spark-architecture": {
+   "title": "Spark architecture: driver, executors, cluster manager",
+   "track": "pyspark"
+  },
+  "pyspark-m01-sparksession": {
+   "title": "SparkSession, SparkContext and running locally",
+   "track": "pyspark"
+  },
+  "pyspark-m01-rdd-vs-dataframe": {
+   "title": "RDD vs DataFrame (and a note on Dataset)",
+   "track": "pyspark"
+  },
+  "pyspark-m01-lazy-evaluation": {
+   "title": "Lazy evaluation: transformations and actions",
+   "track": "pyspark"
+  },
+  "pyspark-m01-dag-and-lineage": {
+   "title": "The DAG and RDD lineage",
+   "track": "pyspark"
+  },
+  "pyspark-m02-schema-and-types": {
+   "title": "Schemas and data types",
+   "track": "pyspark"
+  },
+  "pyspark-m02-columns-and-expressions": {
+   "title": "Columns, expressions, select and filter",
+   "track": "pyspark"
+  },
+  "pyspark-m02-nulls": {
+   "title": "Working with nulls",
+   "track": "pyspark"
+  },
+  "pyspark-m02-sort-distinct-sample": {
+   "title": "Sorting, distinct, limit and sampling",
+   "track": "pyspark"
+  },
+  "pyspark-m03-groupby-aggregation": {
+   "title": "groupBy, aggregation, rollup and cube",
+   "track": "pyspark"
+  },
+  "pyspark-m03-joins": {
+   "title": "Joins in Spark",
+   "track": "pyspark"
+  },
+  "pyspark-m03-union": {
+   "title": "Union and set operations",
+   "track": "pyspark"
+  },
+  "pyspark-m03-pivot-unpivot": {
+   "title": "Pivot and unpivot",
+   "track": "pyspark"
+  },
+  "pyspark-m03-explode-nested": {
+   "title": "Explode and nested data",
+   "track": "pyspark"
+  },
+  "pyspark-m03-window-functions": {
+   "title": "Window functions in Spark",
+   "track": "pyspark"
+  },
+  "pyspark-m03-deduplication": {
+   "title": "Deduplication patterns",
+   "track": "pyspark"
+  },
+  "pyspark-m04-builtin-functions": {
+   "title": "Built-in functions: string, date, math, conditional",
+   "track": "pyspark"
+  },
+  "pyspark-m04-complex-types": {
+   "title": "Arrays, maps, structs, JSON and regex",
+   "track": "pyspark"
+  },
+  "pyspark-m04-udfs": {
+   "title": "Python UDFs",
+   "track": "pyspark"
+  },
+  "pyspark-m04-pandas-udfs-arrow": {
+   "title": "pandas UDFs and Apache Arrow",
+   "track": "pyspark"
+  },
+  "pyspark-m04-broadcast-and-accumulators": {
+   "title": "Broadcast variables and accumulators",
+   "track": "pyspark"
+  },
+  "pyspark-m05-sql-on-dataframes": {
+   "title": "Spark SQL, views, subqueries and CTEs",
+   "track": "pyspark"
+  },
+  "pyspark-m05-catalog-tables": {
+   "title": "Catalog, databases and tables",
+   "track": "pyspark"
+  },
+  "pyspark-m05-hints": {
+   "title": "Query hints",
+   "track": "pyspark"
+  },
+  "pyspark-m06-read-write-basics": {
+   "title": "Reading and writing data, save modes",
+   "track": "pyspark"
+  },
+  "pyspark-m06-file-formats": {
+   "title": "File formats: CSV, JSON, Parquet, ORC, Avro, and compression",
+   "track": "pyspark"
+  },
+  "pyspark-m06-xml-and-excel": {
+   "title": "XML and Excel files",
+   "track": "pyspark"
+  },
+  "pyspark-m06-jdbc": {
+   "title": "JDBC reads and writes",
+   "track": "pyspark"
+  },
+  "pyspark-m06-partitioning-bucketing": {
+   "title": "Partitioning and bucketing on disk",
+   "track": "pyspark"
+  },
+  "pyspark-m07-partitions": {
+   "title": "Partitions, repartition and coalesce",
+   "track": "pyspark"
+  },
+  "pyspark-m07-shuffle": {
+   "title": "Shuffle",
+   "track": "pyspark"
+  },
+  "pyspark-m07-skew": {
+   "title": "Data skew",
+   "track": "pyspark"
+  },
+  "pyspark-m07-caching": {
+   "title": "Caching and persistence",
+   "track": "pyspark"
+  },
+  "pyspark-m07-broadcast-joins": {
+   "title": "Broadcast joins and join strategies",
+   "track": "pyspark"
+  },
+  "pyspark-m07-aqe": {
+   "title": "Adaptive Query Execution",
+   "track": "pyspark"
+  },
+  "pyspark-m07-catalyst-and-tungsten": {
+   "title": "Catalyst optimiser and Tungsten engine",
+   "track": "pyspark"
+  },
+  "pyspark-m07-explain-plans": {
+   "title": "Reading explain plans",
+   "track": "pyspark"
+  },
+  "pyspark-m07-pruning-and-pushdown": {
+   "title": "Partition pruning, column pruning and predicate pushdown",
+   "track": "pyspark"
+  },
+  "pyspark-m07-spill-memory-gc": {
+   "title": "Memory, spill and garbage collection",
+   "track": "pyspark"
+  },
+  "pyspark-m07-stages-tasks-scheduler": {
+   "title": "Jobs, stages, tasks and the Spark UI",
+   "track": "pyspark"
+  },
+  "pyspark-m08-delta-lake": {
+   "title": "Delta Lake: ACID tables on files",
+   "track": "pyspark"
+  },
+  "pyspark-m08-delta-merge": {
+   "title": "MERGE and upserts in Delta",
+   "track": "pyspark"
+  },
+  "pyspark-m08-delta-time-travel-vacuum": {
+   "title": "Time travel, restore and vacuum",
+   "track": "pyspark"
+  },
+  "pyspark-m08-delta-optimize-clustering": {
+   "title": "Compaction, Z-order and liquid clustering",
+   "track": "pyspark"
+  },
+  "pyspark-m08-delta-schema-evolution": {
+   "title": "Schema enforcement and evolution",
+   "track": "pyspark"
+  },
+  "pyspark-m08-delta-change-data-feed": {
+   "title": "Change data feed",
+   "track": "pyspark"
+  },
+  "pyspark-m08-iceberg-hudi": {
+   "title": "Apache Iceberg and Apache Hudi",
+   "track": "pyspark"
+  },
+  "pyspark-m08-scd-patterns": {
+   "title": "Slowly changing dimensions in Spark",
+   "track": "pyspark"
+  },
+  "pyspark-m08-medallion": {
+   "title": "Medallion architecture",
+   "track": "pyspark"
+  },
+  "pyspark-m09-streaming-model": {
+   "title": "The Structured Streaming model",
+   "track": "pyspark"
+  },
+  "pyspark-m09-triggers-output-modes": {
+   "title": "Triggers and output modes",
+   "track": "pyspark"
+  },
+  "pyspark-m09-event-time-watermarks": {
+   "title": "Event time, watermarks and windows",
+   "track": "pyspark"
+  },
+  "pyspark-m09-stateful-operations": {
+   "title": "Stateful operations and state stores",
+   "track": "pyspark"
+  },
+  "pyspark-m09-checkpointing": {
+   "title": "Checkpointing and recovery",
+   "track": "pyspark"
+  },
+  "pyspark-m09-stream-joins": {
+   "title": "Stream-static and stream-stream joins",
+   "track": "pyspark"
+  },
+  "pyspark-m09-sinks-foreachbatch": {
+   "title": "Sinks and foreachBatch",
+   "track": "pyspark"
+  },
+  "pyspark-m09-kafka-eventhubs-kinesis": {
+   "title": "Kafka, Event Hubs and Kinesis sources",
+   "track": "pyspark"
+  },
+  "pyspark-m09-exactly-once": {
+   "title": "Exactly-once and backpressure",
+   "track": "pyspark"
+  },
+  "pyspark-m09-auto-loader": {
+   "title": "Auto Loader and incremental file ingestion",
+   "track": "pyspark"
+  },
+  "pyspark-m10-cluster-managers": {
+   "title": "Cluster managers: YARN, Kubernetes, standalone",
+   "track": "pyspark"
+  },
+  "pyspark-m10-spark-submit": {
+   "title": "spark-submit and deploy modes",
+   "track": "pyspark"
+  },
+  "pyspark-m10-resources-sizing": {
+   "title": "Executor sizing and resources",
+   "track": "pyspark"
+  },
+  "pyspark-m10-dynamic-allocation": {
+   "title": "Dynamic allocation and autoscaling",
+   "track": "pyspark"
+  },
+  "pyspark-m10-managed-platforms": {
+   "title": "Managed Spark platforms compared",
+   "track": "pyspark"
+  },
+  "pyspark-m11-validation-expectations": {
+   "title": "Validation, profiling and expectations",
+   "track": "pyspark"
+  },
+  "pyspark-m11-reconciliation": {
+   "title": "Reconciliation between source and target",
+   "track": "pyspark"
+  },
+  "pyspark-m11-data-lineage": {
+   "title": "Data lineage (not RDD lineage)",
+   "track": "pyspark"
+  },
+  "pyspark-m11-masking-security-auditing": {
+   "title": "Masking, access control and auditing",
+   "track": "pyspark"
+  },
+  "pyspark-m12-testing-pytest": {
+   "title": "Testing PySpark code with pytest",
+   "track": "pyspark"
+  },
+  "pyspark-m12-packaging-config": {
+   "title": "Project structure, packaging, configuration and style",
+   "track": "pyspark"
+  },
+  "pyspark-m12-logging-monitoring-debugging": {
+   "title": "Logging, monitoring and debugging",
+   "track": "pyspark"
+  },
+  "pyspark-m12-cicd": {
+   "title": "CI/CD for Spark jobs",
+   "track": "pyspark"
+  },
+  "pyspark-m12-orchestration-airflow": {
+   "title": "Orchestrating Spark with Airflow",
+   "track": "pyspark"
+  },
+  "pyspark-m12-idempotency-retries": {
+   "title": "Idempotency, retries and error handling",
+   "track": "pyspark"
+  },
+  "pyspark-m13-ingestion-patterns": {
+   "title": "Ingestion and extraction patterns",
+   "track": "pyspark"
+  },
+  "pyspark-m13-jdbc-oracle-sqlserver": {
+   "title": "Reading Oracle and SQL Server via JDBC",
+   "track": "pyspark"
+  },
+  "pyspark-m13-mainframe-flat-files": {
+   "title": "Mainframe extracts and flat files",
+   "track": "pyspark"
+  },
+  "pyspark-m13-incremental-loads": {
+   "title": "Incremental loads and watermark columns",
+   "track": "pyspark"
+  },
+  "pyspark-m13-backfill-cutover": {
+   "title": "Backfill and cutover",
+   "track": "pyspark"
+  },
+  "pyspark-m14-pandas-api-on-spark": {
+   "title": "pandas API on Spark",
+   "track": "pyspark"
+  },
+  "pyspark-m14-spark-connect": {
+   "title": "Spark Connect",
+   "track": "pyspark"
+  },
+  "pyspark-m14-spark-4": {
+   "title": "Notable Spark 4 changes (verify)",
+   "track": "pyspark"
+  },
+  "python-m01-types-mutability": {
+   "title": "Types, references and mutability",
+   "track": "python"
+  },
+  "python-m01-comprehensions-generators": {
+   "title": "Comprehensions, iterators and generators",
+   "track": "python"
+  },
+  "python-m01-functions-decorators": {
+   "title": "Functions, closures and decorators",
+   "track": "python"
+  },
+  "python-m01-classes-dataclasses": {
+   "title": "Classes and dataclasses",
+   "track": "python"
+  },
+  "python-m01-errors-context-managers": {
+   "title": "Exceptions and context managers",
+   "track": "python"
+  },
+  "python-m01-typing": {
+   "title": "Type hints",
+   "track": "python"
+  },
+  "python-m02-virtual-environments": {
+   "title": "Virtual environments and pip",
+   "track": "python"
+  },
+  "python-m02-uv-poetry-lockfiles": {
+   "title": "uv, Poetry and lock files",
+   "track": "python"
+  },
+  "python-m02-project-layout": {
+   "title": "Project layout and packaging",
+   "track": "python"
+  },
+  "python-m03-numpy-arrays": {
+   "title": "NumPy arrays and broadcasting",
+   "track": "python"
+  },
+  "python-m03-vectorization": {
+   "title": "Vectorisation",
+   "track": "python"
+  },
+  "python-m04-pandas-core": {
+   "title": "pandas DataFrames and indexing",
+   "track": "python"
+  },
+  "python-m04-groupby-merge": {
+   "title": "groupby, merge and reshaping",
+   "track": "python"
+  },
+  "python-m04-time-series": {
+   "title": "Time series in pandas",
+   "track": "python"
+  },
+  "python-m04-memory": {
+   "title": "Memory use in pandas",
+   "track": "python"
+  },
+  "python-m04-pandas-vs-polars": {
+   "title": "pandas vs Polars",
+   "track": "python"
+  },
+  "python-m05-matplotlib-seaborn": {
+   "title": "matplotlib and seaborn",
+   "track": "python"
+  },
+  "python-m05-plotly": {
+   "title": "Plotly",
+   "track": "python"
+  },
+  "python-m05-choosing-a-library": {
+   "title": "Choosing a visualisation library",
+   "track": "python"
+  },
+  "python-m06-files-formats": {
+   "title": "Files and formats from Python",
+   "track": "python"
+  },
+  "python-m06-rest-apis": {
+   "title": "Calling REST APIs",
+   "track": "python"
+  },
+  "python-m06-sqlalchemy": {
+   "title": "SQL from Python",
+   "track": "python"
+  },
+  "python-m06-eda-workflow": {
+   "title": "Cleaning and EDA workflow",
+   "track": "python"
+  },
+  "python-m07-profiling": {
+   "title": "Profiling",
+   "track": "python"
+  },
+  "python-m07-concurrency": {
+   "title": "Threads, processes and async",
+   "track": "python"
+  },
+  "python-m07-arrow": {
+   "title": "Apache Arrow",
+   "track": "python"
+  },
+  "python-m08-config-logging": {
+   "title": "Configuration and logging",
+   "track": "python"
+  },
+  "python-m08-pytest": {
+   "title": "Testing with pytest",
+   "track": "python"
+  },
+  "python-m08-git": {
+   "title": "Git for data work",
+   "track": "python"
+  },
+  "python-m08-docker-basics": {
+   "title": "Docker basics for Python",
+   "track": "python"
+  },
+  "python-m08-notebooks-vs-scripts": {
+   "title": "Notebooks vs scripts",
+   "track": "python"
+  },
+  "python-m09-scipy-statsmodels": {
+   "title": "SciPy and statsmodels",
+   "track": "python"
+  },
+  "python-m09-scikit-learn": {
+   "title": "scikit-learn overview",
+   "track": "python"
+  },
+  "python-m09-pytorch": {
+   "title": "PyTorch overview",
+   "track": "python"
+  },
+  "snowflake-m01-three-layer-architecture": {
+   "title": "Storage, compute and cloud services",
+   "track": "snowflake"
+  },
+  "snowflake-m01-virtual-warehouses": {
+   "title": "Virtual warehouses",
+   "track": "snowflake"
+  },
+  "snowflake-m01-micro-partitions": {
+   "title": "Micro-partitions",
+   "track": "snowflake"
+  },
+  "snowflake-m01-editions": {
+   "title": "Editions",
+   "track": "snowflake"
+  },
+  "snowflake-m01-credits": {
+   "title": "Credits and billing",
+   "track": "snowflake"
+  },
+  "snowflake-m02-stages-and-copy": {
+   "title": "Stages and COPY INTO",
+   "track": "snowflake"
+  },
+  "snowflake-m02-snowpipe": {
+   "title": "Snowpipe",
+   "track": "snowflake"
+  },
+  "snowflake-m02-snowpipe-streaming": {
+   "title": "Snowpipe Streaming",
+   "track": "snowflake"
+  },
+  "snowflake-m02-streams-tasks": {
+   "title": "Streams and tasks",
+   "track": "snowflake"
+  },
+  "snowflake-m02-dynamic-tables": {
+   "title": "Dynamic tables",
+   "track": "snowflake"
+  },
+  "snowflake-m02-external-tables": {
+   "title": "External tables",
+   "track": "snowflake"
+  },
+  "snowflake-m02-iceberg-tables": {
+   "title": "Apache Iceberg tables in Snowflake",
+   "track": "snowflake"
+  },
+  "snowflake-m03-caching-layers": {
+   "title": "Caching layers",
+   "track": "snowflake"
+  },
+  "snowflake-m03-clustering": {
+   "title": "Clustering keys and automatic clustering",
+   "track": "snowflake"
+  },
+  "snowflake-m03-search-optimization": {
+   "title": "Search optimization service",
+   "track": "snowflake"
+  },
+  "snowflake-m03-query-acceleration": {
+   "title": "Query acceleration service",
+   "track": "snowflake"
+  },
+  "snowflake-m03-warehouse-sizing-multicluster": {
+   "title": "Warehouse sizing and multi-cluster warehouses",
+   "track": "snowflake"
+  },
+  "snowflake-m03-query-profile": {
+   "title": "Query profile",
+   "track": "snowflake"
+  },
+  "snowflake-m04-variant": {
+   "title": "Semi-structured data and VARIANT",
+   "track": "snowflake"
+  },
+  "snowflake-m04-time-travel-fail-safe": {
+   "title": "Time Travel and Fail-safe",
+   "track": "snowflake"
+  },
+  "snowflake-m04-zero-copy-cloning": {
+   "title": "Zero-copy cloning",
+   "track": "snowflake"
+  },
+  "snowflake-m04-snowpark": {
+   "title": "Snowpark",
+   "track": "snowflake"
+  },
+  "snowflake-m05-secure-data-sharing": {
+   "title": "Secure data sharing",
+   "track": "snowflake"
+  },
+  "snowflake-m05-marketplace": {
+   "title": "Snowflake Marketplace",
+   "track": "snowflake"
+  },
+  "snowflake-m05-clean-rooms": {
+   "title": "Data clean rooms",
+   "track": "snowflake"
+  },
+  "snowflake-m06-rbac": {
+   "title": "Role-based access control",
+   "track": "snowflake"
+  },
+  "snowflake-m06-masking-policies": {
+   "title": "Dynamic data masking",
+   "track": "snowflake"
+  },
+  "snowflake-m06-row-access-policies": {
+   "title": "Row access policies",
+   "track": "snowflake"
+  },
+  "snowflake-m06-tags-classification": {
+   "title": "Object tags and data classification",
+   "track": "snowflake"
+  },
+  "snowflake-m06-network-policies": {
+   "title": "Network policies and private connectivity",
+   "track": "snowflake"
+  },
+  "snowflake-m06-horizon": {
+   "title": "Snowflake Horizon (verify)",
+   "track": "snowflake"
+  },
+  "snowflake-m07-cortex": {
+   "title": "Cortex AI features (verify)",
+   "track": "snowflake"
+  },
+  "snowflake-m07-snowpark-ml": {
+   "title": "Snowflake ML (verify)",
+   "track": "snowflake"
+  },
+  "snowflake-m07-notebooks": {
+   "title": "Snowflake Notebooks (verify)",
+   "track": "snowflake"
+  },
+  "snowflake-m08-resource-monitors-cost": {
+   "title": "Resource monitors and cost control",
+   "track": "snowflake"
+  },
+  "snowflake-m08-cicd": {
+   "title": "CI/CD and change management for Snowflake",
+   "track": "snowflake"
+  },
+  "snowflake-m08-vs-databricks-fabric": {
+   "title": "Snowflake vs Databricks vs Fabric",
+   "track": "snowflake"
+  },
+  "snowflake-m08-iceberg-interoperability": {
+   "title": "Iceberg interoperability",
+   "track": "snowflake"
+  },
+  "sql-m01-null-logic": {
+   "title": "NULL and three-valued logic",
+   "track": "sql"
+  },
+  "sql-m01-logical-processing-order": {
+   "title": "Logical query processing order",
+   "track": "sql"
+  },
+  "sql-m01-join-semantics": {
+   "title": "Join semantics",
+   "track": "sql"
+  },
+  "sql-m01-set-operations": {
+   "title": "Set operations",
+   "track": "sql"
+  },
+  "sql-m02-semi-anti-joins": {
+   "title": "Semi joins and anti joins",
+   "track": "sql"
+  },
+  "sql-m02-apply-lateral": {
+   "title": "APPLY and LATERAL",
+   "track": "sql"
+  },
+  "sql-m02-non-equi-self-joins": {
+   "title": "Non-equi joins and self joins",
+   "track": "sql"
+  },
+  "sql-m03-window-frames": {
+   "title": "Window frames: ROWS vs RANGE",
+   "track": "sql"
+  },
+  "sql-m03-ranking": {
+   "title": "Ranking functions",
+   "track": "sql"
+  },
+  "sql-m03-lag-lead-running-totals": {
+   "title": "LAG, LEAD and running totals",
+   "track": "sql"
+  },
+  "sql-m03-gaps-and-islands": {
+   "title": "Gaps and islands",
+   "track": "sql"
+  },
+  "sql-m03-sessionization": {
+   "title": "Sessionization",
+   "track": "sql"
+  },
+  "sql-m04-ctes": {
+   "title": "Common table expressions",
+   "track": "sql"
+  },
+  "sql-m04-recursive-hierarchies": {
+   "title": "Recursive CTEs and hierarchies",
+   "track": "sql"
+  },
+  "sql-m04-bom-graph-traversal": {
+   "title": "Bill of materials and graph traversal",
+   "track": "sql"
+  },
+  "sql-m05-deduplication": {
+   "title": "Deduplication",
+   "track": "sql"
+  },
+  "sql-m05-top-n-per-group": {
+   "title": "Top N per group",
+   "track": "sql"
+  },
+  "sql-m05-pivot-unpivot": {
+   "title": "Pivot and unpivot",
+   "track": "sql"
+  },
+  "sql-m05-replacing-cursors": {
+   "title": "Replacing cursors with set-based SQL",
+   "track": "sql"
+  },
+  "sql-m06-calendar-tables": {
+   "title": "Calendar and date dimension tables",
+   "track": "sql"
+  },
+  "sql-m06-time-series": {
+   "title": "Time series queries",
+   "track": "sql"
+  },
+  "sql-m06-scd": {
+   "title": "Slowly changing dimensions in SQL",
+   "track": "sql"
+  },
+  "sql-m06-temporal-tables": {
+   "title": "System-versioned temporal tables and flashback",
+   "track": "sql"
+  },
+  "sql-m07-json": {
+   "title": "JSON in SQL",
+   "track": "sql"
+  },
+  "sql-m07-xml": {
+   "title": "XML in SQL",
+   "track": "sql"
+  },
+  "sql-m08-merge-upsert": {
+   "title": "MERGE and upserts",
+   "track": "sql"
+  },
+  "sql-m08-bulk-operations": {
+   "title": "Bulk operations",
+   "track": "sql"
+  },
+  "sql-m08-isolation-levels": {
+   "title": "Transactions and isolation levels",
+   "track": "sql"
+  },
+  "sql-m08-locking-deadlocks": {
+   "title": "Locking, blocking and deadlocks",
+   "track": "sql"
+  },
+  "sql-m09-execution-plans": {
+   "title": "Execution plans",
+   "track": "sql"
+  },
+  "sql-m09-indexes": {
+   "title": "Index types",
+   "track": "sql"
+  },
+  "sql-m09-statistics": {
+   "title": "Statistics and cardinality estimation",
+   "track": "sql"
+  },
+  "sql-m09-sargability": {
+   "title": "Sargability",
+   "track": "sql"
+  },
+  "sql-m09-parameter-sniffing": {
+   "title": "Parameter sniffing",
+   "track": "sql"
+  },
+  "sql-m09-partitioning": {
+   "title": "Table partitioning",
+   "track": "sql"
+  },
+  "sql-m09-hints": {
+   "title": "Query hints",
+   "track": "sql"
+  },
+  "sql-m10-stored-procedures": {
+   "title": "Stored procedures and packages",
+   "track": "sql"
+  },
+  "sql-m10-functions": {
+   "title": "User-defined functions",
+   "track": "sql"
+  },
+  "sql-m10-triggers": {
+   "title": "Triggers",
+   "track": "sql"
+  },
+  "sql-m10-dynamic-sql-injection": {
+   "title": "Dynamic SQL and SQL injection",
+   "track": "sql"
+  },
+  "sql-m10-error-handling": {
+   "title": "Error handling",
+   "track": "sql"
+  },
+  "sql-m11-cohorts-retention": {
+   "title": "Cohorts and retention",
+   "track": "sql"
+  },
+  "sql-m11-funnels": {
+   "title": "Funnels",
+   "track": "sql"
+  },
+  "sql-m11-percentiles": {
+   "title": "Percentiles and medians",
+   "track": "sql"
+  },
+  "sql-m11-ab-analysis": {
+   "title": "A/B test analysis in SQL",
+   "track": "sql"
+  },
+  "sql-m12-reconciliation": {
+   "title": "Reconciliation queries",
+   "track": "sql"
+  },
+  "sql-m12-dialect-translation": {
+   "title": "Translating between Oracle, T-SQL, Spark SQL and Snowflake",
+   "track": "sql"
+  },
+  "sql-m12-data-type-mapping": {
+   "title": "Data type mapping across platforms",
+   "track": "sql"
+  },
+  "tools-m01-ingestion-styles": {
+   "title": "Batch, CDC and streaming ingestion",
+   "track": "tools"
+  },
+  "tools-m01-debezium": {
+   "title": "Debezium and log-based CDC",
+   "track": "tools"
+  },
+  "tools-m01-managed-connectors": {
+   "title": "Managed connectors: Fivetran, Airbyte and similar",
+   "track": "tools"
+  },
+  "tools-m01-azure-data-factory": {
+   "title": "Azure Data Factory",
+   "track": "tools"
+  },
+  "tools-m02-kafka": {
+   "title": "Apache Kafka",
+   "track": "tools"
+  },
+  "tools-m02-event-hubs": {
+   "title": "Azure Event Hubs",
+   "track": "tools"
+  },
+  "tools-m02-kinesis": {
+   "title": "Amazon Kinesis",
+   "track": "tools"
+  },
+  "tools-m02-pulsar": {
+   "title": "Apache Pulsar",
+   "track": "tools"
+  },
+  "tools-m02-flink-vs-spark-streaming": {
+   "title": "Apache Flink vs Spark Structured Streaming",
+   "track": "tools"
+  },
+  "tools-m02-schema-registry": {
+   "title": "Schema registries",
+   "track": "tools"
+  },
+  "tools-m03-columnar-formats": {
+   "title": "Parquet and ORC",
+   "track": "tools"
+  },
+  "tools-m03-open-table-formats": {
+   "title": "Delta Lake, Apache Iceberg and Apache Hudi compared",
+   "track": "tools"
+  },
+  "tools-m03-object-storage": {
+   "title": "Object storage: ADLS, S3 and GCS",
+   "track": "tools"
+  },
+  "tools-m03-format-interoperability": {
+   "title": "Table format interoperability",
+   "track": "tools"
+  },
+  "tools-m04-spark": {
+   "title": "Apache Spark in the landscape",
+   "track": "tools"
+  },
+  "tools-m04-trino-presto": {
+   "title": "Trino and Presto",
+   "track": "tools"
+  },
+  "tools-m04-dbt": {
+   "title": "dbt",
+   "track": "tools"
+  },
+  "tools-m04-duckdb": {
+   "title": "DuckDB",
+   "track": "tools"
+  },
+  "tools-m04-warehouse-engines": {
+   "title": "Cloud warehouse engines",
+   "track": "tools"
+  },
+  "tools-m05-scheduling-vs-orchestration": {
+   "title": "Scheduling vs orchestration",
+   "track": "tools"
+  },
+  "tools-m05-airflow": {
+   "title": "Apache Airflow",
+   "track": "tools"
+  },
+  "tools-m05-dagster": {
+   "title": "Dagster",
+   "track": "tools"
+  },
+  "tools-m05-prefect": {
+   "title": "Prefect",
+   "track": "tools"
+  },
+  "tools-m05-adf-fabric-pipelines": {
+   "title": "ADF, Fabric pipelines and Databricks Jobs as orchestrators",
+   "track": "tools"
+  },
+  "tools-m06-catalogs-explained": {
+   "title": "Technical, business and enterprise data catalogs",
+   "track": "tools"
+  },
+  "tools-m06-unity-catalog": {
+   "title": "Unity Catalog in the landscape",
+   "track": "tools"
+  },
+  "tools-m06-purview": {
+   "title": "Microsoft Purview",
+   "track": "tools"
+  },
+  "tools-m06-datahub-openmetadata": {
+   "title": "DataHub and OpenMetadata",
+   "track": "tools"
+  },
+  "tools-m06-lineage": {
+   "title": "Data lineage and OpenLineage",
+   "track": "tools"
+  },
+  "tools-m06-enterprise-catalogs": {
+   "title": "Enterprise catalogs: Collibra, Alation, Informatica",
+   "track": "tools"
+  },
+  "tools-m07-great-expectations": {
+   "title": "Great Expectations",
+   "track": "tools"
+  },
+  "tools-m07-soda": {
+   "title": "Soda",
+   "track": "tools"
+  },
+  "tools-m07-deequ": {
+   "title": "Deequ and PyDeequ",
+   "track": "tools"
+  },
+  "tools-m07-data-observability": {
+   "title": "Data observability platforms",
+   "track": "tools"
+  },
+  "tools-m07-data-contracts": {
+   "title": "Data contracts",
+   "track": "tools"
+  },
+  "tools-m08-clickhouse": {
+   "title": "ClickHouse",
+   "track": "tools"
+  },
+  "tools-m08-druid-pinot": {
+   "title": "Apache Druid and Apache Pinot",
+   "track": "tools"
+  },
+  "tools-m08-power-bi": {
+   "title": "Power BI",
+   "track": "tools"
+  },
+  "tools-m08-tableau": {
+   "title": "Tableau",
+   "track": "tools"
+  },
+  "tools-m08-semantic-layers": {
+   "title": "Semantic layers and metrics stores",
+   "track": "tools"
+  },
+  "tools-m09-docker": {
+   "title": "Docker and containers",
+   "track": "tools"
+  },
+  "tools-m09-kubernetes": {
+   "title": "Kubernetes",
+   "track": "tools"
+  },
+  "tools-m09-terraform": {
+   "title": "Terraform and infrastructure as code",
+   "track": "tools"
+  },
+  "tools-m09-cicd": {
+   "title": "CI/CD for data platforms",
+   "track": "tools"
+  },
+  "tools-m09-secrets-identity": {
+   "title": "Secrets and identity",
+   "track": "tools"
+  },
+  "tools-m10-mlflow": {
+   "title": "MLflow",
+   "track": "tools"
+  },
+  "tools-m10-feature-stores": {
+   "title": "Feature store products",
+   "track": "tools"
+  },
+  "tools-m10-vector-databases": {
+   "title": "Vector databases and vector search",
+   "track": "tools"
+  },
+  "tools-m10-model-serving": {
+   "title": "Model serving platforms",
+   "track": "tools"
+  },
+  "tools-m11-cloud-map-ingest-store": {
+   "title": "Cloud map: ingestion, streaming and storage",
+   "track": "tools"
+  },
+  "tools-m11-cloud-map-process-orchestrate": {
+   "title": "Cloud map: processing and orchestration",
+   "track": "tools"
+  },
+  "tools-m11-cloud-map-govern-serve": {
+   "title": "Cloud map: governance, BI and ML",
+   "track": "tools"
+  }
+ }
 }
