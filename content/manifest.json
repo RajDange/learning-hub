@@ -392,6 +392,85 @@
        "remember": "Use the on-premises gateway for data inside your own network and the VNet gateway for private Azure sources; Spark and Direct Lake do not go through gateways."
       }
      ]
+    },
+    {
+     "key": "fabric-m04",
+     "num": "04",
+     "name": "Data engineering",
+     "file": "content/fabric/04-data-engineering.md",
+     "lessons": [
+      {
+       "id": "fabric-m04-notebooks",
+       "title": "Notebooks in Fabric",
+       "verified": "2026-10",
+       "summary": "Fabric notebooks are the main place to write Spark code (PySpark, Spark SQL, Scala, SparkR) against OneLake.",
+       "remember": "Fabric notebooks run Spark or plain Python against OneLake, with a default lakehouse and NotebookUtils for orchestration helpers."
+      },
+      {
+       "id": "fabric-m04-spark-pools",
+       "title": "Spark pools, environments and runtimes",
+       "verified": "2026-10",
+       "summary": "Fabric manages Spark clusters for you.",
+       "remember": "Starter pools start fast, custom pools fit special needs, and environments pin the runtime and libraries your code needs."
+      },
+      {
+       "id": "fabric-m04-spark-job-definitions",
+       "title": "Spark job definitions",
+       "verified": "2026-10",
+       "summary": "A Spark job definition is a Fabric item that runs a packaged Spark program, much like spark-submit.",
+       "remember": "A Spark job definition is Fabric's spark-submit: a packaged program with arguments, environment and retries."
+      },
+      {
+       "id": "fabric-m04-spark-performance-features",
+       "title": "Spark performance features in Fabric",
+       "verified": "2026-10",
+       "summary": "Fabric adds several features on top of open-source Spark: - Native execution engine: runs supported Spark SQL operators in vectorised C++ (built on the open-source Velox and Apache Gluten projects) instead of the JVM.",
+       "remember": "Fabric speeds Spark up with a native C++ engine and session sharing, but the fundamentals of partitioning and shuffle still decide performance."
+      }
+     ]
+    },
+    {
+     "key": "fabric-m05",
+     "num": "05",
+     "name": "Real-Time Intelligence",
+     "file": "content/fabric/05-real-time-intelligence.md",
+     "lessons": [
+      {
+       "id": "fabric-m05-rti-overview",
+       "title": "Real-Time Intelligence overview",
+       "verified": "2026-10",
+       "summary": "Real-Time Intelligence is Fabric's workload for data in motion: telemetry, logs, clickstreams, IoT readings, change events.",
+       "remember": "Real-Time Intelligence chains Eventstream to move, Eventhouse to store and query, dashboards to watch and Activator to act."
+      },
+      {
+       "id": "fabric-m05-eventstreams",
+       "title": "Eventstreams",
+       "verified": "2026-10",
+       "summary": "An Eventstream is a no-code pipeline for events.",
+       "remember": "Eventstream connects, shapes and routes events without code, with at-least-once delivery."
+      },
+      {
+       "id": "fabric-m05-eventhouse-kql",
+       "title": "Eventhouse and KQL databases",
+       "verified": "2026-10",
+       "summary": "An Eventhouse is a container for one or more KQL databases, the same engine as Azure Data Explorer.",
+       "remember": "Eventhouse is Fabric's engine for fast queries over append-only event data, with an optional Delta copy in OneLake."
+      },
+      {
+       "id": "fabric-m05-activator",
+       "title": "Activator",
+       "verified": "2026-10",
+       "summary": "Activator (formerly Data Activator; items still appear with the type name Reflex) watches data and acts when a condition is met.",
+       "remember": "Activator turns conditions in data into alerts and actions, per tracked object."
+      },
+      {
+       "id": "fabric-m05-real-time-dashboards",
+       "title": "Real-time dashboards",
+       "verified": "2026-10",
+       "summary": "A Real-Time Dashboard is a Fabric item whose tiles each run a KQL query against an Eventhouse, Azure Data Explorer or Azure Monitor.",
+       "remember": "Real-time dashboards are KQL tiles for live operational monitoring; Power BI reports are for modelled business reporting."
+      }
+     ]
     }
    ]
   },
