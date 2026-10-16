@@ -3243,6 +3243,106 @@
        "remember": "Prompt, constrain, retrieve and switch models before fine-tuning; fine-tune only with an evaluation set showing it helps."
       }
      ]
+    },
+    {
+     "key": "ai-m08",
+     "num": "08",
+     "name": "Evaluation and safety",
+     "file": "content/ai/08-evaluation-and-safety.md",
+     "lessons": [
+      {
+       "id": "ai-m08-evals",
+       "title": "Evaluating LLM applications",
+       "verified": "2026-10",
+       "summary": "Evals are tests for LLM applications.",
+       "remember": "Build a test set from real cases, grade with code where possible and calibrated LLM judges elsewhere, and run evals on every change."
+      },
+      {
+       "id": "ai-m08-hallucinations",
+       "title": "Hallucinations",
+       "verified": "2026-10",
+       "summary": "A hallucination is a fluent, confident output that is false or unsupported: an invented citation, a non-existent API parameter, a wrong number, a made-up policy.",
+       "remember": "Hallucinations are confident errors; ground answers in sources, allow \"I don't know\", use tools for facts, and verify before trusting."
+      },
+      {
+       "id": "ai-m08-prompt-injection",
+       "title": "Prompt injection",
+       "verified": "2026-10",
+       "summary": "Prompt injection is when text the model processes contains instructions that override the developer's intent.",
+       "remember": "Any text a model reads can try to command it; limit tool permissions, require approval for actions, and treat both inputs and outputs as untrusted."
+      },
+      {
+       "id": "ai-m08-guardrails",
+       "title": "Guardrails",
+       "verified": "2026-10",
+       "summary": "Guardrails are checks around a model that enforce policy, independent of the model's own behaviour: - Input guardrails: detect prompt injection and jailbreak attempts, block out-of-scope topics, detect and redact persona",
+       "remember": "Guardrails check inputs, outputs and actions outside the model to enforce policy; combine them with least privilege, not instead of it."
+      },
+      {
+       "id": "ai-m08-privacy",
+       "title": "Privacy and data protection",
+       "verified": "2026-10",
+       "summary": "Using LLMs with business data raises data protection questions: - Where data goes: hosted APIs process prompts on the provider's infrastructure.",
+       "remember": "Know where prompts go and how long they are kept, minimise and redact personal data, and govern logs, indexes and memory as personal data stores."
+      },
+      {
+       "id": "ai-m08-responsible-ai",
+       "title": "Responsible AI and regulation (verify)",
+       "verified": "2026-10",
+       "summary": "Responsible AI principles (fairness, reliability and safety, privacy and security, transparency, accountability, human oversight) are made concrete through frameworks and law: - NIST AI Risk Management Framework (2023, v",
+       "remember": "Responsible AI is made operational with NIST AI RMF, ISO 42001 and the risk-based EU AI Act, whose high-risk deadlines were pushed to 2027 and 2028 (verify)."
+      }
+     ]
+    },
+    {
+     "key": "ai-m09",
+     "num": "09",
+     "name": "AI in data engineering",
+     "file": "content/ai/09-ai-in-data-engineering.md",
+     "lessons": [
+      {
+       "id": "ai-m09-text-to-sql",
+       "title": "Text-to-SQL",
+       "verified": "2026-10",
+       "summary": "Text-to-SQL turns a natural-language question into a SQL query, runs it, and presents the answer.",
+       "remember": "Text-to-SQL works when backed by a semantic layer, curated schema context, read-only execution and validation; enterprise accuracy is still far from perfect."
+      },
+      {
+       "id": "ai-m09-llm-extraction",
+       "title": "LLM-based extraction",
+       "verified": "2026-10",
+       "summary": "Many business inputs are unstructured: invoices, contracts, emails, support tickets, forms, call transcripts.",
+       "remember": "Extract with a schema and structured outputs, validate with rules, send uncertain records to people, and measure accuracy per field."
+      },
+      {
+       "id": "ai-m09-metadata-enrichment",
+       "title": "Metadata enrichment",
+       "verified": "2026-10",
+       "summary": "Catalogs are only useful when tables and columns have descriptions, owners, tags and glossary links, and most do not.",
+       "remember": "Use LLMs to draft descriptions, tags and glossary links for catalogs, with human owners approving what is published."
+      },
+      {
+       "id": "ai-m09-dq-triage",
+       "title": "Data quality triage with LLMs",
+       "verified": "2026-10",
+       "summary": "Data quality and observability tools produce many alerts.",
+       "remember": "LLMs speed up data quality triage by summarising failures, gathering context through tools and suggesting causes, while people decide the fix."
+      },
+      {
+       "id": "ai-m09-unstructured-pipelines",
+       "title": "Unstructured data pipelines",
+       "verified": "2026-10",
+       "summary": "GenAI makes unstructured data (documents, emails, images, audio, video) usable at scale, and data engineering now builds pipelines for it: 1.",
+       "remember": "Build unstructured pipelines like data pipelines: ingest with metadata and permissions, parse, enrich, chunk and embed incrementally, with lineage."
+      },
+      {
+       "id": "ai-m09-platform-ai-features",
+       "title": "AI features in Fabric, Databricks and Snowflake (verify)",
+       "verified": "2026-10",
+       "summary": "All three platforms bring generative AI next to governed data (names as of October 2026; they change often): Capability Microsoft Fabric Databricks Snowflake ------------ AI functions in SQL or DataFrames AI functions (p",
+       "remember": "Fabric, Databricks and Snowflake all offer AI functions, natural-language analytics, vector search and agents inside their governance; check current names and status."
+      }
+     ]
     }
    ]
   },
