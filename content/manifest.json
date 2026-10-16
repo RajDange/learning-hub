@@ -2565,7 +2565,129 @@
    "key": "ml",
    "name": "Machine Learning",
    "planned": 50,
-   "modules": []
+   "modules": [
+    {
+     "key": "ml-m01",
+     "num": "01",
+     "name": "Stage 0: Math and statistics",
+     "file": "content/ml/01-math-and-statistics.md",
+     "lessons": [
+      {
+       "id": "ml-m01-linear-algebra",
+       "title": "Linear algebra for ML",
+       "verified": "",
+       "summary": "Machine learning treats data as numbers arranged in vectors and matrices: - A vector is an ordered list of numbers: one customer's features (age, tenure, spend) or one word's embedding.",
+       "remember": "Data is a matrix of rows and features, models multiply features by weights (dot products), and similarity is measured with distances and dot products."
+      },
+      {
+       "id": "ml-m01-calculus-gradients",
+       "title": "Calculus essentials: derivatives and gradients",
+       "verified": "",
+       "summary": "Training a model means adjusting parameters to reduce a loss (an error measure).",
+       "remember": "The gradient is the vector of slopes of the loss; stepping against it reduces error, and the chain rule computes it through layers."
+      },
+      {
+       "id": "ml-m01-probability",
+       "title": "Probability",
+       "verified": "",
+       "summary": "Probability quantifies uncertainty, and many ML outputs are probabilities.",
+       "remember": "Conditional probability and Bayes' rule update beliefs with evidence, and base rates decide how meaningful a positive result is."
+      },
+      {
+       "id": "ml-m01-distributions",
+       "title": "Distributions",
+       "verified": "",
+       "summary": "A distribution describes how values of a variable are spread.",
+       "remember": "Know the shape: normal for symmetric noise, binomial and Poisson for counts, long tails for money and usage, and use medians for skewed data."
+      },
+      {
+       "id": "ml-m01-hypothesis-testing",
+       "title": "Hypothesis testing",
+       "verified": "",
+       "summary": "A hypothesis test asks whether an observed difference could plausibly be due to chance.",
+       "remember": "A p-value is the chance of data this extreme if nothing were going on; plan power, fix alpha in advance, and report effect sizes."
+      },
+      {
+       "id": "ml-m01-confidence-intervals",
+       "title": "Confidence intervals",
+       "verified": "",
+       "summary": "A confidence interval (CI) gives a range of plausible values for an unknown quantity (a conversion rate, a mean, a model's accuracy) from a sample.",
+       "remember": "A confidence interval shows the plausible range of an estimate; width shrinks with the square root of sample size."
+      },
+      {
+       "id": "ml-m01-optimization",
+       "title": "Optimisation and gradient descent",
+       "verified": "",
+       "summary": "Training a model is optimisation: find parameters that minimise a loss function measuring error on training data, such as mean squared error for regression or log loss (cross-entropy) for classification.",
+       "remember": "Training minimises a loss by stepping against the gradient, with the learning rate setting the step size."
+      }
+     ]
+    },
+    {
+     "key": "ml-m02",
+     "num": "02",
+     "name": "Stage 1: Fundamentals",
+     "file": "content/ml/02-fundamentals.md",
+     "lessons": [
+      {
+       "id": "ml-m02-problem-framing",
+       "title": "Framing an ML problem",
+       "verified": "",
+       "summary": "Most ML projects fail at framing, not modelling.",
+       "remember": "Frame the decision, the exact target, what is known at prediction time, the metric and the baseline before choosing any model."
+      },
+      {
+       "id": "ml-m02-supervised-unsupervised",
+       "title": "Supervised, unsupervised and other learning types",
+       "verified": "",
+       "summary": "- Supervised learning: learn from examples with known answers (labels).",
+       "remember": "Supervised learns from labelled answers, unsupervised finds structure without labels, and self-supervised creates its own labels at scale."
+      },
+      {
+       "id": "ml-m02-bias-variance",
+       "title": "Bias, variance, overfitting and underfitting",
+       "verified": "",
+       "summary": "A model's error on new data comes from two competing sources: - Bias: error from a model too simple to capture the pattern (a straight line through curved data).",
+       "remember": "Underfitting is too simple (high bias), overfitting is memorising noise (high variance); compare training and validation error to tell which."
+      },
+      {
+       "id": "ml-m02-train-val-test",
+       "title": "Train, validation and test sets",
+       "verified": "",
+       "summary": "To estimate how a model will perform on new data, split the data: - Training set: fit the model.",
+       "remember": "Train on one part, tune on another, test once on a third, and split by time or group when the data demands it."
+      },
+      {
+       "id": "ml-m02-cross-validation",
+       "title": "Cross-validation",
+       "verified": "",
+       "summary": "k-fold cross-validation splits the training data into k parts (folds, often 5).",
+       "remember": "Cross-validation rotates evaluation across folds for a stable estimate; use stratified, group or time-series folds when the data requires."
+      },
+      {
+       "id": "ml-m02-classification-metrics",
+       "title": "Classification metrics",
+       "verified": "",
+       "summary": "For a binary classifier, the confusion matrix counts true positives (TP), false positives (FP), true negatives (TN) and false negatives (FN).",
+       "remember": "Use precision when false alarms are costly, recall when misses are costly, PR AUC for rare classes, and pick the threshold from business costs."
+      },
+      {
+       "id": "ml-m02-regression-metrics",
+       "title": "Regression metrics",
+       "verified": "",
+       "summary": "For numeric predictions: - MAE (mean absolute error): average absolute error, in the target's units.",
+       "remember": "MAE is the typical error, RMSE punishes big misses, MAPE fails near zero, and every metric needs a naive baseline."
+      },
+      {
+       "id": "ml-m02-data-leakage",
+       "title": "Data leakage",
+       "verified": "",
+       "summary": "Data leakage happens when information that would not be available at prediction time gets into training, so the model looks excellent in testing and fails in production.",
+       "remember": "Use only information available at prediction time, split before preprocessing, and treat suspiciously good results as a leakage alarm."
+      }
+     ]
+    }
+   ]
   },
   {
    "key": "ai",
