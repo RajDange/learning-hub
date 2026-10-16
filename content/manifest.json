@@ -2792,6 +2792,113 @@
        "remember": "Recommenders combine content similarity and collaborative patterns from implicit feedback, handle cold start, and are validated online."
       }
      ]
+    },
+    {
+     "key": "ml-m04",
+     "num": "04",
+     "name": "Stage 3: Features and pipelines",
+     "file": "content/ml/04-features-and-pipelines.md",
+     "lessons": [
+      {
+       "id": "ml-m04-encoding-scaling",
+       "title": "Encoding and scaling features",
+       "verified": "",
+       "summary": "Models need numbers.",
+       "remember": "One-hot for few categories, target encoding (out of fold) for many, and scale numeric features for distance-based and linear models."
+      },
+      {
+       "id": "ml-m04-missing-data",
+       "title": "Missing data",
+       "verified": "",
+       "summary": "Why values are missing matters: - Missing completely at random: unrelated to anything; dropping or simple imputation is fine.",
+       "remember": "Ask why data is missing, impute with training statistics, and add missing indicators because missingness often carries signal."
+      },
+      {
+       "id": "ml-m04-imbalanced-data",
+       "title": "Imbalanced data",
+       "verified": "",
+       "summary": "In fraud, default, failure and churn problems, the positive class can be 1 percent or far less.",
+       "remember": "For rare classes, use precision-recall metrics, class weights and a tuned threshold; resample only training data and recalibrate."
+      },
+      {
+       "id": "ml-m04-feature-selection",
+       "title": "Feature engineering and selection",
+       "verified": "",
+       "summary": "Feature engineering creates inputs that make the pattern easy to learn, usually from domain knowledge: - Aggregates over time windows: purchases in the last 30 days, average ticket size, days since last login.",
+       "remember": "Domain-driven features beat algorithm tweaks; select features inside cross-validation and only from information available at prediction time."
+      },
+      {
+       "id": "ml-m04-sklearn-pipelines",
+       "title": "scikit-learn pipelines",
+       "verified": "",
+       "summary": "A scikit-learn Pipeline chains preprocessing steps and a model into one estimator.",
+       "remember": "Put all preprocessing and the model in one pipeline so it is fitted on training data only and deployed as one object."
+      },
+      {
+       "id": "ml-m04-hyperparameter-tuning",
+       "title": "Hyperparameter tuning",
+       "verified": "",
+       "summary": "Hyperparameters are settings chosen before training (tree depth, learning rate, regularisation strength, number of trees).",
+       "remember": "Tune with random or Bayesian search under cross-validation; expect modest gains, and log every trial."
+      },
+      {
+       "id": "ml-m04-interpretability-shap",
+       "title": "Interpretability and SHAP",
+       "verified": "",
+       "summary": "Interpretability explains what a model does: - Global explanations: which features matter overall.",
+       "remember": "Use permutation importance for global views and SHAP for per-prediction contributions; they explain the model, not causation."
+      },
+      {
+       "id": "ml-m04-calibration",
+       "title": "Probability calibration",
+       "verified": "",
+       "summary": "A model is calibrated when its predicted probabilities match observed frequencies: of all cases scored 0.2, about 20 percent are positive.",
+       "remember": "Calibrated models say 20 percent and mean it; check with reliability curves and fix with Platt or isotonic calibration on held-out data."
+      },
+      {
+       "id": "ml-m04-fairness",
+       "title": "Fairness",
+       "verified": "",
+       "summary": "Models can treat groups differently because of biased historical data (past decisions encoded in labels), unrepresentative samples, or proxies for protected attributes (postcode standing in for ethnicity).",
+       "remember": "Measure model outcomes per group, choose a fairness definition deliberately with stakeholders, and remember proxies carry bias even without protected attributes."
+      }
+     ]
+    },
+    {
+     "key": "ml-m05",
+     "num": "05",
+     "name": "Stage 4: Neural network basics",
+     "file": "content/ml/05-neural-network-basics.md",
+     "lessons": [
+      {
+       "id": "ml-m05-neural-network-basics",
+       "title": "Neurons, layers and activations",
+       "verified": "",
+       "summary": "A neural network is built from layers of simple units.",
+       "remember": "A neural network stacks layers of weighted sums with non-linear activations, letting it learn complex features from raw data."
+      },
+      {
+       "id": "ml-m05-backpropagation",
+       "title": "Backpropagation",
+       "verified": "",
+       "summary": "Backpropagation is how neural networks compute the gradient of the loss with respect to every weight: 1.",
+       "remember": "Backpropagation applies the chain rule backwards through the network to get every weight's gradient in about one extra pass."
+      },
+      {
+       "id": "ml-m05-training-loops",
+       "title": "Training loops and regularisation",
+       "verified": "",
+       "summary": "Training a neural network runs a loop: - Data is split into mini-batches (for example 32 to 1,024 examples).",
+       "remember": "Train in mini-batches over epochs, watch validation loss, and use early stopping, dropout, weight decay and augmentation against overfitting."
+      },
+      {
+       "id": "ml-m05-pytorch-concepts",
+       "title": "PyTorch concepts",
+       "verified": "",
+       "summary": "The PyTorch building blocks used in every training script: - Tensors (torch.tensor): arrays with a dtype and device (cpu, cuda); move models and data with .to(device).",
+       "remember": "PyTorch is tensors on devices, modules with forward methods, data loaders, and autograd plus an optimiser in a loop."
+      }
+     ]
     }
    ]
   },
