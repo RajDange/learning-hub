@@ -490,6 +490,85 @@
        "remember": "Load landing-zone files incrementally with a checkpointed file stream; on Databricks, Auto Loader adds scalable discovery and schema evolution."
       }
      ]
+    },
+    {
+     "key": "pyspark-m10",
+     "num": "10",
+     "name": "Cluster and deployment",
+     "file": "content/pyspark/10-cluster-and-deployment.md",
+     "lessons": [
+      {
+       "id": "pyspark-m10-cluster-managers",
+       "title": "Cluster managers: YARN, Kubernetes, standalone",
+       "verified": "",
+       "summary": "Spark does not manage machines itself.",
+       "remember": "YARN, Kubernetes or standalone supply the machines; the Spark model on top is the same, and managed platforms hide this layer."
+      },
+      {
+       "id": "pyspark-m10-spark-submit",
+       "title": "spark-submit and deploy modes",
+       "verified": "",
+       "summary": "spark-submit launches a Spark application on a cluster.",
+       "remember": "spark-submit packages code, dependencies and resources into a job; use cluster mode for production."
+      },
+      {
+       "id": "pyspark-m10-resources-sizing",
+       "title": "Executor sizing and resources",
+       "verified": "",
+       "summary": "The main resource settings: - spark.executor.cores: task slots per executor.",
+       "remember": "Size executors moderately (around 4 to 5 cores, enough memory and overhead per core) and fix plans before adding memory."
+      },
+      {
+       "id": "pyspark-m10-dynamic-allocation",
+       "title": "Dynamic allocation and autoscaling",
+       "verified": "",
+       "summary": "With dynamic allocation (spark.dynamicAllocation.enabled=true), Spark requests more executors when tasks are waiting and releases idle ones after a timeout, between minExecutors and maxExecutors.",
+       "remember": "Dynamic allocation adds and removes executors with demand; it needs shuffle files to survive executor removal."
+      },
+      {
+       "id": "pyspark-m10-managed-platforms",
+       "title": "Managed Spark platforms compared",
+       "verified": "",
+       "summary": "Most organisations run Spark on a managed service rather than their own clusters: - Databricks (AWS, Azure, GCP): Spark plus Photon, Delta Lake, Unity Catalog, notebooks, jobs and serverless compute.",
+       "remember": "Spark code moves easily between managed platforms; catalogs, utilities, security and cost models do not."
+      }
+     ]
+    },
+    {
+     "key": "pyspark-m11",
+     "num": "11",
+     "name": "Data quality and governance",
+     "file": "content/pyspark/11-data-quality-and-governance.md",
+     "lessons": [
+      {
+       "id": "pyspark-m11-validation-expectations",
+       "title": "Validation, profiling and expectations",
+       "verified": "",
+       "summary": "Data quality work in Spark has three layers: - Profiling: understanding data before writing rules.",
+       "remember": "Profile first, then encode rules that fail, drop or quarantine, and compute them in as few passes as possible."
+      },
+      {
+       "id": "pyspark-m11-reconciliation",
+       "title": "Reconciliation between source and target",
+       "verified": "",
+       "summary": "Reconciliation proves that a target holds the same data as its source, which is essential during migrations and for regulated pipelines.",
+       "remember": "Reconcile in layers: counts, aggregates, partition checksums, then row diffs where checksums disagree, after normalising values."
+      },
+      {
+       "id": "pyspark-m11-data-lineage",
+       "title": "Data lineage (not RDD lineage)",
+       "verified": "",
+       "summary": "Data lineage records which datasets, jobs and columns produce which other datasets: \"gold.revenue is built by job X from silver.orders and silver.fxrates\".",
+       "remember": "Data lineage maps datasets and jobs across pipelines; RDD lineage only rebuilds partitions inside one Spark app."
+      },
+      {
+       "id": "pyspark-m11-masking-security-auditing",
+       "title": "Masking, access control and auditing",
+       "verified": "",
+       "summary": "Open-source Spark has little built-in data security: whoever can read the files can read the data.",
+       "remember": "Spark's data security lives in the catalog and platform: privileges, row filters, column masks and audit logs, with storage locked to governed compute."
+      }
+     ]
     }
    ]
   },
