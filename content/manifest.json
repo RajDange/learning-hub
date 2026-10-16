@@ -529,6 +529,98 @@
        "remember": "Reports explore, paginated reports print, and apps distribute; security belongs in the model, not the report."
       }
      ]
+    },
+    {
+     "key": "fabric-m08",
+     "num": "08",
+     "name": "Governance and security",
+     "file": "content/fabric/08-governance-and-security.md",
+     "lessons": [
+      {
+       "id": "fabric-m08-governance-overview",
+       "title": "Governance model in Fabric",
+       "verified": "2026-10",
+       "summary": "Fabric governance is a delegated model: a small central team sets guardrails, and control is pushed down to the people closest to the data.",
+       "remember": "Fabric governance flows from tenant to capacity and domain, to workspace, item and finally data-level security, and each layer has its own admin."
+      },
+      {
+       "id": "fabric-m08-tenant-settings",
+       "title": "Tenant settings and admin portal",
+       "verified": "2026-10",
+       "summary": "Tenant settings switch Fabric features on or off for the organisation.",
+       "remember": "Tenant settings switch features on or off for chosen groups and can be delegated to domains or capacities, but they do not secure data."
+      },
+      {
+       "id": "fabric-m08-domains",
+       "title": "Domains",
+       "verified": "2026-10",
+       "summary": "A domain groups workspaces by business area: Finance, Sales, Manufacturing.",
+       "remember": "Domains group workspaces by business area for discovery and delegated settings, but they are not a security boundary."
+      },
+      {
+       "id": "fabric-m08-workspace-roles",
+       "title": "Workspace roles",
+       "verified": "2026-10",
+       "summary": "Every workspace has four roles, assigned to users, security groups, Microsoft 365 groups or service principals: Capability Admin Member Contributor Viewer --------------- Manage workspace, delete it, connect to Git Yes A",
+       "remember": "Workspace roles are coarse: Contributor and above can read and change all data in the workspace, so design workspaces around who should see what."
+      },
+      {
+       "id": "fabric-m08-item-permissions",
+       "title": "Item permissions and sharing",
+       "verified": "2026-10",
+       "summary": "To give someone access to one item without a workspace role, you share it.",
+       "remember": "Sharing grants Read only; ReadData opens the SQL path, ReadAll opens the Spark and file path, and write access needs a workspace role."
+      },
+      {
+       "id": "fabric-m08-onelake-security",
+       "title": "OneLake security",
+       "verified": "2026-10",
+       "summary": "OneLake security (which grew out of \"OneLake data access roles\") defines roles inside an item that grant access to specific tables, folders or schemas, optionally with row-level and column-level filters.",
+       "remember": "OneLake security puts table, row and column permissions on the data itself, so SQL, Spark and Direct Lake all enforce the same rules."
+      },
+      {
+       "id": "fabric-m08-sql-granular-security",
+       "title": "Row, column and object level security",
+       "verified": "2026-10",
+       "summary": "Inside the Warehouse and SQL analytics endpoint, standard T-SQL security applies: - Object-level security: GRANT, DENY, REVOKE on tables, views, functions and procedures.",
+       "remember": "T-SQL grants, RLS and masking protect the SQL path and model RLS protects the model; neither stops Spark reads on its own."
+      },
+      {
+       "id": "fabric-m08-sensitivity-labels",
+       "title": "Sensitivity labels and DLP",
+       "verified": "2026-10",
+       "summary": "Sensitivity labels from Microsoft Purview Information Protection (for example Public, General, Confidential, Highly Confidential) can be applied to Fabric items.",
+       "remember": "Sensitivity labels classify and travel downstream, DLP detects sensitive data, and protection policies restrict access by label."
+      },
+      {
+       "id": "fabric-m08-purview-integration",
+       "title": "Microsoft Purview and the OneLake catalog",
+       "verified": "2026-10",
+       "summary": "Two catalogs meet here: - The OneLake catalog is Fabric's built-in catalog, with three tabs.",
+       "remember": "The OneLake catalog governs what is in Fabric; Purview governs the whole estate and scans Fabric into it."
+      },
+      {
+       "id": "fabric-m08-lineage-impact",
+       "title": "Lineage and impact analysis",
+       "verified": "2026-10",
+       "summary": "Fabric captures item-level lineage automatically: which source feeds which pipeline or dataflow, which lakehouse feeds which semantic model, which model feeds which report.",
+       "remember": "Fabric lineage is item-level: the lineage view shows a workspace, impact analysis shows everything downstream across workspaces."
+      },
+      {
+       "id": "fabric-m08-endorsement",
+       "title": "Endorsement",
+       "verified": "2026-10",
+       "summary": "Endorsement marks items that people can trust.",
+       "remember": "Promoted is the owner's claim, certified is a reviewer's approval, and master data marks the authoritative source."
+      },
+      {
+       "id": "fabric-m08-auditing-monitoring",
+       "title": "Auditing and monitoring",
+       "verified": "2026-10",
+       "summary": "Fabric has several monitoring tools, each answering a different question: - Audit log (in Microsoft Purview Audit): who did what?",
+       "remember": "Audit logs say who did what, the metrics app says how busy the capacity is, and the monitoring hub says whether jobs ran."
+      }
+     ]
     }
    ]
   },
