@@ -2970,7 +2970,109 @@
    "key": "ai",
    "name": "AI and Generative AI",
    "planned": 51,
-   "modules": []
+   "modules": [
+    {
+     "key": "ai-m01",
+     "num": "01",
+     "name": "Landscape",
+     "file": "content/ai/01-landscape.md",
+     "lessons": [
+      {
+       "id": "ai-m01-ai-ml-dl-genai",
+       "title": "AI vs ML vs deep learning vs generative AI",
+       "verified": "2026-10",
+       "summary": "The terms nest inside each other: - Artificial intelligence (AI): the broad goal of making computers perform tasks that seem to need intelligence.",
+       "remember": "AI contains ML, ML contains deep learning, and generative AI is deep learning that produces new content."
+      },
+      {
+       "id": "ai-m01-what-llms-can-cannot-do",
+       "title": "What LLMs can and cannot do",
+       "verified": "2026-10",
+       "summary": "Large language models generate text by predicting likely next tokens, after training on vast text and further tuning to follow instructions.",
+       "remember": "LLMs excel at language, extraction and code over provided context, and are unreliable for unsupported facts, exact computation and deterministic decisions."
+      }
+     ]
+    },
+    {
+     "key": "ai-m02",
+     "num": "02",
+     "name": "Deep learning in practice",
+     "file": "content/ai/02-deep-learning-in-practice.md",
+     "lessons": [
+      {
+       "id": "ai-m02-cnns",
+       "title": "Convolutional neural networks",
+       "verified": "2026-10",
+       "summary": "A convolutional neural network (CNN) processes grid-like data (images, spectrograms) with convolution layers: small filters slide across the input and detect local patterns, using the same weights at every position.",
+       "remember": "CNNs slide shared filters over images to detect local patterns hierarchically, and pretrained CNNs are reused for most practical vision tasks."
+      },
+      {
+       "id": "ai-m02-sequence-models",
+       "title": "Sequence models before transformers",
+       "verified": "2026-10",
+       "summary": "Text, speech and time series are sequences.",
+       "remember": "RNNs and LSTMs read sequences step by step, which limited long-range memory and parallel training; transformers solved both with attention."
+      },
+      {
+       "id": "ai-m02-transfer-learning",
+       "title": "Transfer learning",
+       "verified": "2026-10",
+       "summary": "Transfer learning reuses a model trained on a large, general dataset for a new, often smaller task.",
+       "remember": "Start from a pretrained model and adapt it, by extracting features or fine-tuning, to get strong results with little labelled data."
+      }
+     ]
+    },
+    {
+     "key": "ai-m03",
+     "num": "03",
+     "name": "Transformers and LLMs",
+     "file": "content/ai/03-transformers-and-llms.md",
+     "lessons": [
+      {
+       "id": "ai-m03-tokenization",
+       "title": "Tokenisation",
+       "verified": "2026-10",
+       "summary": "Language models do not see characters or words; they see tokens: pieces of text from a fixed vocabulary, typically tens of thousands to a few hundred thousand entries.",
+       "remember": "LLMs read and write subword tokens; tokens set cost, context limits and latency, and explain some character-level quirks."
+      },
+      {
+       "id": "ai-m03-embeddings",
+       "title": "Embeddings",
+       "verified": "2026-10",
+       "summary": "An embedding is a vector of numbers (commonly a few hundred to a few thousand dimensions) that represents the meaning of a piece of content: a word, sentence, document, image or product.",
+       "remember": "Embeddings map content to vectors where nearness means similar meaning; they power semantic search, RAG, clustering and matching."
+      },
+      {
+       "id": "ai-m03-attention-transformers",
+       "title": "Attention and the transformer",
+       "verified": "2026-10",
+       "summary": "The transformer (introduced in \"Attention Is All You Need\", 2017) is the architecture behind modern language models.",
+       "remember": "Transformers use self-attention to relate every token to every other in parallel; decoder-only transformers generate text token by token."
+      },
+      {
+       "id": "ai-m03-pretraining-alignment",
+       "title": "Pretraining, fine-tuning and alignment",
+       "verified": "2026-10",
+       "summary": "An assistant-style LLM is built in stages: 1.",
+       "remember": "Pretraining gives knowledge, instruction tuning gives helpfulness, and preference training gives aligned behaviour; none of them guarantees truth."
+      },
+      {
+       "id": "ai-m03-context-windows",
+       "title": "Context windows",
+       "verified": "2026-10",
+       "summary": "The context window is the maximum number of tokens a model can consider at once: the system prompt, conversation history, retrieved documents, tool definitions and results, plus the output it generates.",
+       "remember": "The context window bounds what a model can see, but quality drops as context grows, so supply the smallest relevant context."
+      },
+      {
+       "id": "ai-m03-inference-parameters",
+       "title": "Inference parameters",
+       "verified": "2026-10",
+       "summary": "Settings that control how a model generates output: - Temperature: scales randomness.",
+       "remember": "Use low temperature for consistent extraction, cap output tokens, and use reasoning effort only where the task needs it."
+      }
+     ]
+    }
+   ]
   },
   {
    "key": "tools",
