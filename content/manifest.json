@@ -306,6 +306,92 @@
        "remember": "Fabric absorbs Synapse, ADF and Power BI Premium, but the mapping is not one-to-one and moving is a project, not a switch."
       }
      ]
+    },
+    {
+     "key": "fabric-m02",
+     "num": "02",
+     "name": "Storage",
+     "file": "content/fabric/02-storage.md",
+     "lessons": [
+      {
+       "id": "fabric-m02-lakehouse",
+       "title": "Lakehouse",
+       "verified": "2026-10",
+       "summary": "A Lakehouse is a Fabric item that stores data in OneLake and is designed to be written mainly by Spark (notebooks, Spark job definitions) and by Data Factory.",
+       "remember": "A Lakehouse is Spark-first storage with a Files area for anything and a Tables area of Delta tables that every Fabric engine can read."
+      },
+      {
+       "id": "fabric-m02-warehouse",
+       "title": "Warehouse",
+       "verified": "2026-10",
+       "summary": "A Fabric Warehouse is a relational data warehouse you build and load with T-SQL.",
+       "remember": "The Warehouse is the T-SQL-first, read-write store in Fabric, with multi-table transactions and Delta storage underneath."
+      },
+      {
+       "id": "fabric-m02-sql-analytics-endpoint",
+       "title": "SQL analytics endpoint",
+       "verified": "2026-10",
+       "summary": "The SQL analytics endpoint is a read-only T-SQL interface that Fabric creates automatically for each lakehouse, mirrored database and SQL database (exactly one per item).",
+       "remember": "The SQL analytics endpoint gives read-only T-SQL over lakehouse tables, with a sync delay and with security that protects only the SQL path."
+      },
+      {
+       "id": "fabric-m02-shortcuts",
+       "title": "Shortcuts",
+       "verified": "2026-10",
+       "summary": "A shortcut is a pointer in OneLake to data stored somewhere else.",
+       "remember": "A shortcut is a zero-copy pointer to data elsewhere; external shortcuts read with a shared delegated credential."
+      },
+      {
+       "id": "fabric-m02-mirroring",
+       "title": "Mirroring",
+       "verified": "2026-10",
+       "summary": "Mirroring continuously replicates data from an operational or analytical source into OneLake as Delta tables, without you building pipelines.",
+       "remember": "Mirroring is managed, near real-time replication of a source into read-only Delta tables in OneLake, with free replication compute."
+      },
+      {
+       "id": "fabric-m02-delta-in-fabric",
+       "title": "Delta format in Fabric",
+       "verified": "2026-10",
+       "summary": "Delta Lake is Fabric's common table format.",
+       "remember": "Everything in Fabric is Delta in OneLake; V-Order and regular compaction decide how fast it reads."
+      }
+     ]
+    },
+    {
+     "key": "fabric-m03",
+     "num": "03",
+     "name": "Data integration",
+     "file": "content/fabric/03-data-integration.md",
+     "lessons": [
+      {
+       "id": "fabric-m03-pipelines",
+       "title": "Data Factory pipelines",
+       "verified": "2026-10",
+       "summary": "A Fabric pipeline orchestrates work: it runs activities in order, with branching, loops, parameters and error paths.",
+       "remember": "Fabric pipelines are ADF's orchestration model inside Fabric, minus datasets and SSIS, plus native Fabric activities."
+      },
+      {
+       "id": "fabric-m03-dataflows-gen2",
+       "title": "Dataflows Gen2",
+       "verified": "2026-10",
+       "summary": "Dataflow Gen2 is low-code data preparation with Power Query, the same engine used in Excel and Power BI.",
+       "remember": "Dataflow Gen2 is Power Query in Fabric: great for low-code shaping at moderate volume, costly for heavy lifting."
+      },
+      {
+       "id": "fabric-m03-copy-job",
+       "title": "Copy job",
+       "verified": "2026-10",
+       "summary": "A Copy job is a Fabric item that moves data from a source to a destination without building a pipeline.",
+       "remember": "Copy job is managed bulk and incremental copy with built-in state, the simplest way to land source tables in Fabric."
+      },
+      {
+       "id": "fabric-m03-gateways",
+       "title": "On-premises and VNet data gateways",
+       "verified": "2026-10",
+       "summary": "Fabric is a cloud service, so it needs a bridge to reach data behind a firewall: - The on-premises data gateway is Windows software you install on a machine inside your network.",
+       "remember": "Use the on-premises gateway for data inside your own network and the VNet gateway for private Azure sources; Spark and Direct Lake do not go through gateways."
+      }
+     ]
     }
    ]
   },
