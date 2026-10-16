@@ -2018,6 +2018,121 @@
        "remember": "Temporal tables and flashback keep system-time history automatically; business-effective history still needs dimensional modelling."
       }
      ]
+    },
+    {
+     "key": "sql-m07",
+     "num": "07",
+     "name": "Semi-structured data",
+     "file": "content/sql/07-semi-structured.md",
+     "lessons": [
+      {
+       "id": "sql-m07-json",
+       "title": "JSON in SQL",
+       "verified": "",
+       "summary": "Every major engine can query JSON, with different syntax: Task T-SQL Oracle Snowflake Spark SQL --------------- Storage type NVARCHAR(MAX), native json type (2025, verify) JSON type (21c+) or text with IS JSON VARIANT ST",
+       "remember": "All engines parse JSON with path functions and explode arrays into rows (OPENJSON, JSONTABLE, FLATTEN, explode); extract hot fields into columns."
+      },
+      {
+       "id": "sql-m07-xml",
+       "title": "XML in SQL",
+       "verified": "",
+       "summary": "Legacy integrations (SOAP services, banking and insurance messages, older ERP exports) still produce XML.",
+       "remember": "Shred XML into rows with nodes() and value() in SQL Server or XMLTABLE in Oracle, declare namespaces, and do it once at load."
+      }
+     ]
+    },
+    {
+     "key": "sql-m08",
+     "num": "08",
+     "name": "Modification and transactions",
+     "file": "content/sql/08-modification-and-transactions.md",
+     "lessons": [
+      {
+       "id": "sql-m08-merge-upsert",
+       "title": "MERGE and upserts",
+       "verified": "",
+       "summary": "MERGE (T-SQL, Oracle, Snowflake, Spark SQL with Delta, Fabric Warehouse) compares a source with a target on a key and, in one statement, updates matched rows, inserts unmatched source rows, and (in T-SQL, Snowflake and D",
+       "remember": "MERGE upserts and optionally deletes in one atomic statement; deduplicate the source, update only real changes, and mind SQL Server's concurrency caveats."
+      },
+      {
+       "id": "sql-m08-bulk-operations",
+       "title": "Bulk operations",
+       "verified": "",
+       "summary": "Loading or changing millions of rows needs different techniques from single-row DML: - Bulk load: SQL Server BULK INSERT, bcp and SqlBulkCopy; Oracle SQLLoader, external tables and direct-path INSERT /+ APPEND /; Snowfla",
+       "remember": "Use bulk loaders, minimal logging where acceptable, batched deletes and partition switching instead of row-by-row DML."
+      },
+      {
+       "id": "sql-m08-isolation-levels",
+       "title": "Transactions and isolation levels",
+       "verified": "",
+       "summary": "A transaction groups statements so they succeed or fail together (ACID: atomic, consistent, isolated, durable).",
+       "remember": "Isolation levels trade consistency for concurrency; Oracle and RCSI use row versions so readers do not block writers, and NOLOCK can return wrong data."
+      },
+      {
+       "id": "sql-m08-locking-deadlocks",
+       "title": "Locking, blocking and deadlocks",
+       "verified": "",
+       "summary": "Databases lock data to keep transactions isolated.",
+       "remember": "Blocking is waiting, deadlock is a cycle the engine breaks by killing one side; keep transactions short, ordered and indexed, and retry victims."
+      }
+     ]
+    },
+    {
+     "key": "sql-m09",
+     "num": "09",
+     "name": "Performance",
+     "file": "content/sql/09-performance.md",
+     "lessons": [
+      {
+       "id": "sql-m09-execution-plans",
+       "title": "Execution plans",
+       "verified": "",
+       "summary": "An execution plan shows how the optimiser decided to run a query: which indexes, which join algorithms, in what order, with estimated and actual row counts.",
+       "remember": "Read the actual plan and compare estimated with actual rows first; mismatches, scans and spills point to the cause."
+      },
+      {
+       "id": "sql-m09-indexes",
+       "title": "Index types",
+       "verified": "",
+       "summary": "Indexes are additional structures that let the engine find rows without scanning the whole table.",
+       "remember": "Clustered and nonclustered B-trees serve OLTP lookups, columnstore and bitmap serve analytics, and cloud warehouses replace indexes with pruning."
+      },
+      {
+       "id": "sql-m09-statistics",
+       "title": "Statistics and cardinality estimation",
+       "verified": "",
+       "summary": "The optimiser chooses plans from estimates of how many rows each step returns (cardinality).",
+       "remember": "The optimiser plans from statistics; refresh them after big loads and add histograms or extended stats for skewed or correlated data."
+      },
+      {
+       "id": "sql-m09-sargability",
+       "title": "Sargability",
+       "verified": "",
+       "summary": "A predicate is sargable (Search ARGument ABLE) when the engine can use an index seek or partition pruning to evaluate it.",
+       "remember": "Keep the column bare on one side of the predicate; move functions and arithmetic to the constant side, and match data types."
+      },
+      {
+       "id": "sql-m09-parameter-sniffing",
+       "title": "Parameter sniffing",
+       "verified": "",
+       "summary": "SQL Server compiles a stored procedure or parameterised query once and caches the plan, optimised for the parameter values used at first compilation (\"sniffed\").",
+       "remember": "Cached plans fit the first parameter values; with skewed data use recompile hints, Query Store forcing or PSP optimisation (Oracle: adaptive cursor sharing)."
+      },
+      {
+       "id": "sql-m09-partitioning",
+       "title": "Table partitioning",
+       "verified": "",
+       "summary": "Partitioning splits one logical table into physical pieces by a key, usually date: - SQL Server: a partition function defines boundary values and a partition scheme maps partitions to filegroups; tables and indexes are c",
+       "remember": "Partition big tables by date for elimination and sliding-window loads and purges; it is mainly for manageability, not lookups."
+      },
+      {
+       "id": "sql-m09-hints",
+       "title": "Query hints",
+       "verified": "",
+       "summary": "Hints override optimiser decisions: - SQL Server: table hints (WITH (INDEX(ixname)), FORCESEEK), join hints (LOOP, HASH, MERGE), and query hints with OPTION (...) such as RECOMPILE, MAXDOP n, OPTIMIZE FOR, USE HINT('...'",
+       "remember": "Hints override the optimiser for proven problems; they age badly, so prefer statistics, indexing and plan management."
+      }
+     ]
     }
    ]
   },
