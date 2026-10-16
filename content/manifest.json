@@ -1207,6 +1207,92 @@
        "remember": "ADF is Azure's established pipeline and copy service with self-hosted and SSIS runtimes; Fabric Data Factory is its successor for new Fabric-based work."
       }
      ]
+    },
+    {
+     "key": "tools-m02",
+     "num": "02",
+     "name": "Streaming platforms",
+     "file": "content/tools/02-streaming-platforms.md",
+     "lessons": [
+      {
+       "id": "tools-m02-kafka",
+       "title": "Apache Kafka",
+       "verified": "2026-10",
+       "summary": "Apache Kafka is a distributed, durable log for events.",
+       "remember": "Kafka is a replicated, partitioned, replayable log; order holds within a partition and consumer groups scale reading."
+      },
+      {
+       "id": "tools-m02-event-hubs",
+       "title": "Azure Event Hubs",
+       "verified": "2026-10",
+       "summary": "Azure Event Hubs is Azure's managed event ingestion service, with the same core model as Kafka: event hubs (topics) with partitions, consumer groups and retention.",
+       "remember": "Event Hubs is Azure's managed event log with a Kafka-compatible endpoint, sized by tier and throughput units."
+      },
+      {
+       "id": "tools-m02-kinesis",
+       "title": "Amazon Kinesis",
+       "verified": "2026-10",
+       "summary": "AWS's streaming family: - Kinesis Data Streams: a managed, partitioned stream.",
+       "remember": "Kinesis Data Streams is AWS's shard-based event stream, Firehose delivers streams to storage, and managed Flink processes them."
+      },
+      {
+       "id": "tools-m02-pulsar",
+       "title": "Apache Pulsar",
+       "verified": "2026-10",
+       "summary": "Apache Pulsar is a messaging and streaming platform that separates serving from storage: stateless brokers handle clients, while data is stored in Apache BookKeeper nodes as segments.",
+       "remember": "Pulsar separates brokers from BookKeeper storage and adds native multi-tenancy and geo-replication, but has a smaller ecosystem than Kafka."
+      },
+      {
+       "id": "tools-m02-flink-vs-spark-streaming",
+       "title": "Apache Flink vs Spark Structured Streaming",
+       "verified": "2026-10",
+       "summary": "Both are distributed stream processors with event-time windows, watermarks, state and exactly-once checkpoints, but they come from different designs: - Apache Flink processes record by record as a true streaming engine, ",
+       "remember": "Choose Flink for millisecond, stateful event processing; choose Spark Structured Streaming when micro-batch latency is enough and you want one engine for batch and streaming."
+      },
+      {
+       "id": "tools-m02-schema-registry",
+       "title": "Schema registries",
+       "verified": "2026-10",
+       "summary": "A schema registry stores versioned schemas for the messages on a stream.",
+       "remember": "A schema registry versions message schemas and rejects incompatible changes before they break consumers."
+      }
+     ]
+    },
+    {
+     "key": "tools-m03",
+     "num": "03",
+     "name": "Table formats and storage",
+     "file": "content/tools/03-table-formats-and-storage.md",
+     "lessons": [
+      {
+       "id": "tools-m03-columnar-formats",
+       "title": "Parquet and ORC",
+       "verified": "2026-10",
+       "summary": "Columnar file formats store each column's values together instead of each row's values together.",
+       "remember": "Parquet stores columns in row groups with footer statistics, so engines read only needed columns and skip irrelevant chunks."
+      },
+      {
+       "id": "tools-m03-open-table-formats",
+       "title": "Delta Lake, Apache Iceberg and Apache Hudi compared",
+       "verified": "2026-10",
+       "summary": "A table format turns a folder of Parquet files into a table with transactions, schema, history and statistics.",
+       "remember": "Delta, Iceberg and Hudi all add transactions to Parquet; Iceberg is the most engine-neutral, Delta leads in Databricks and Fabric, Hudi targets upserts."
+      },
+      {
+       "id": "tools-m03-object-storage",
+       "title": "Object storage: ADLS, S3 and GCS",
+       "verified": "2026-10",
+       "summary": "Cloud data lakes sit on object storage: virtually unlimited, cheap, durable storage of files (objects) addressed by key.",
+       "remember": "Object storage is the cheap, durable, shared foundation of every lakehouse, but it is not a file system: mind small files, listing and egress."
+      },
+      {
+       "id": "tools-m03-format-interoperability",
+       "title": "Table format interoperability",
+       "verified": "2026-10",
+       "summary": "Because platforms favour different formats, several mechanisms let one table be read as another: - Delta UniForm: a Delta table also writes Iceberg metadata, so Iceberg readers can read it.",
+       "remember": "UniForm, OneLake virtualization, XTable and Iceberg REST catalogs let one copy be read in several formats, with feature and permission caveats."
+      }
+     ]
     }
    ]
   }
