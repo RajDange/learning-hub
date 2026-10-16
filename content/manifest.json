@@ -2686,6 +2686,112 @@
        "remember": "Use only information available at prediction time, split before preprocessing, and treat suspiciously good results as a leakage alarm."
       }
      ]
+    },
+    {
+     "key": "ml-m03",
+     "num": "03",
+     "name": "Stage 2: Classical algorithms",
+     "file": "content/ml/03-classical-algorithms.md",
+     "lessons": [
+      {
+       "id": "ml-m03-linear-regression",
+       "title": "Linear regression",
+       "verified": "",
+       "summary": "Linear regression predicts a number as a weighted sum of features plus an intercept: y = b0 + b1x1 + b2x2 + ....",
+       "remember": "Linear regression fits a weighted sum of features by least squares; it is the transparent baseline every regression model should beat."
+      },
+      {
+       "id": "ml-m03-logistic-regression",
+       "title": "Logistic regression",
+       "verified": "",
+       "summary": "Logistic regression is the linear model for classification.",
+       "remember": "Logistic regression turns a linear score into a probability with the sigmoid; coefficients change the log-odds, and the threshold is a business choice."
+      },
+      {
+       "id": "ml-m03-regularization",
+       "title": "Regularisation: ridge, lasso, elastic net",
+       "verified": "",
+       "summary": "Regularisation adds a penalty for large coefficients to the loss, discouraging overly complex models: - Ridge (L2): penalises the sum of squared coefficients; shrinks all coefficients towards zero, handles correlated fea",
+       "remember": "Regularisation penalises large weights: ridge shrinks them, lasso zeroes some out, and the strength is tuned by cross-validation."
+      },
+      {
+       "id": "ml-m03-knn",
+       "title": "k-nearest neighbours",
+       "verified": "",
+       "summary": "k-nearest neighbours (k-NN) predicts by looking up the k most similar training examples (by a distance such as Euclidean or cosine) and taking a majority vote (classification) or average (regression).",
+       "remember": "k-NN predicts from the k most similar examples; scale features and use approximate indexes at scale."
+      },
+      {
+       "id": "ml-m03-naive-bayes",
+       "title": "Naive Bayes",
+       "verified": "",
+       "summary": "Naive Bayes classifiers apply Bayes' rule to compute the probability of each class given the features, with the \"naive\" assumption that features are independent given the class.",
+       "remember": "Naive Bayes applies Bayes' rule assuming independent features; fast and strong for simple text classification, poorly calibrated."
+      },
+      {
+       "id": "ml-m03-decision-trees",
+       "title": "Decision trees",
+       "verified": "",
+       "summary": "A decision tree splits data with a sequence of yes/no questions on features (\"tenure < 6 months?\", \"plan = basic?\"), choosing at each step the split that best separates the target (by Gini impurity or entropy for classif",
+       "remember": "A decision tree is a learned set of if-then splits; easy to explain, prone to overfitting, and the basis of forests and boosting."
+      },
+      {
+       "id": "ml-m03-random-forests",
+       "title": "Random forests",
+       "verified": "",
+       "summary": "A random forest trains many decision trees, each on a random bootstrap sample of rows (bagging) and considering a random subset of features at each split, then averages their predictions (or takes a majority vote).",
+       "remember": "A random forest averages many trees trained on random rows and features, cutting variance for robust, low-tuning performance."
+      },
+      {
+       "id": "ml-m03-gradient-boosting",
+       "title": "Gradient boosting",
+       "verified": "",
+       "summary": "Gradient boosting builds trees sequentially: each new, small tree is trained to correct the errors (the gradient of the loss) of the ensemble so far, and its contribution is scaled by a learning rate.",
+       "remember": "Gradient boosting adds small trees that fix previous errors; XGBoost, LightGBM and CatBoost are the go-to models for tabular data."
+      },
+      {
+       "id": "ml-m03-svm",
+       "title": "Support vector machines",
+       "verified": "",
+       "summary": "A support vector machine (SVM) finds the boundary between classes with the widest possible margin, defined by the closest training points (the support vectors).",
+       "remember": "SVMs find the widest-margin boundary, with kernels for non-linear cases; good for smaller, high-dimensional data, rarely first choice today."
+      },
+      {
+       "id": "ml-m03-clustering",
+       "title": "Clustering",
+       "verified": "",
+       "summary": "Clustering groups similar items without labels: - k-means: choose k, assign points to the nearest of k centroids, move centroids to the mean, repeat.",
+       "remember": "Clustering finds groups without labels; k-means for round clusters, density methods for odd shapes and noise, and usefulness is the real test."
+      },
+      {
+       "id": "ml-m03-pca",
+       "title": "PCA and dimensionality reduction",
+       "verified": "",
+       "summary": "Principal component analysis (PCA) finds new axes (principal components) that are combinations of the original features, ordered by how much of the data's variance each explains.",
+       "remember": "PCA compresses correlated features into a few components that keep most variance; t-SNE and UMAP are for visualising, not measuring."
+      },
+      {
+       "id": "ml-m03-anomaly-detection",
+       "title": "Anomaly detection",
+       "verified": "",
+       "summary": "Anomaly detection finds unusual records: fraud, equipment faults, data quality problems, security events.",
+       "remember": "Start anomaly detection with simple statistical baselines, add Isolation Forest or similar for multivariate cases, and route alerts to people who can judge them."
+      },
+      {
+       "id": "ml-m03-forecasting",
+       "title": "Time series forecasting",
+       "verified": "",
+       "summary": "Forecasting predicts future values of a series (demand, load, revenue).",
+       "remember": "Beat the seasonal naive baseline, use statistical models for single series and boosted trees with lag features for many, and backtest over time."
+      },
+      {
+       "id": "ml-m03-recommenders",
+       "title": "Recommender basics",
+       "verified": "",
+       "summary": "Recommender systems suggest items (products, content, next actions) to users: - Content-based: recommend items similar to those a user liked, using item attributes or embeddings.",
+       "remember": "Recommenders combine content similarity and collaborative patterns from implicit feedback, handle cold start, and are validated online."
+      }
+     ]
     }
    ]
   },
