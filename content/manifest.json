@@ -1572,6 +1572,121 @@
        "remember": "Snowflake Iceberg tables keep data in open Parquet and Iceberg metadata, managed by Snowflake or an external catalog, readable by other engines."
       }
      ]
+    },
+    {
+     "key": "snowflake-m03",
+     "num": "03",
+     "name": "Performance",
+     "file": "content/snowflake/03-performance.md",
+     "lessons": [
+      {
+       "id": "snowflake-m03-caching-layers",
+       "title": "Caching layers",
+       "verified": "2026-10",
+       "summary": "Snowflake has three caches: - Result cache (cloud services layer): the result of a query is kept for 24 hours (extended each time it is reused, up to 31 days).",
+       "remember": "The result cache returns identical queries free for 24 hours, the warehouse cache keeps recent data local until suspend, and metadata answers simple aggregates."
+      },
+      {
+       "id": "snowflake-m03-clustering",
+       "title": "Clustering keys and automatic clustering",
+       "verified": "2026-10",
+       "summary": "Natural clustering (data stored in load order) works well when queries filter on the load order, typically date.",
+       "remember": "Clustering keys plus Automatic Clustering restore pruning on very large tables, at a continuing serverless and storage cost."
+      },
+      {
+       "id": "snowflake-m03-search-optimization",
+       "title": "Search optimization service",
+       "verified": "2026-10",
+       "summary": "The search optimization service (Enterprise Edition) builds and maintains a persistent search access path for chosen tables or columns.",
+       "remember": "Search optimization accelerates selective point lookups and searches on large tables, at extra storage and maintenance cost."
+      },
+      {
+       "id": "snowflake-m03-query-acceleration",
+       "title": "Query acceleration service",
+       "verified": "2026-10",
+       "summary": "The query acceleration service (QAS) (Enterprise Edition) lets a warehouse offload parts of eligible queries, mainly large scans with selective filters or aggregations, to additional serverless compute.",
+       "remember": "QAS offloads parts of big scan-heavy queries to serverless compute so a warehouse can handle outliers without upsizing."
+      },
+      {
+       "id": "snowflake-m03-warehouse-sizing-multicluster",
+       "title": "Warehouse sizing and multi-cluster warehouses",
+       "verified": "2026-10",
+       "summary": "Two different scaling problems need two different tools: - Scale up (a bigger warehouse size) when single queries are slow, spill to storage or process lots of data.",
+       "remember": "Scale up for heavy single queries, scale out with multi-cluster warehouses for concurrency, and separate warehouses by workload."
+      },
+      {
+       "id": "snowflake-m03-query-profile",
+       "title": "Query profile",
+       "verified": "2026-10",
+       "summary": "The Query Profile in Snowsight shows how a query executed: a graph of operators (TableScan, Filter, Join, Aggregate, Sort) with the time and rows of each, plus statistics.",
+       "remember": "In the Query Profile, check pruning, spilling and exploding joins first; they explain most slow Snowflake queries."
+      }
+     ]
+    },
+    {
+     "key": "snowflake-m04",
+     "num": "04",
+     "name": "Data features",
+     "file": "content/snowflake/04-data-features.md",
+     "lessons": [
+      {
+       "id": "snowflake-m04-variant",
+       "title": "Semi-structured data and VARIANT",
+       "verified": "2026-10",
+       "summary": "Snowflake stores semi-structured data (JSON, Avro, ORC, Parquet, XML) in the VARIANT type, alongside ARRAY and OBJECT.",
+       "remember": "VARIANT stores JSON-like data natively; use path notation and FLATTEN to query it, and promote important fields to typed columns."
+      },
+      {
+       "id": "snowflake-m04-time-travel-fail-safe",
+       "title": "Time Travel and Fail-safe",
+       "verified": "2026-10",
+       "summary": "Snowflake keeps historical data in two stages after changes or drops: - Time Travel: you can query data as it was at a past time or before a statement (SELECT ...",
+       "remember": "Time Travel lets you query and restore past data for up to 90 days; Fail-safe adds 7 days that only Snowflake Support can recover from."
+      },
+      {
+       "id": "snowflake-m04-zero-copy-cloning",
+       "title": "Zero-copy cloning",
+       "verified": "2026-10",
+       "summary": "CREATE TABLE devorders CLONE orders (and the same for schemas and databases) creates a clone instantly, without copying data: the clone initially points to the same micro-partitions as the source.",
+       "remember": "Cloning creates instant copies that share storage until changes diverge, ideal for test environments and snapshots."
+      },
+      {
+       "id": "snowflake-m04-snowpark",
+       "title": "Snowpark",
+       "verified": "2026-10",
+       "summary": "Snowpark lets you write data logic in Python, Java or Scala that runs inside Snowflake: - A DataFrame API (similar to PySpark) that is translated to SQL and executed lazily by warehouses, so data does not leave Snowflake",
+       "remember": "Snowpark runs Python, Java and Scala DataFrames, UDFs and procedures inside Snowflake, so data stays put."
+      }
+     ]
+    },
+    {
+     "key": "snowflake-m05",
+     "num": "05",
+     "name": "Sharing",
+     "file": "content/snowflake/05-sharing.md",
+     "lessons": [
+      {
+       "id": "snowflake-m05-secure-data-sharing",
+       "title": "Secure data sharing",
+       "verified": "2026-10",
+       "summary": "Secure data sharing lets a provider account give other Snowflake accounts read access to live tables, secure views and other objects without copying data.",
+       "remember": "Snowflake shares live data between accounts without copies; consumers query it with their own compute."
+      },
+      {
+       "id": "snowflake-m05-marketplace",
+       "title": "Snowflake Marketplace",
+       "verified": "2026-10",
+       "summary": "The Snowflake Marketplace is a catalogue of listings from data providers (market data, weather, demographics, reference data, enrichment services) and of Snowflake Native Apps, applications that run inside the consumer's",
+       "remember": "The Marketplace delivers third-party data and native apps as live shares and in-account applications."
+      },
+      {
+       "id": "snowflake-m05-clean-rooms",
+       "title": "Data clean rooms",
+       "verified": "2026-10",
+       "summary": "A data clean room lets two or more organisations analyse their combined data without either seeing the other's raw records.",
+       "remember": "A clean room allows joint analysis on combined data while each party's raw records stay hidden, enforced by templates and policies."
+      }
+     ]
     }
    ]
   },
