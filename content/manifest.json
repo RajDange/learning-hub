@@ -256,6 +256,91 @@
        "remember": "Partition on disk by a low-cardinality filter column such as date; too many partitions is worse than none."
       }
      ]
+    },
+    {
+     "key": "pyspark-m07",
+     "num": "07",
+     "name": "Performance and internals",
+     "file": "content/pyspark/07-performance-and-internals.md",
+     "lessons": [
+      {
+       "id": "pyspark-m07-partitions",
+       "title": "Partitions, repartition and coalesce",
+       "verified": "",
+       "summary": "A DataFrame is split into partitions: chunks of rows processed independently, one task per partition.",
+       "remember": "Partitions set parallelism; repartition shuffles to rebalance, coalesce merges cheaply but only downward."
+      },
+      {
+       "id": "pyspark-m07-shuffle",
+       "title": "Shuffle",
+       "verified": "",
+       "summary": "A shuffle redistributes rows across partitions so that rows with the same key end up together.",
+       "remember": "A shuffle moves rows by key across the network between stages; filter and project before it, and avoid the ones you do not need."
+      },
+      {
+       "id": "pyspark-m07-skew",
+       "title": "Data skew",
+       "verified": "",
+       "summary": "Skew means some keys have far more rows than others.",
+       "remember": "Skew is one key with too many rows; check nulls and hot keys, let AQE split joins, broadcast if possible, and salt as a last resort."
+      },
+      {
+       "id": "pyspark-m07-caching",
+       "title": "Caching and persistence",
+       "verified": "",
+       "summary": "Because every action re-runs the plan from the source, a DataFrame used several times is computed several times.",
+       "remember": "Cache only what you reuse, materialise it with an action, and unpersist when done."
+      },
+      {
+       "id": "pyspark-m07-broadcast-joins",
+       "title": "Broadcast joins and join strategies",
+       "verified": "",
+       "summary": "Spark picks a physical join strategy for each join: - Broadcast hash join: the small side is collected and sent to every executor; each task joins its partition of the large side locally.",
+       "remember": "Broadcast the small side to avoid shuffling the big one; sort-merge is the safe default for two large tables."
+      },
+      {
+       "id": "pyspark-m07-aqe",
+       "title": "Adaptive Query Execution",
+       "verified": "",
+       "summary": "Adaptive Query Execution (AQE), on by default since Spark 3.2, re-optimises a query while it runs, using real statistics collected at each shuffle boundary rather than estimates made before the start.",
+       "remember": "AQE re-plans at each shuffle using real sizes: it merges small partitions, switches to broadcast joins, and splits skewed join partitions."
+      },
+      {
+       "id": "pyspark-m07-catalyst-and-tungsten",
+       "title": "Catalyst optimiser and Tungsten engine",
+       "verified": "",
+       "summary": "Every DataFrame or SQL query passes through Catalyst, Spark's optimiser, in four phases: 1.",
+       "remember": "Catalyst rewrites and plans the query, Tungsten executes it with compact memory and generated code."
+      },
+      {
+       "id": "pyspark-m07-explain-plans",
+       "title": "Reading explain plans",
+       "verified": "",
+       "summary": "df.explain(mode) prints the plan Spark will run.",
+       "remember": "Read plans bottom-up and look at scans for pushed filters, Exchanges for shuffles, and join operators for the strategy."
+      },
+      {
+       "id": "pyspark-m07-pruning-and-pushdown",
+       "title": "Partition pruning, column pruning and predicate pushdown",
+       "verified": "",
+       "summary": "The fastest data to process is data you never read.",
+       "remember": "Filter on stored columns, select only what you need, and lay data out so statistics can skip files."
+      },
+      {
+       "id": "pyspark-m07-spill-memory-gc",
+       "title": "Memory, spill and garbage collection",
+       "verified": "",
+       "summary": "Each executor's JVM heap is divided by Spark's unified memory manager into: - Execution memory: buffers for shuffles, joins, sorts and aggregations.",
+       "remember": "Spill means partitions are too big for execution memory; out-of-memory means something could not spill, often skew, collect, broadcast or Python."
+      },
+      {
+       "id": "pyspark-m07-stages-tasks-scheduler",
+       "title": "Jobs, stages, tasks and the Spark UI",
+       "verified": "",
+       "summary": "The vocabulary of Spark execution: - Job: what one action triggers.",
+       "remember": "An action is a job, shuffles split it into stages, each stage runs one task per partition, and the Spark UI shows where time went."
+      }
+     ]
     }
    ]
   },
