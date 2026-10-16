@@ -50,3 +50,17 @@ All nine syllabus files written; validator clean (443 planned lessons, 0 errors)
 - 2026-10-16: sql track complete (48 lessons).
 - 2026-10-16: python track complete (34 lessons).
 - 2026-10-16: ml track complete (50 lessons).
+- 2026-10-16: ai track complete (51 lessons). No model versions are named. EU AI Act changes from the 2026 "Digital Omnibus" come from secondary sources and are marked (verify) in the lesson title.
+
+## 2026-10-16: Final pass and summary
+
+All three phases are complete in one session.
+
+- 443 lessons across nine tracks, every syllabus item written: pyspark 82, fabric 50, tools 52, databricks 38, snowflake 38, sql 48, python 34, ml 50, ai 51.
+- Validator: 0 errors, 0 warnings. No `verified: pending`, no TODO:concept entries (none were needed in the syllabus), every Related id resolves to a written lesson, every lesson has a Related section.
+- Concept-only tracks (fabric, databricks, snowflake, tools) contain no code; their only fenced blocks are Mermaid diagrams.
+- Prose length per lesson ranges from about 130 to 350 words (median about 205), plus snippets and tables.
+- Browser check: all 443 lessons were opened in the running app; every one rendered with its "Remember this" box and Related links, all 25 Mermaid diagrams rendered, and the console showed no errors.
+- Sources: fabric, databricks, snowflake, tools and ai lessons were written from research notes gathered from official documentation (Microsoft Learn, docs.databricks.com, docs.snowflake.com, Apache and vendor docs, standards bodies) on 2026-10-16, and carry `verified: 2026-10`. Where official pages contradicted each other (for example preview versus GA status), the lesson says so instead of choosing.
+- Items most likely to age quickly: product names and preview/GA status in fabric, databricks and snowflake (many renames in 2025-2026), the EU AI Act timeline, and version numbers in tools. Re-verify these first in any refresh.
+- Process note: research for platform tracks ran in parallel background agents while lessons for other tracks were written, so commits are not strictly in track order; each module still has its own commit.
