@@ -84,3 +84,4 @@ Overall: 3 lessons written, 443 planned in syllabus, 0 errors, 2 warnings.
 ## Notes
 
 - 2026-10-16: The app was loaded in a real browser (desktop app browser pane) through `python -m http.server 8000`. Checked: track switcher, sidebar, Markdown sections, Mermaid diagram rendering, "Remember this" highlight, Related links, the "I learned this" toggle and localStorage, and a 375 px phone width with no horizontal scroll. Export/Import were not clicked through (they use a file dialog).
+
