@@ -1472,7 +1472,108 @@
    "key": "snowflake",
    "name": "Snowflake",
    "planned": 38,
-   "modules": []
+   "modules": [
+    {
+     "key": "snowflake-m01",
+     "num": "01",
+     "name": "Architecture",
+     "file": "content/snowflake/01-architecture.md",
+     "lessons": [
+      {
+       "id": "snowflake-m01-three-layer-architecture",
+       "title": "Storage, compute and cloud services",
+       "verified": "2026-10",
+       "summary": "Snowflake is a fully managed SaaS data platform built from three independent layers: 1.",
+       "remember": "Snowflake separates storage, compute warehouses and a cloud services brain, so many workloads share data without competing."
+      },
+      {
+       "id": "snowflake-m01-virtual-warehouses",
+       "title": "Virtual warehouses",
+       "verified": "2026-10",
+       "summary": "A virtual warehouse is a named compute cluster.",
+       "remember": "A virtual warehouse is per-second-billed compute that doubles in size and credits per step and suspends when idle."
+      },
+      {
+       "id": "snowflake-m01-micro-partitions",
+       "title": "Micro-partitions",
+       "verified": "2026-10",
+       "summary": "Snowflake automatically divides every table into micro-partitions: immutable, columnar storage units holding about 50 to 500 MB of uncompressed data, created in the order data is inserted or loaded.",
+       "remember": "Snowflake splits tables into small immutable micro-partitions with min and max metadata, and skips those that cannot match a filter."
+      },
+      {
+       "id": "snowflake-m01-editions",
+       "title": "Editions",
+       "verified": "2026-10",
+       "summary": "Snowflake is sold in editions; each includes everything in the one before: - Standard: core platform, Time Travel up to 1 day, Fail-safe, secure data sharing.",
+       "remember": "Enterprise adds multi-cluster, long Time Travel and masking and row policies; Business Critical adds private connectivity, customer keys and failover."
+      },
+      {
+       "id": "snowflake-m01-credits",
+       "title": "Credits and billing",
+       "verified": "2026-10",
+       "summary": "Snowflake bills in credits (with a price per credit set by edition, region and contract) plus storage and data transfer: - Warehouse compute: credits per hour by size, billed per second (60-second minimum per start).",
+       "remember": "Snowflake bills credits for warehouses and serverless features, plus storage and egress; serverless features are the cost most often overlooked."
+      }
+     ]
+    },
+    {
+     "key": "snowflake-m02",
+     "num": "02",
+     "name": "Loading and pipelines",
+     "file": "content/snowflake/02-loading-and-pipelines.md",
+     "lessons": [
+      {
+       "id": "snowflake-m02-stages-and-copy",
+       "title": "Stages and COPY INTO",
+       "verified": "2026-10",
+       "summary": "A stage is a location of files Snowflake can load from or unload to: - Internal stages: storage managed by Snowflake: a per-user stage (@~), a per-table stage (@%table), or named internal stages.",
+       "remember": "Stages point at files and COPY INTO bulk-loads them in parallel, remembering loaded files for 64 days."
+      },
+      {
+       "id": "snowflake-m02-snowpipe",
+       "title": "Snowpipe",
+       "verified": "2026-10",
+       "summary": "Snowpipe loads files continuously as they arrive.",
+       "remember": "Snowpipe auto-ingests new files from cloud storage with serverless COPY, billed per GB."
+      },
+      {
+       "id": "snowflake-m02-snowpipe-streaming",
+       "title": "Snowpipe Streaming",
+       "verified": "2026-10",
+       "summary": "Snowpipe Streaming writes rows directly into Snowflake tables through an SDK or REST API, without staging files first.",
+       "remember": "Snowpipe Streaming writes rows straight into tables with seconds of latency, from SDKs, REST or the Kafka connector."
+      },
+      {
+       "id": "snowflake-m02-streams-tasks",
+       "title": "Streams and tasks",
+       "verified": "2026-10",
+       "summary": "Two building blocks for in-database pipelines: - A stream records changes to a table (or view, dynamic table or Iceberg table) since the stream was last consumed.",
+       "remember": "Streams track changed rows since last consumption, and tasks run SQL on schedules or when streams have data."
+      },
+      {
+       "id": "snowflake-m02-dynamic-tables",
+       "title": "Dynamic tables",
+       "verified": "2026-10",
+       "summary": "A dynamic table is defined by a query and a target lag (for example TARGETLAG = '10 minutes', minimum 60 seconds, or DOWNSTREAM).",
+       "remember": "A dynamic table is a SQL query plus a target lag; Snowflake keeps it fresh, incrementally where possible."
+      },
+      {
+       "id": "snowflake-m02-external-tables",
+       "title": "External tables",
+       "verified": "2026-10",
+       "summary": "An external table lets Snowflake query files in an external stage (S3, Azure, GCS) without loading them.",
+       "remember": "External tables query lake files in place, read-only and slower; Iceberg tables are the modern choice for shared lake data."
+      },
+      {
+       "id": "snowflake-m02-iceberg-tables",
+       "title": "Apache Iceberg tables in Snowflake",
+       "verified": "2026-10",
+       "summary": "Iceberg tables store data as Parquet files with Iceberg metadata in storage you can choose, so other engines (Spark, Trino, Flink, DuckDB) can read the same tables.",
+       "remember": "Snowflake Iceberg tables keep data in open Parquet and Iceberg metadata, managed by Snowflake or an external catalog, readable by other engines."
+      }
+     ]
+    }
+   ]
   },
   {
    "key": "sql",
