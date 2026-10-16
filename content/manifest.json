@@ -48,6 +48,99 @@
        "remember": "Spark splits the DAG into stages at shuffles, and uses lineage to recompute lost partitions instead of keeping copies."
       }
      ]
+    },
+    {
+     "key": "pyspark-m02",
+     "num": "02",
+     "name": "DataFrame basics",
+     "file": "content/pyspark/02-dataframe-basics.md",
+     "lessons": [
+      {
+       "id": "pyspark-m02-schema-and-types",
+       "title": "Schemas and data types",
+       "verified": "",
+       "summary": "Every DataFrame has a schema: an ordered list of column names, types and nullability, held as a StructType of StructFields.",
+       "remember": "Declare schemas for text sources and use decimals for money; inference is a convenience, not a contract."
+      },
+      {
+       "id": "pyspark-m02-columns-and-expressions",
+       "title": "Columns, expressions, select and filter",
+       "verified": "",
+       "summary": "DataFrame code is built from column expressions.",
+       "remember": "A column is an expression, not data; build logic from expressions so Spark can optimise it."
+      },
+      {
+       "id": "pyspark-m02-nulls",
+       "title": "Working with nulls",
+       "verified": "",
+       "summary": "Spark SQL follows SQL's null rules: any comparison with null gives null, and a filter keeps only rows where the condition is true.",
+       "remember": "Null is \"unknown\", so comparisons with it are never true; test for it explicitly and use null-safe equality where two unknowns should match."
+      },
+      {
+       "id": "pyspark-m02-sort-distinct-sample",
+       "title": "Sorting, distinct, limit and sampling",
+       "verified": "",
+       "summary": "Four everyday operations with very different costs: - orderBy / sort produces a total order across all partitions.",
+       "remember": "Global sorts and distincts shuffle everything; ask whether you need them before you write them."
+      }
+     ]
+    },
+    {
+     "key": "pyspark-m03",
+     "num": "03",
+     "name": "Transformations",
+     "file": "content/pyspark/03-transformations.md",
+     "lessons": [
+      {
+       "id": "pyspark-m03-groupby-aggregation",
+       "title": "groupBy, aggregation, rollup and cube",
+       "verified": "",
+       "summary": "groupBy(keys).agg(...) collapses rows with the same key into one row and computes aggregate expressions: sum, count, avg, min, max, countDistinct, collectlist, first, percentileapprox and many more.",
+       "remember": "groupBy shuffles once and aggregates partially first; rollup and cube add subtotal rows marked by grouping()."
+      },
+      {
+       "id": "pyspark-m03-joins",
+       "title": "Joins in Spark",
+       "verified": "",
+       "summary": "df.join(other, on, how) combines two DataFrames.",
+       "remember": "Join on column names to avoid duplicate keys, use leftsemi and leftanti for existence checks, and watch for key duplication."
+      },
+      {
+       "id": "pyspark-m03-union",
+       "title": "Union and set operations",
+       "verified": "",
+       "summary": "- union(other) appends rows by position.",
+       "remember": "Use unionByName, not union, unless you have checked column order yourself."
+      },
+      {
+       "id": "pyspark-m03-pivot-unpivot",
+       "title": "Pivot and unpivot",
+       "verified": "",
+       "summary": "Pivot turns distinct values of one column into new columns, with an aggregate in each cell: groupBy(\"product\").pivot(\"month\").sum(\"qty\").",
+       "remember": "Pivot with an explicit values list; unpivot wide legacy tables into rows early."
+      },
+      {
+       "id": "pyspark-m03-explode-nested",
+       "title": "Explode and nested data",
+       "verified": "",
+       "summary": "JSON, Avro and API data often contain arrays and nested structs.",
+       "remember": "explode turns array elements into rows; use explodeouter to keep empty ones and never explode two arrays blindly."
+      },
+      {
+       "id": "pyspark-m03-window-functions",
+       "title": "Window functions in Spark",
+       "verified": "",
+       "summary": "A window function computes a value for each row from a window of related rows, without collapsing them like groupBy does.",
+       "remember": "Windows compute per-row results over related rows; always state the frame when you mean rows, and partition by a key."
+      },
+      {
+       "id": "pyspark-m03-deduplication",
+       "title": "Deduplication patterns",
+       "verified": "",
+       "summary": "Two kinds of duplicates need two tools: - Exact or key duplicates where any copy will do: dropDuplicates(\"key\") keeps one arbitrary row per key.",
+       "remember": "dropDuplicates keeps any copy; when one copy must win, rank with rownumber and a full tie-breaking order."
+      }
+     ]
     }
    ]
   },
