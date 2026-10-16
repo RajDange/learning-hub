@@ -2392,6 +2392,71 @@
        "remember": "Polars is a fast, lazy, expression-based DataFrame library; pandas has the broadest ecosystem."
       }
      ]
+    },
+    {
+     "key": "python-m05",
+     "num": "05",
+     "name": "Visualisation",
+     "file": "content/python/05-visualisation.md",
+     "lessons": [
+      {
+       "id": "python-m05-matplotlib-seaborn",
+       "title": "matplotlib and seaborn",
+       "verified": "",
+       "summary": "- matplotlib is Python's foundational plotting library.",
+       "remember": "matplotlib draws anything with full control; seaborn makes statistical plots from DataFrames quickly on top of it."
+      },
+      {
+       "id": "python-m05-plotly",
+       "title": "Plotly",
+       "verified": "",
+       "summary": "Plotly produces interactive charts (hover, zoom, pan, toggle series) rendered in the browser with JavaScript.",
+       "remember": "Plotly makes interactive browser charts from DataFrames, and Dash or Streamlit turn them into data apps."
+      },
+      {
+       "id": "python-m05-choosing-a-library",
+       "title": "Choosing a visualisation library",
+       "verified": "",
+       "summary": "Pick the tool by audience and lifetime of the chart: Need Good choice ------ Quick look during analysis pandas .plot(), seaborn Static chart for a document or paper matplotlib, seaborn Interactive exploration in a notebo",
+       "remember": "Use Python libraries for analysis and small apps, and BI tools for governed reporting used by many people."
+      }
+     ]
+    },
+    {
+     "key": "python-m06",
+     "num": "06",
+     "name": "Data access",
+     "file": "content/python/06-data-access.md",
+     "lessons": [
+      {
+       "id": "python-m06-files-formats",
+       "title": "Files and formats from Python",
+       "verified": "",
+       "summary": "Python reads and writes every common data format: - CSV: pandas.readcsv / polars.readcsv; the standard library csv module for streaming rows.",
+       "remember": "pandas, Polars, pyarrow and DuckDB read every format; fsspec reaches cloud storage, and delta-rs and pyiceberg read lakehouse tables without Spark."
+      },
+      {
+       "id": "python-m06-rest-apis",
+       "title": "Calling REST APIs",
+       "verified": "",
+       "summary": "Many sources are SaaS applications exposing REST APIs.",
+       "remember": "A good API extractor sets timeouts, handles auth, pages through cursors, backs off on 429s, extracts incrementally and lands raw JSON first."
+      },
+      {
+       "id": "python-m06-sqlalchemy",
+       "title": "SQL from Python",
+       "verified": "",
+       "summary": "Python talks to databases through DB-API drivers: pyodbc or mssql-python for SQL Server, oracledb for Oracle, psycopg for PostgreSQL, snowflake-connector-python, databricks-sql-connector.",
+       "remember": "Use DB-API drivers with bound parameters, SQLAlchemy for engines and portability, and bulk tools rather than tosql for large loads."
+      },
+      {
+       "id": "python-m06-eda-workflow",
+       "title": "Cleaning and EDA workflow",
+       "verified": "",
+       "summary": "Exploratory data analysis (EDA) is a repeatable routine to understand a new dataset before building on it: 1.",
+       "remember": "Check shape, keys, missing values, distributions, categories and relationships, then turn findings into coded cleaning steps and quality rules."
+      }
+     ]
     }
    ]
   },
