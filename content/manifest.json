@@ -1,0 +1,108 @@
+{
+ "generated_by": "tools/validate.py",
+ "tracks": [
+  {
+   "key": "pyspark",
+   "name": "PySpark",
+   "planned": 0,
+   "modules": [
+    {
+     "key": "pyspark-m01",
+     "num": "01",
+     "name": "Foundations",
+     "file": "content/pyspark/01-foundations.md",
+     "lessons": [
+      {
+       "id": "pyspark-m01-lazy-evaluation",
+       "title": "Lazy evaluation (sample)",
+       "verified": "",
+       "summary": "Spark does not run a transformation when you write it.",
+       "remember": "Transformations build a plan; only actions run it."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "fabric",
+   "name": "Microsoft Fabric",
+   "planned": 0,
+   "modules": [
+    {
+     "key": "fabric-m01",
+     "num": "01",
+     "name": "Fundamentals",
+     "file": "content/fabric/01-fundamentals.md",
+     "lessons": [
+      {
+       "id": "fabric-m01-onelake",
+       "title": "OneLake (sample)",
+       "verified": "pending",
+       "summary": "OneLake is the single logical data lake that comes with every Fabric tenant.",
+       "remember": "OneLake is one lake per tenant, shared by every Fabric workload."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "databricks",
+   "name": "Databricks",
+   "planned": 0,
+   "modules": []
+  },
+  {
+   "key": "snowflake",
+   "name": "Snowflake",
+   "planned": 0,
+   "modules": []
+  },
+  {
+   "key": "sql",
+   "name": "SQL",
+   "planned": 0,
+   "modules": []
+  },
+  {
+   "key": "python",
+   "name": "Python",
+   "planned": 0,
+   "modules": []
+  },
+  {
+   "key": "ml",
+   "name": "Machine Learning",
+   "planned": 0,
+   "modules": []
+  },
+  {
+   "key": "ai",
+   "name": "AI",
+   "planned": 0,
+   "modules": []
+  },
+  {
+   "key": "tools",
+   "name": "Tools and Technologies Landscape",
+   "planned": 0,
+   "modules": [
+    {
+     "key": "tools-m01",
+     "num": "01",
+     "name": "Ingestion and cdc",
+     "file": "content/tools/01-ingestion-and-cdc.md",
+     "lessons": [
+      {
+       "id": "tools-m01-ingestion-styles",
+       "title": "Batch, CDC and streaming ingestion (sample)",
+       "verified": "pending",
+       "summary": "There are three common ways to move data from source systems into an analytics platform: periodic batch copies, change data capture (CDC), and event streaming.",
+       "remember": "Batch copies snapshots, CDC copies changes, streaming copies events."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "planned": {}
+}

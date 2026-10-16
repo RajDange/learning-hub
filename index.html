@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Hub</title>
+  <meta name="description" content="A personal map of data and AI tools and technologies.">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <a class="skip-link" href="#lesson">Skip to lesson</a>
+
+  <header class="site-header">
+    <div class="brand-row">
+      <button class="icon-button sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false" title="Show contents">
+        <span aria-hidden="true">☰</span><span class="visually-hidden">Contents</span>
+      </button>
+      <a class="brand" href="#" id="brandLink">Learning Hub</a>
+      <div class="header-actions">
+        <button class="text-button" id="exportBtn" type="button">Export progress</button>
+        <button class="text-button" id="importBtn" type="button">Import progress</button>
+        <input type="file" id="importFile" accept="application/json,.json" hidden>
+      </div>
+    </div>
+    <nav class="track-switcher" id="trackSwitcher" aria-label="Tracks"></nav>
+    <div class="track-progress" id="trackProgress" aria-live="polite">
+      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="progressBar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <span class="progress-label" id="progressLabel"></span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="Lessons">
+      <div class="sidebar-tools">
+        <label class="visually-hidden" for="search">Search all tracks</label>
+        <input type="search" id="search" placeholder="Search all tracks" autocomplete="off">
+        <div class="filter" role="radiogroup" aria-label="Filter lessons">
+          <label><input type="radio" name="filter" value="all" checked> All</label>
+          <label><input type="radio" name="filter" value="todo"> Not learned</label>
+          <label><input type="radio" name="filter" value="done"> Learned</label>
+        </div>
+      </div>
+      <div class="sidebar-list" id="sidebarList"></div>
+    </aside>
+    <div class="scrim" id="scrim" hidden></div>
+
+    <main class="main" id="lesson" tabindex="-1">
+      <div class="loading">Loading…</div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
