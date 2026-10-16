@@ -1472,6 +1472,92 @@
        "remember": "A data contract is an enforced, versioned agreement on schema, quality and ownership between producer and consumers."
       }
      ]
+    },
+    {
+     "key": "tools-m08",
+     "num": "08",
+     "name": "Serving, OLAP and BI",
+     "file": "content/tools/08-serving-olap-bi.md",
+     "lessons": [
+      {
+       "id": "tools-m08-clickhouse",
+       "title": "ClickHouse",
+       "verified": "2026-10",
+       "summary": "ClickHouse is an open-source (Apache 2.0) column-oriented OLAP database built for very fast aggregations over large volumes of event-style data.",
+       "remember": "ClickHouse is a columnar OLAP database whose sorted MergeTree tables make aggregations over billions of events fast."
+      },
+      {
+       "id": "tools-m08-druid-pinot",
+       "title": "Apache Druid and Apache Pinot",
+       "verified": "2026-10",
+       "summary": "Two open-source real-time OLAP stores built for low-latency queries on fresh event data, often directly from Kafka: - Apache Druid: ingests streams (Kafka, Kinesis) and batches into time-partitioned segments with indexes",
+       "remember": "Druid and Pinot serve fresh event data to many concurrent users with millisecond latency; Pinot leans to user-facing analytics."
+      },
+      {
+       "id": "tools-m08-power-bi",
+       "title": "Power BI",
+       "verified": "2026-10",
+       "summary": "Power BI is Microsoft's business intelligence tool: - Power BI Desktop (free, Windows) to model data and build reports.",
+       "remember": "Power BI pairs a strong semantic model engine with Microsoft's ecosystem, and inside Fabric reads OneLake directly."
+      },
+      {
+       "id": "tools-m08-tableau",
+       "title": "Tableau",
+       "verified": "2026-10",
+       "summary": "Tableau is a visual analytics platform, part of Salesforce since 2019.",
+       "remember": "Tableau is Salesforce's visual analytics platform, strongest at exploration, with Tableau Next adding semantics and AI agents."
+      },
+      {
+       "id": "tools-m08-semantic-layers",
+       "title": "Semantic layers and metrics stores",
+       "verified": "2026-10",
+       "summary": "A semantic layer defines business concepts (metrics such as revenue or active customers, dimensions, joins, filters) once, in one place, and exposes them to every consumer: BI tools, notebooks, applications and, increasi",
+       "remember": "A semantic layer defines metrics once for every tool and for AI; it lives in the BI tool, the platform, or a universal layer."
+      }
+     ]
+    },
+    {
+     "key": "tools-m09",
+     "num": "09",
+     "name": "Infrastructure and DevOps",
+     "file": "content/tools/09-infrastructure-and-devops.md",
+     "lessons": [
+      {
+       "id": "tools-m09-docker",
+       "title": "Docker and containers",
+       "verified": "2026-10",
+       "summary": "A container packages an application with its dependencies (Python version, libraries, system packages, configuration) so it runs the same everywhere.",
+       "remember": "A container image packages code with its dependencies so the tested artefact is exactly what runs."
+      },
+      {
+       "id": "tools-m09-kubernetes",
+       "title": "Kubernetes",
+       "verified": "2026-10",
+       "summary": "Kubernetes orchestrates containers across a cluster of machines.",
+       "remember": "Kubernetes runs and scales containers declaratively across a cluster; powerful for data services, but it needs a team to operate."
+      },
+      {
+       "id": "tools-m09-terraform",
+       "title": "Terraform and infrastructure as code",
+       "verified": "2026-10",
+       "summary": "Infrastructure as code (IaC) describes cloud resources (storage accounts, networks, Databricks workspaces, Fabric capacities, Snowflake warehouses, permissions) in files kept in Git, and tools create or update the real r",
+       "remember": "Terraform declares infrastructure in code, plans changes against stored state and applies them; keep state safe and avoid manual drift."
+      },
+      {
+       "id": "tools-m09-cicd",
+       "title": "CI/CD for data platforms",
+       "verified": "2026-10",
+       "summary": "CI/CD automates checking and deploying changes.",
+       "remember": "CI tests every change and CD promotes the same artefact through environments with approvals, using each platform's deployment tooling."
+      },
+      {
+       "id": "tools-m09-secrets-identity",
+       "title": "Secrets and identity",
+       "verified": "2026-10",
+       "summary": "Pipelines need to authenticate to databases, storage and APIs.",
+       "remember": "Prefer managed identities and federation over stored secrets; keep unavoidable secrets in a vault and grant least privilege."
+      }
+     ]
     }
    ]
   }
