@@ -3071,6 +3071,92 @@
        "remember": "Use low temperature for consistent extraction, cap output tokens, and use reasoning effort only where the task needs it."
       }
      ]
+    },
+    {
+     "key": "ai-m04",
+     "num": "04",
+     "name": "Using LLMs",
+     "file": "content/ai/04-using-llms.md",
+     "lessons": [
+      {
+       "id": "ai-m04-prompting",
+       "title": "Prompting",
+       "verified": "2026-10",
+       "summary": "A prompt is everything the model receives: a system prompt (role, rules, output format), the user's request, and any supplied context.",
+       "remember": "Be specific, give context and examples, separate instructions from data, and measure prompt changes against a test set."
+      },
+      {
+       "id": "ai-m04-structured-outputs",
+       "title": "Structured outputs",
+       "verified": "2026-10",
+       "summary": "Data pipelines need machine-readable output, not prose.",
+       "remember": "Structured outputs guarantee schema-valid JSON via constrained decoding; still validate values and allow nulls for missing information."
+      },
+      {
+       "id": "ai-m04-tool-calling",
+       "title": "Tool and function calling",
+       "verified": "2026-10",
+       "summary": "Tool calling (function calling) lets a model use your code.",
+       "remember": "With tool calling, the model proposes a function call and your code runs it and returns the result; you control permissions."
+      },
+      {
+       "id": "ai-m04-cost-latency",
+       "title": "Cost and latency",
+       "verified": "2026-10",
+       "summary": "LLM cost is mostly tokens: price per million input tokens plus (usually higher) price per million output tokens, including hidden reasoning tokens.",
+       "remember": "Cost and latency scale with tokens; right-size the model, cache static prompt prefixes, batch what can wait, and trim context and output."
+      }
+     ]
+    },
+    {
+     "key": "ai-m05",
+     "num": "05",
+     "name": "Retrieval-augmented generation",
+     "file": "content/ai/05-rag.md",
+     "lessons": [
+      {
+       "id": "ai-m05-rag-overview",
+       "title": "RAG: retrieval-augmented generation",
+       "verified": "2026-10",
+       "summary": "Retrieval-augmented generation (RAG) answers questions using your own documents.",
+       "remember": "RAG retrieves relevant chunks of your documents into the prompt so the model answers from them with citations; retrieval quality decides answer quality."
+      },
+      {
+       "id": "ai-m05-chunking",
+       "title": "Chunking and document preparation",
+       "verified": "2026-10",
+       "summary": "Before retrieval, documents must be parsed and chunked: - Parsing: extract clean text and structure from PDFs, Word, HTML, slides and scans: headings, tables, lists, page numbers.",
+       "remember": "Parse documents carefully, chunk along their structure, attach rich metadata, and add context to chunks so each can stand alone."
+      },
+      {
+       "id": "ai-m05-vector-search",
+       "title": "Vector search and indexes",
+       "verified": "2026-10",
+       "summary": "Vector search finds the chunks whose embeddings are nearest to the query's embedding.",
+       "remember": "Vector search uses approximate indexes such as HNSW to find semantically similar chunks fast, with metadata filters for scope and permissions."
+      },
+      {
+       "id": "ai-m05-hybrid-search",
+       "title": "Hybrid search",
+       "verified": "2026-10",
+       "summary": "Hybrid search runs two retrievers and merges their results: - Keyword (lexical) search, typically BM25: scores documents by matching terms, weighted by rarity.",
+       "remember": "Combine BM25 keyword search with vector search, merge with reciprocal rank fusion, and you catch both exact terms and meaning."
+      },
+      {
+       "id": "ai-m05-reranking",
+       "title": "Reranking",
+       "verified": "2026-10",
+       "summary": "Retrievers are built for speed: they encode query and documents separately (a bi-encoder) and compare vectors.",
+       "remember": "Retrieve broadly and cheaply, then rerank candidates with a cross-encoder so the best passages reach the model."
+      },
+      {
+       "id": "ai-m05-rag-evaluation",
+       "title": "Evaluating RAG",
+       "verified": "2026-10",
+       "summary": "Evaluate the two halves of RAG separately and together: Retrieval - Recall at k: is a relevant chunk among the top k?",
+       "remember": "Measure retrieval (recall, ranking) and generation (faithfulness, relevance, correctness) on a fixed question set, using LLM judges checked against humans."
+      }
+     ]
     }
    ]
   },
