@@ -141,6 +141,121 @@
        "remember": "dropDuplicates keeps any copy; when one copy must win, rank with rownumber and a full tie-breaking order."
       }
      ]
+    },
+    {
+     "key": "pyspark-m04",
+     "num": "04",
+     "name": "Functions and custom logic",
+     "file": "content/pyspark/04-functions-and-custom-logic.md",
+     "lessons": [
+      {
+       "id": "pyspark-m04-builtin-functions",
+       "title": "Built-in functions: string, date, math, conditional",
+       "verified": "",
+       "summary": "pyspark.sql.functions (imported as F) holds hundreds of functions that run inside the JVM: - String: upper, trim, concatws, substring, split, regexpreplace, lpad, formatstring.",
+       "remember": "Reach for pyspark.sql.functions first; a built-in is almost always faster than anything you write in Python."
+      },
+      {
+       "id": "pyspark-m04-complex-types",
+       "title": "Arrays, maps, structs, JSON and regex",
+       "verified": "",
+       "summary": "Spark handles nested data natively: - Structs group fields: F.struct(...) builds one, col(\"a.b\") reads one.",
+       "remember": "Parse JSON once with a schema, and use higher-order functions to work inside arrays without exploding them."
+      },
+      {
+       "id": "pyspark-m04-udfs",
+       "title": "Python UDFs",
+       "verified": "",
+       "summary": "A user-defined function (UDF) runs your own Python function on each row.",
+       "remember": "A Python UDF is a black box that ships every row to Python; use it only when no built-in or pandas UDF fits."
+      },
+      {
+       "id": "pyspark-m04-pandas-udfs-arrow",
+       "title": "pandas UDFs and Apache Arrow",
+       "verified": "",
+       "summary": "A pandas UDF (vectorised UDF) receives whole batches of rows as pandas Series or DataFrames instead of one row at a time.",
+       "remember": "pandas UDFs move data in Arrow batches, so Python libraries can run on Spark at near-vectorised speed."
+      },
+      {
+       "id": "pyspark-m04-broadcast-and-accumulators",
+       "title": "Broadcast variables and accumulators",
+       "verified": "",
+       "summary": "Two shared-variable tools from the RDD era that still matter: - A broadcast variable sends a read-only value (a lookup dictionary, a small model) to every executor once, instead of with every task.",
+       "remember": "Broadcast ships read-only data once per executor; accumulators in transformations can over-count on retries, so do not use them for exact business numbers."
+      }
+     ]
+    },
+    {
+     "key": "pyspark-m05",
+     "num": "05",
+     "name": "Spark SQL",
+     "file": "content/pyspark/05-spark-sql.md",
+     "lessons": [
+      {
+       "id": "pyspark-m05-sql-on-dataframes",
+       "title": "Spark SQL, views, subqueries and CTEs",
+       "verified": "",
+       "summary": "Spark SQL and the DataFrame API are two front ends to the same engine.",
+       "remember": "SQL and DataFrames compile to the same plan, so pick whichever reads better for each step."
+      },
+      {
+       "id": "pyspark-m05-catalog-tables",
+       "title": "Catalog, databases and tables",
+       "verified": "",
+       "summary": "Spark keeps table definitions in a catalog (metastore).",
+       "remember": "Managed tables let the catalog own the files; external tables only point at them, and modern catalogs add a third naming level."
+      },
+      {
+       "id": "pyspark-m05-hints",
+       "title": "Query hints",
+       "verified": "",
+       "summary": "Hints tell the optimiser to choose a plan it might not choose itself.",
+       "remember": "Hints override the optimiser; use them for proven problems and revisit them when data volumes change."
+      }
+     ]
+    },
+    {
+     "key": "pyspark-m06",
+     "num": "06",
+     "name": "Input and output",
+     "file": "content/pyspark/06-input-output.md",
+     "lessons": [
+      {
+       "id": "pyspark-m06-read-write-basics",
+       "title": "Reading and writing data, save modes",
+       "verified": "",
+       "summary": "spark.read returns a DataFrameReader: you set format, options and an optional schema, then load a path or table.",
+       "remember": "Readers set format, options and schema; writers set format and mode, and only a table format makes overwrite safe."
+      },
+      {
+       "id": "pyspark-m06-file-formats",
+       "title": "File formats: CSV, JSON, Parquet, ORC, Avro, and compression",
+       "verified": "",
+       "summary": "- CSV: text, row-based, no types, many dialects.",
+       "remember": "Land raw data in whatever the source gives you, but store analytical data in a columnar format, usually Parquet under a table format."
+      },
+      {
+       "id": "pyspark-m06-xml-and-excel",
+       "title": "XML and Excel files",
+       "verified": "",
+       "summary": "Legacy systems often hand over XML or spreadsheets.",
+       "remember": "XML is readable natively in Spark 4 (via spark-xml before), while Excel is a small-data, driver-side job."
+      },
+      {
+       "id": "pyspark-m06-jdbc",
+       "title": "JDBC reads and writes",
+       "verified": "",
+       "summary": "Spark reads from and writes to relational databases through JDBC.",
+       "remember": "A JDBC read is single-threaded until you give it a partition column or predicates, and every partition is another connection to the source."
+      },
+      {
+       "id": "pyspark-m06-partitioning-bucketing",
+       "title": "Partitioning and bucketing on disk",
+       "verified": "",
+       "summary": "Partitioning on disk (df.write.partitionBy(\"country\", \"loaddate\")) writes one folder per value: .../country=DE/loaddate=2025-10-15/.",
+       "remember": "Partition on disk by a low-cardinality filter column such as date; too many partitions is worse than none."
+      }
+     ]
     }
    ]
   },
