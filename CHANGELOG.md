@@ -45,3 +45,4 @@ All nine syllabus files written; validator clean (443 planned lessons, 0 errors)
 - 2026-10-16: pyspark track complete (82 lessons). Spark 4.1 real-time mode added to streaming lessons after tools research confirmed it.
 - 2026-10-16: tools m01 written; it replaced the tools sample lesson (all three samples are now gone).
 - 2026-10-16: tools track complete (52 lessons).
+- 2026-10-16: databricks track complete (38 lessons). Many 2025-2026 renames (Lakeflow Jobs, Lakeflow Spark Declarative Pipelines, Declarative Automation Bundles, OpenSharing, AI Search, Genie agents) are given with their old names; syllabus titles keep the original ids.

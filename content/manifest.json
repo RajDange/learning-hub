@@ -1343,6 +1343,128 @@
        "remember": "Genie answers business questions by generating SQL over a curated, governed set of tables and metrics; curation decides accuracy."
       }
      ]
+    },
+    {
+     "key": "databricks-m06",
+     "num": "06",
+     "name": "ML and AI",
+     "file": "content/databricks/06-ml-and-ai.md",
+     "lessons": [
+      {
+       "id": "databricks-m06-mlflow-on-databricks",
+       "title": "MLflow on Databricks",
+       "verified": "2026-10",
+       "summary": "Databricks runs a managed MLflow (MLflow 3 since mid-2025) integrated with the workspace and Unity Catalog: - Experiments track training runs from notebooks and jobs, with autologging for common libraries.",
+       "remember": "On Databricks, MLflow tracks experiments and registers models in Unity Catalog with versions, aliases, permissions and lineage."
+      },
+      {
+       "id": "databricks-m06-feature-store",
+       "title": "Feature engineering in Unity Catalog",
+       "verified": "2026-10",
+       "summary": "In Databricks, any Delta table with a primary key in Unity Catalog can be a feature table.",
+       "remember": "On Databricks, feature tables are UC Delta tables with primary keys, joined point-in-time for training and published to a Lakebase-backed online store for serving."
+      },
+      {
+       "id": "databricks-m06-model-serving",
+       "title": "Model serving",
+       "verified": "2026-10",
+       "summary": "Model Serving deploys models as serverless REST endpoints that scale automatically (including to zero).",
+       "remember": "Model Serving hosts custom models, foundation models and external model proxies as serverless endpoints, governed through a gateway."
+      },
+      {
+       "id": "databricks-m06-vector-search",
+       "title": "Vector search",
+       "verified": "2026-10",
+       "summary": "Databricks' vector search (renamed AI Search in June 2026) maintains vector indexes over Unity Catalog data: - Delta Sync indexes stay in sync with a source Delta table (which needs change data feed).",
+       "remember": "Databricks vector search (now AI Search) keeps vector and hybrid indexes in sync with Delta tables for RAG."
+      },
+      {
+       "id": "databricks-m06-agent-tooling",
+       "title": "Agent tooling",
+       "verified": "2026-10",
+       "summary": "Databricks groups its agent capabilities under Agent Bricks (names changed repeatedly in 2025-2026; earlier terms include Mosaic AI Agent Framework).",
+       "remember": "Databricks agent tooling (Agent Bricks) builds agents on Unity Catalog tools, evaluates them with MLflow traces and judges, and serves them through Model Serving."
+      }
+     ]
+    },
+    {
+     "key": "databricks-m07",
+     "num": "07",
+     "name": "DevOps and operations",
+     "file": "content/databricks/07-devops-and-operations.md",
+     "lessons": [
+      {
+       "id": "databricks-m07-asset-bundles",
+       "title": "Databricks Asset Bundles",
+       "verified": "2026-10",
+       "summary": "Bundles (introduced as Databricks Asset Bundles; renamed Declarative Automation Bundles in March 2026, with the bundle command and \"DAB\" abbreviation unchanged) define a Databricks project as code.",
+       "remember": "Bundles declare a project's jobs, pipelines and other resources in YAML with per-environment targets, deployed by the CLI."
+      },
+      {
+       "id": "databricks-m07-terraform",
+       "title": "Terraform for Databricks",
+       "verified": "2026-10",
+       "summary": "The Databricks Terraform provider manages the platform layer as code: workspaces (together with cloud provider resources such as networks and storage), Unity Catalog metastores, catalogs, schemas, storage credentials, ex",
+       "remember": "Use the Databricks Terraform provider for workspaces, Unity Catalog objects and permissions; leave project jobs and pipelines to bundles."
+      },
+      {
+       "id": "databricks-m07-cicd",
+       "title": "CI/CD on Databricks",
+       "verified": "2026-10",
+       "summary": "Databricks' recommended CI/CD flow: 1.",
+       "remember": "Develop in your own bundle target, test in CI, and let service principals deploy bundles to test and prod with approvals."
+      },
+      {
+       "id": "databricks-m07-cluster-policies",
+       "title": "Compute policies",
+       "verified": "2026-10",
+       "summary": "Compute policies (formerly cluster policies) are rules that limit what classic compute users can create: allowed node types, maximum workers, required auto-termination, fixed runtime versions, mandatory tags for cost all",
+       "remember": "Compute policies constrain classic cluster settings per group to control cost, tagging and security."
+      },
+      {
+       "id": "databricks-m07-monitoring",
+       "title": "Monitoring and observability",
+       "verified": "2026-10",
+       "summary": "Databricks monitoring spans several tools: - Jobs and pipelines UI: run history, task durations, failures, repair runs, pipeline event logs with data quality metrics.",
+       "remember": "Monitor Databricks with job and pipeline UIs, system tables for usage and cost, and data quality monitoring for table health."
+      },
+      {
+       "id": "databricks-m07-dbu-cost-model",
+       "title": "DBUs and the cost model",
+       "verified": "2026-10",
+       "summary": "Databricks charges in Databricks Units (DBUs), a unit of processing capacity per hour, billed per second.",
+       "remember": "DBU rates depend on the compute product; classic adds a separate cloud bill while serverless includes infrastructure, and system tables show where spend goes."
+      }
+     ]
+    },
+    {
+     "key": "databricks-m08",
+     "num": "08",
+     "name": "Decisions",
+     "file": "content/databricks/08-decisions.md",
+     "lessons": [
+      {
+       "id": "databricks-m08-when-databricks",
+       "title": "When Databricks is the right choice",
+       "verified": "2026-10",
+       "summary": "Seen from the Databricks side (the full three-way comparison is in the Fabric track), Databricks tends to fit when: - Engineering and data science are central: complex Spark pipelines, streaming, ML training and AI appli",
+       "remember": "Choose Databricks when code-heavy engineering, streaming, ML and AI on open formats across clouds are central."
+      },
+      {
+       "id": "databricks-m08-serverless-vs-classic",
+       "title": "Serverless vs classic compute",
+       "verified": "2026-10",
+       "summary": "Databricks increasingly defaults to serverless.",
+       "remember": "Serverless trades configuration for speed and no infrastructure work; keep classic for code, networking or hardware that serverless cannot handle."
+      },
+      {
+       "id": "databricks-m08-governance-patterns",
+       "title": "Governance patterns on Databricks",
+       "verified": "2026-10",
+       "summary": "Common Unity Catalog patterns used by organisations in 2026: - Catalog per environment (dev, test, prod), sometimes combined with catalog per domain (financeprod, salesprod), with schemas for layers or data products.",
+       "remember": "Separate catalogs by environment and domain, bind them to the right workspaces, prefer managed tables, grant to groups, and protect sensitive data with tag-based policies."
+      }
+     ]
     }
    ]
   },
