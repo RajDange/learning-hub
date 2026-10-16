@@ -1946,6 +1946,78 @@
        "remember": "Exploding a BOM multiplies quantities down a recursive CTE; for general graphs carry the path to avoid cycles."
       }
      ]
+    },
+    {
+     "key": "sql-m05",
+     "num": "05",
+     "name": "Set-based patterns",
+     "file": "content/sql/05-set-based-patterns.md",
+     "lessons": [
+      {
+       "id": "sql-m05-deduplication",
+       "title": "Deduplication",
+       "verified": "",
+       "summary": "Duplicates come in two kinds: exact duplicates (every column identical, often from reloading a file twice) and key duplicates (several versions of the same business key with different values).",
+       "remember": "Find duplicates with GROUP BY HAVING, keep one per key with ROWNUMBER and a full tie-breaking order, and fix the cause upstream."
+      },
+      {
+       "id": "sql-m05-top-n-per-group",
+       "title": "Top N per group",
+       "verified": "",
+       "summary": "\"The three best-selling products per category\", \"the latest order per customer\": three standard solutions: 1.",
+       "remember": "Rank within groups and filter (or QUALIFY), or use APPLY with TOP per group when an index supports it."
+      },
+      {
+       "id": "sql-m05-pivot-unpivot",
+       "title": "Pivot and unpivot",
+       "verified": "",
+       "summary": "Pivot turns row values into columns (months across the top); unpivot turns columns into rows.",
+       "remember": "Conditional aggregation pivots portably, and unpivoting wide legacy tables into rows makes them usable."
+      },
+      {
+       "id": "sql-m05-replacing-cursors",
+       "title": "Replacing cursors with set-based SQL",
+       "verified": "",
+       "summary": "A cursor (or a WHILE loop, or PL/SQL FOR rec IN (SELECT ...) LOOP) processes rows one at a time.",
+       "remember": "Replace row-by-row loops with window functions, joins in UPDATE, MERGE and ROWNUMBER; loop over batches, never single rows."
+      }
+     ]
+    },
+    {
+     "key": "sql-m06",
+     "num": "06",
+     "name": "Time and temporal data",
+     "file": "content/sql/06-time-and-temporal.md",
+     "lessons": [
+      {
+       "id": "sql-m06-calendar-tables",
+       "title": "Calendar and date dimension tables",
+       "verified": "",
+       "summary": "A calendar table (date dimension) has one row per date, with precomputed attributes: year, quarter, month, week number, day of week, isweekend, isholiday, fiscal year and period, working-day number, and anything else the",
+       "remember": "A calendar table precomputes date attributes and fills missing days, making time reporting consistent and simple."
+      },
+      {
+       "id": "sql-m06-time-series",
+       "title": "Time series queries",
+       "verified": "",
+       "summary": "Common time-series operations in SQL: - Bucketing: truncate timestamps to a period: DATETRUNC('hour', ts) (Snowflake, Spark, Fabric), DATETRUNC(hour, ts) (SQL Server 2022), TRUNC(ts, 'HH24') (Oracle), or DATEBIN for arbi",
+       "remember": "Bucket with date truncation, fill gaps from a calendar, compare periods with LAG or calendar joins, and keep timestamps in UTC."
+      },
+      {
+       "id": "sql-m06-scd",
+       "title": "Slowly changing dimensions in SQL",
+       "verified": "",
+       "summary": "Dimensions such as customer or product change over time.",
+       "remember": "Type 1 overwrites, type 2 expires the old row and inserts a new version with validity dates; facts store the version's surrogate key."
+      },
+      {
+       "id": "sql-m06-temporal-tables",
+       "title": "System-versioned temporal tables and flashback",
+       "verified": "",
+       "summary": "Databases can keep row history automatically: - SQL Server temporal tables (system-versioned, SQL Server 2016+, Azure SQL): the table has ValidFrom/ValidTo period columns and a linked history table.",
+       "remember": "Temporal tables and flashback keep system-time history automatically; business-effective history still needs dimensional modelling."
+      }
+     ]
     }
    ]
   },
