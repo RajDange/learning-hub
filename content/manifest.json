@@ -1293,6 +1293,92 @@
        "remember": "UniForm, OneLake virtualization, XTable and Iceberg REST catalogs let one copy be read in several formats, with feature and permission caveats."
       }
      ]
+    },
+    {
+     "key": "tools-m04",
+     "num": "04",
+     "name": "Processing and query engines",
+     "file": "content/tools/04-processing-and-query-engines.md",
+     "lessons": [
+      {
+       "id": "tools-m04-spark",
+       "title": "Apache Spark in the landscape",
+       "verified": "2026-10",
+       "summary": "Apache Spark is a general-purpose distributed processing engine: one engine for batch ETL, SQL, streaming and machine learning, with APIs in Python, SQL, Scala, Java and R.",
+       "remember": "Spark is the general-purpose distributed engine for big batch, streaming and ML; use smaller engines when data fits on one machine."
+      },
+      {
+       "id": "tools-m04-trino-presto",
+       "title": "Trino and Presto",
+       "verified": "2026-10",
+       "summary": "Presto was created at Facebook as a fast distributed SQL engine for interactive queries over data lakes.",
+       "remember": "Trino (and PrestoDB) are distributed SQL engines for interactive, federated queries over lakes and databases; Athena is serverless Trino."
+      },
+      {
+       "id": "tools-m04-dbt",
+       "title": "dbt",
+       "verified": "2026-10",
+       "summary": "dbt (\"data build tool\") is the standard way to manage SQL transformations inside a warehouse or lakehouse.",
+       "remember": "dbt manages SQL transformations as tested, documented, dependency-ordered models that the warehouse runs."
+      },
+      {
+       "id": "tools-m04-duckdb",
+       "title": "DuckDB",
+       "verified": "2026-10",
+       "summary": "DuckDB is an in-process analytical database: a library you import into Python, R, Java or a command line, like SQLite but built for analytics.",
+       "remember": "DuckDB is a fast in-process SQL engine for analytics on one machine, often replacing a cluster for medium-sized data."
+      },
+      {
+       "id": "tools-m04-warehouse-engines",
+       "title": "Cloud warehouse engines",
+       "verified": "2026-10",
+       "summary": "A cloud data warehouse is a managed SQL engine for analytics: columnar storage, massively parallel query execution, SQL security and high concurrency, with little or no infrastructure to manage.",
+       "remember": "Cloud warehouses are managed, parallel SQL engines; choose by ecosystem, pricing model and openness of storage."
+      }
+     ]
+    },
+    {
+     "key": "tools-m05",
+     "num": "05",
+     "name": "Orchestration",
+     "file": "content/tools/05-orchestration.md",
+     "lessons": [
+      {
+       "id": "tools-m05-scheduling-vs-orchestration",
+       "title": "Scheduling vs orchestration",
+       "verified": "2026-10",
+       "summary": "A scheduler runs a job at a time: cron, Windows Task Scheduler, a SQL Agent job.",
+       "remember": "A scheduler starts a job at a time; an orchestrator runs dependent tasks with retries, alerts, parameters and backfills."
+      },
+      {
+       "id": "tools-m05-airflow",
+       "title": "Apache Airflow",
+       "verified": "2026-10",
+       "summary": "Apache Airflow is the most widely used open-source orchestrator.",
+       "remember": "Airflow orchestrates Python-defined DAGs of tasks across any system; Airflow 3 added versioning, assets and task isolation."
+      },
+      {
+       "id": "tools-m05-dagster",
+       "title": "Dagster",
+       "verified": "2026-10",
+       "summary": "Dagster is an open-source orchestrator built around software-defined assets: instead of describing tasks, you declare the data assets (tables, files, ML models) your code produces and what they depend on.",
+       "remember": "Dagster orchestrates by declaring data assets and their dependencies, giving built-in lineage, freshness and checks."
+      },
+      {
+       "id": "tools-m05-prefect",
+       "title": "Prefect",
+       "verified": "2026-10",
+       "summary": "Prefect is a Python-native workflow orchestrator.",
+       "remember": "Prefect turns plain Python functions into orchestrated flows, with a hosted control plane and execution in your own infrastructure."
+      },
+      {
+       "id": "tools-m05-adf-fabric-pipelines",
+       "title": "ADF, Fabric pipelines and Databricks Jobs as orchestrators",
+       "verified": "2026-10",
+       "summary": "Data platforms ship their own orchestrators: - Azure Data Factory and Fabric Data Factory pipelines: visual pipelines with activities, control flow, schedules and event triggers.",
+       "remember": "Use the platform's own orchestrator when work lives on one platform; add a separate orchestrator when workflows span many systems."
+      }
+     ]
     }
    ]
   }
