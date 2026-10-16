@@ -271,11 +271,39 @@
      "file": "content/fabric/01-fundamentals.md",
      "lessons": [
       {
+       "id": "fabric-m01-what-is-fabric",
+       "title": "What Microsoft Fabric is",
+       "verified": "2026-10",
+       "summary": "Microsoft Fabric is a SaaS analytics platform.",
+       "remember": "Fabric is one SaaS platform where every workload shares a capacity for compute and OneLake for storage."
+      },
+      {
        "id": "fabric-m01-onelake",
-       "title": "OneLake (sample)",
-       "verified": "pending",
+       "title": "OneLake",
+       "verified": "2026-10",
        "summary": "OneLake is the single logical data lake that comes with every Fabric tenant.",
-       "remember": "OneLake is one lake per tenant, shared by every Fabric workload."
+       "remember": "OneLake is one ADLS-based lake per tenant, organised by workspace and item, holding Delta tables that every Fabric engine reads."
+      },
+      {
+       "id": "fabric-m01-tenants-capacities-workspaces",
+       "title": "Tenants, capacities and workspaces",
+       "verified": "2026-10",
+       "summary": "Fabric has a four-level containment hierarchy: 1.",
+       "remember": "Tenant holds settings and OneLake, capacities supply regional compute, workspaces hold items, and domains group workspaces for governance."
+      },
+      {
+       "id": "fabric-m01-licensing-capacity",
+       "title": "Licensing and capacity units",
+       "verified": "2026-10",
+       "summary": "Fabric is paid mainly through capacities.",
+       "remember": "You buy capacity units that every workload shares; bursting and smoothing absorb spikes, and sustained overuse leads to staged throttling."
+      },
+      {
+       "id": "fabric-m01-fabric-vs-synapse-adf-premium",
+       "title": "Fabric vs Synapse, ADF and Power BI Premium",
+       "verified": "2026-10",
+       "summary": "Fabric is Microsoft's successor platform for several earlier services: - Azure Synapse Analytics: Fabric Data Warehouse, Fabric Spark, pipelines and Eventhouse cover the same ground as dedicated SQL pools, Synapse Spark,",
+       "remember": "Fabric absorbs Synapse, ADF and Power BI Premium, but the mapping is not one-to-one and moving is a project, not a switch."
       }
      ]
     }

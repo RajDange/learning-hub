@@ -40,3 +40,4 @@ All nine syllabus files written; validator clean (443 planned lessons, 0 errors)
 ## Phase C log
 
 - 2026-10-16: pyspark m01 written; it replaced the pyspark sample lesson. PySpark modules are written while research agents gather current sources for fabric, so the fabric-first order is kept for research but not for writing time.
+- 2026-10-16: fabric m01 written from Microsoft Learn sources checked by research agents; it replaced the fabric sample lesson.
