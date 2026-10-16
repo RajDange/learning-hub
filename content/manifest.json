@@ -2248,7 +2248,87 @@
    "key": "python",
    "name": "Python for Data, ML and AI",
    "planned": 34,
-   "modules": []
+   "modules": [
+    {
+     "key": "python-m01",
+     "num": "01",
+     "name": "Language essentials for data work",
+     "file": "content/python/01-language-essentials.md",
+     "lessons": [
+      {
+       "id": "python-m01-types-mutability",
+       "title": "Types, references and mutability",
+       "verified": "",
+       "summary": "In Python, variables are names that refer to objects.",
+       "remember": "Python names point to objects; mutating a shared mutable object changes it for everyone, so copy deliberately and avoid mutable defaults."
+      },
+      {
+       "id": "python-m01-comprehensions-generators",
+       "title": "Comprehensions, iterators and generators",
+       "verified": "",
+       "summary": "- Comprehensions build lists, dicts and sets concisely: f(x) for x in rows if cond(x), {k: v for k, v in pairs}.",
+       "remember": "Comprehensions build collections concisely; generators stream values lazily so large data never has to fit in memory."
+      },
+      {
+       "id": "python-m01-functions-decorators",
+       "title": "Functions, closures and decorators",
+       "verified": "",
+       "summary": "Functions in Python are objects: they can be passed as arguments, returned from other functions and stored in variables.",
+       "remember": "Functions are objects; decorators wrap them to add behaviour, and most data frameworks are built on that idea."
+      },
+      {
+       "id": "python-m01-classes-dataclasses",
+       "title": "Classes and dataclasses",
+       "verified": "",
+       "summary": "A class bundles data (attributes) with behaviour (methods).",
+       "remember": "Use dataclasses for typed records and config, Pydantic to validate external input, and keep transformation logic in functions."
+      },
+      {
+       "id": "python-m01-errors-context-managers",
+       "title": "Exceptions and context managers",
+       "verified": "",
+       "summary": "- Exceptions: try / except SpecificError / else / finally.",
+       "remember": "Catch specific errors, add context and re-raise; use with blocks so connections, files and transactions are always cleaned up."
+      },
+      {
+       "id": "python-m01-typing",
+       "title": "Type hints",
+       "verified": "",
+       "summary": "Type hints annotate the expected types of variables, parameters and return values: def load(path: str, limit: int None = None) - pd.DataFrame:.",
+       "remember": "Type hints document and statically check code; libraries like Pydantic and FastAPI also use them at runtime."
+      }
+     ]
+    },
+    {
+     "key": "python-m02",
+     "num": "02",
+     "name": "Environments and packaging",
+     "file": "content/python/02-environments-and-packaging.md",
+     "lessons": [
+      {
+       "id": "python-m02-virtual-environments",
+       "title": "Virtual environments and pip",
+       "verified": "",
+       "summary": "A virtual environment is an isolated folder with its own Python interpreter link and installed packages, so each project has its own dependency versions.",
+       "remember": "One virtual environment per project keeps dependencies isolated and reproducible; never install project packages globally."
+      },
+      {
+       "id": "python-m02-uv-poetry-lockfiles",
+       "title": "uv, Poetry and lock files",
+       "verified": "",
+       "summary": "Modern Python projects declare dependencies in pyproject.toml and pin exact resolved versions in a lock file: - Direct dependencies (what you asked for, with version ranges) live in pyproject.toml.",
+       "remember": "Declare dependencies in pyproject.toml and pin everything in a lock file; uv makes this fast."
+      },
+      {
+       "id": "python-m02-project-layout",
+       "title": "Project layout and packaging",
+       "verified": "",
+       "summary": "A maintainable data project follows a standard layout: The src layout prevents accidentally importing code from the working directory instead of the installed package.",
+       "remember": "Use a src layout with pyproject.toml, tests beside it, and build a wheel that every environment installs."
+      }
+     ]
+    }
+   ]
   },
   {
    "key": "ml",
