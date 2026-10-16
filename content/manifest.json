@@ -1687,6 +1687,121 @@
        "remember": "A clean room allows joint analysis on combined data while each party's raw records stay hidden, enforced by templates and policies."
       }
      ]
+    },
+    {
+     "key": "snowflake-m06",
+     "num": "06",
+     "name": "Security and governance",
+     "file": "content/snowflake/06-security-and-governance.md",
+     "lessons": [
+      {
+       "id": "snowflake-m06-rbac",
+       "title": "Role-based access control",
+       "verified": "2026-10",
+       "summary": "Snowflake combines role-based access control (privileges are granted to roles, and roles to users) with discretionary access control (every object has an owner role that can grant on it).",
+       "remember": "Snowflake grants privileges to roles in a hierarchy, with owners able to grant; use functional and access roles, future grants and managed access schemas."
+      },
+      {
+       "id": "snowflake-m06-masking-policies",
+       "title": "Dynamic data masking",
+       "verified": "2026-10",
+       "summary": "A masking policy (Enterprise Edition) is a schema-level object containing a SQL expression that decides, at query time, what a user sees in a column.",
+       "remember": "Masking policies decide per role at query time what a column shows, and tag-based masking applies them automatically wherever a tag appears."
+      },
+      {
+       "id": "snowflake-m06-row-access-policies",
+       "title": "Row access policies",
+       "verified": "2026-10",
+       "summary": "A row access policy (Enterprise Edition) is an object with a boolean SQL expression evaluated for each row, using the current role or user.",
+       "remember": "Row access policies filter rows per role at query time, often via a small mapping table, so one table serves many audiences."
+      },
+      {
+       "id": "snowflake-m06-tags-classification",
+       "title": "Object tags and data classification",
+       "verified": "2026-10",
+       "summary": "Object tags are key-value labels (for example pii = 'email', costcenter = 'finance') attached to accounts, warehouses, databases, schemas, tables and columns.",
+       "remember": "Tags label objects and columns, classification suggests sensitive-data tags automatically, and tag-based policies protect what is tagged."
+      },
+      {
+       "id": "snowflake-m06-network-policies",
+       "title": "Network policies and private connectivity",
+       "verified": "2026-10",
+       "summary": "Snowflake is reachable over the internet by default.",
+       "remember": "Restrict Snowflake with network rules and policies, use private connectivity on Business Critical, and use MFA or key-based service authentication."
+      },
+      {
+       "id": "snowflake-m06-horizon",
+       "title": "Snowflake Horizon",
+       "verified": "2026-10",
+       "summary": "Snowflake Horizon Catalog is the name Snowflake uses for its built-in governance and discovery capabilities, grouped in one place: - Compliance and security: access control, masking and row access policies, tags and clas",
+       "remember": "Horizon is Snowflake's built-in governance, discovery and Iceberg catalog layer, spanning policies, lineage, quality and security posture."
+      }
+     ]
+    },
+    {
+     "key": "snowflake-m07",
+     "num": "07",
+     "name": "AI and ML",
+     "file": "content/snowflake/07-ai-and-ml.md",
+     "lessons": [
+      {
+       "id": "snowflake-m07-cortex",
+       "title": "Cortex AI features",
+       "verified": "2026-10",
+       "summary": "Snowflake Cortex is Snowflake's set of AI services running inside the platform: - Cortex AI Functions (also called AISQL): SQL functions that call large language models on table data: AICOMPLETE, AICLASSIFY, AIFILTER, AI",
+       "remember": "Cortex brings LLM functions to SQL, plus managed search, text-to-SQL over semantic views, and agents, all inside Snowflake."
+      },
+      {
+       "id": "snowflake-m07-snowpark-ml",
+       "title": "Snowflake ML",
+       "verified": "2026-10",
+       "summary": "Snowflake ML is the set of tools for the machine learning lifecycle on Snowflake: - Feature Store: feature views over Snowflake tables, with point-in-time lookups for training (an online store was in preview in 2026).",
+       "remember": "Snowflake ML provides feature store, container-based training, experiment tracking, registry and serving inside Snowflake's governance."
+      },
+      {
+       "id": "snowflake-m07-notebooks",
+       "title": "Snowflake Notebooks",
+       "verified": "2026-10",
+       "summary": "Snowflake Notebooks run Python, SQL and Markdown cells inside Snowflake.",
+       "remember": "Snowflake Notebooks run Python and SQL next to the data, with container runtimes and Git-backed workspaces."
+      }
+     ]
+    },
+    {
+     "key": "snowflake-m08",
+     "num": "08",
+     "name": "Operations and decisions",
+     "file": "content/snowflake/08-operations-and-decisions.md",
+     "lessons": [
+      {
+       "id": "snowflake-m08-resource-monitors-cost",
+       "title": "Resource monitors and cost control",
+       "verified": "2026-10",
+       "summary": "Snowflake gives several cost controls: - Resource monitors track warehouse credit use over a period against a quota, and can notify, suspend after running queries finish, or suspend immediately at thresholds (for example",
+       "remember": "Resource monitors cap warehouse credits, budgets cover everything including serverless and AI, and tags plus usage views enable chargeback."
+      },
+      {
+       "id": "snowflake-m08-cicd",
+       "title": "CI/CD and change management for Snowflake",
+       "verified": "2026-10",
+       "summary": "Options for managing Snowflake objects as code: - Git integration: Snowflake can connect to Git repositories and run files from them.",
+       "remember": "Manage Snowflake as code with Git, the CLI, DCM Projects, dbt and Terraform, and test changes on zero-copy clones."
+      },
+      {
+       "id": "snowflake-m08-vs-databricks-fabric",
+       "title": "Snowflake vs Databricks vs Fabric",
+       "verified": "2026-10",
+       "summary": "From the Snowflake side (the full comparison lives in the Fabric track), Snowflake tends to fit when: - The core users are SQL analysts and engineers who want a warehouse that needs almost no administration.",
+       "remember": "Snowflake fits SQL-first, low-administration, sharing-heavy and multi-cloud needs, and increasingly interoperates through Iceberg."
+      },
+      {
+       "id": "snowflake-m08-iceberg-interoperability",
+       "title": "Iceberg interoperability",
+       "verified": "2026-10",
+       "summary": "Snowflake uses Apache Iceberg to work with other engines in both directions: - Other engines reading Snowflake data: Snowflake-managed Iceberg tables are exposed through the Horizon Catalog Iceberg REST endpoint (built o",
+       "remember": "Snowflake shares Iceberg tables through its Horizon REST catalog and reads other platforms' Iceberg catalogs, including Unity Catalog and OneLake."
+      }
+     ]
     }
    ]
   },

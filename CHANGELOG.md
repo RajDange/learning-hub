@@ -46,3 +46,4 @@ All nine syllabus files written; validator clean (443 planned lessons, 0 errors)
 - 2026-10-16: tools m01 written; it replaced the tools sample lesson (all three samples are now gone).
 - 2026-10-16: tools track complete (52 lessons).
 - 2026-10-16: databricks track complete (38 lessons). Many 2025-2026 renames (Lakeflow Jobs, Lakeflow Spark Declarative Pipelines, Declarative Automation Bundles, OpenSharing, AI Search, Genie agents) are given with their old names; syllabus titles keep the original ids.
+- 2026-10-16: snowflake track complete (38 lessons). 2026 renames noted in lessons (Snowflake Intelligence to CoWork, Cortex Code to CoCo, Horizon Catalog preferred over Open Catalog for new customers).
