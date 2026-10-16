@@ -13,11 +13,39 @@
      "file": "content/pyspark/01-foundations.md",
      "lessons": [
       {
-       "id": "pyspark-m01-lazy-evaluation",
-       "title": "Lazy evaluation (sample)",
+       "id": "pyspark-m01-spark-architecture",
+       "title": "Spark architecture: driver, executors, cluster manager",
        "verified": "",
-       "summary": "Spark does not run a transformation when you write it.",
-       "remember": "Transformations build a plan; only actions run it."
+       "summary": "A Spark application is one driver process plus many executor processes.",
+       "remember": "The driver plans, the executors do the work one partition per task, and the cluster manager supplies the machines."
+      },
+      {
+       "id": "pyspark-m01-sparksession",
+       "title": "SparkSession, SparkContext and running locally",
+       "verified": "",
+       "summary": "SparkSession is the single entry point to Spark in modern code.",
+       "remember": "SparkSession is the one door into Spark; SparkContext is the older, lower-level door it wraps."
+      },
+      {
+       "id": "pyspark-m01-rdd-vs-dataframe",
+       "title": "RDD vs DataFrame (and a note on Dataset)",
+       "verified": "",
+       "summary": "Spark has three data abstractions: - RDD (Resilient Distributed Dataset): a distributed collection of arbitrary objects.",
+       "remember": "In PySpark, use DataFrames; RDDs are a low-level escape hatch and Dataset is a Scala and Java idea."
+      },
+      {
+       "id": "pyspark-m01-lazy-evaluation",
+       "title": "Lazy evaluation: transformations and actions",
+       "verified": "",
+       "summary": "Spark operations come in two kinds: - Transformations (select, filter, join, groupBy, withColumn) return a new DataFrame and only add a step to a plan.",
+       "remember": "Transformations build a plan; only actions run it, and every action runs it again unless you cache."
+      },
+      {
+       "id": "pyspark-m01-dag-and-lineage",
+       "title": "The DAG and RDD lineage",
+       "verified": "",
+       "summary": "When an action runs, Spark turns the optimised plan into a DAG (directed acyclic graph) of steps.",
+       "remember": "Spark splits the DAG into stages at shuffles, and uses lineage to recompute lost partitions instead of keeping copies."
       }
      ]
     }

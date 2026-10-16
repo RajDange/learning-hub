@@ -36,3 +36,7 @@ All nine syllabus files written; validator clean (443 planned lessons, 0 errors)
 - Cross-platform comparison home: `fabric-m10-fabric-vs-databricks-vs-snowflake`. Databricks and Snowflake each have a shorter "from our side" lesson that links to it.
 - Concept versus tool homes: ML concepts (experiment tracking, feature stores, serving) live in ml; products (MLflow, Feast and so on) in tools; vector search concept in ai, products in tools.
 - Added `.gitattributes` to keep line endings as LF.
+
+## Phase C log
+
+- 2026-10-16: pyspark m01 written; it replaced the pyspark sample lesson. PySpark modules are written while research agents gather current sources for fabric, so the fabric-first order is kept for research but not for writing time.
