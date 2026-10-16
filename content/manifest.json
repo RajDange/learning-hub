@@ -471,6 +471,64 @@
        "remember": "Real-time dashboards are KQL tiles for live operational monitoring; Power BI reports are for modelled business reporting."
       }
      ]
+    },
+    {
+     "key": "fabric-m06",
+     "num": "06",
+     "name": "Data science and AI",
+     "file": "content/fabric/06-data-science-and-ai.md",
+     "lessons": [
+      {
+       "id": "fabric-m06-experiments-models",
+       "title": "Experiments and ML models",
+       "verified": "2026-10",
+       "summary": "Fabric's Data Science workload uses MLflow for machine learning bookkeeping, surfaced as two item types: - An experiment item groups training runs.",
+       "remember": "Fabric experiments and models are MLflow under the hood, with PREDICT for batch scoring in Spark."
+      },
+      {
+       "id": "fabric-m06-automl",
+       "title": "AutoML and ML tooling in Fabric",
+       "verified": "2026-10",
+       "summary": "AutoML automatically tries algorithms and hyperparameters and returns the best model by a chosen metric.",
+       "remember": "Fabric AutoML (FLAML) finds a strong baseline model quickly, but the problem framing and data quality are still your job."
+      },
+      {
+       "id": "fabric-m06-copilot-ai-features",
+       "title": "Copilot and AI features",
+       "verified": "2026-10",
+       "summary": "Fabric embeds generative AI in three ways: - Copilot inside workloads: generating Power Query steps in dataflows, building pipelines, writing SQL and KQL, creating Power BI report pages and summaries, and helping in note",
+       "remember": "Copilot helps authors, data agents answer business questions over governed data, and AI functions enrich columns, all on paid capacity."
+      }
+     ]
+    },
+    {
+     "key": "fabric-m07",
+     "num": "07",
+     "name": "BI",
+     "file": "content/fabric/07-bi.md",
+     "lessons": [
+      {
+       "id": "fabric-m07-semantic-models",
+       "title": "Semantic models",
+       "verified": "2026-10",
+       "summary": "A semantic model (formerly a Power BI dataset) is the business layer between data and reports.",
+       "remember": "The semantic model is where business definitions and report security live; feed it a clean star schema."
+      },
+      {
+       "id": "fabric-m07-direct-lake",
+       "title": "Direct Lake",
+       "verified": "2026-10",
+       "summary": "Direct Lake is a semantic model storage mode that loads columns from Delta tables in OneLake directly into the VertiPaq engine when queries need them.",
+       "remember": "Direct Lake reads OneLake Delta tables straight into Power BI's engine; keep tables compact and watch for fallback."
+      },
+      {
+       "id": "fabric-m07-reports",
+       "title": "Reports, dashboards and apps",
+       "verified": "2026-10",
+       "summary": "Fabric includes the full Power BI service: - Reports: interactive pages of visuals on a semantic model, built in Power BI Desktop or the browser.",
+       "remember": "Reports explore, paginated reports print, and apps distribute; security belongs in the model, not the report."
+      }
+     ]
     }
    ]
   },
