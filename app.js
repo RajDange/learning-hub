@@ -621,6 +621,9 @@
         "<p>Then open <a href=\"http://localhost:8000/\">http://localhost:8000/</a>.</p>");
       return;
     }
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js").catch(function (e) { console.warn("Service worker:", e); });
+    }
     setupMarked();
     wire();
     updateHeaderOffset();

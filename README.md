@@ -32,3 +32,7 @@ Then open http://localhost:8000/ in your browser. Opening `index.html` directly 
 ## Adding or editing content
 
 See CONTENT_GUIDE.md for the lesson format and writing rules, and `syllabus/_format.md` for the syllabus format. After any change run `python tools/validate.py`; it checks the files and regenerates `content/manifest.json` and `STATUS.md`. Never edit those two files by hand.
+
+## Install on a phone
+
+The app is a Progressive Web App. Open the hosted site in Chrome on Android (or Safari on iPhone), then choose **Install app** (Chrome menu) or **Add to Home Screen** (Safari share menu). After the first visit every lesson is cached, so it also works offline. Progress is stored per device; use Export and Import progress to move it between devices.

@@ -65,3 +65,4 @@ All three phases are complete in one session.
 - Items most likely to age quickly: product names and preview/GA status in fabric, databricks and snowflake (many renames in 2025-2026), the EU AI Act timeline, and version numbers in tools. Re-verify these first in any refresh.
 - Process note: research for platform tracks ran in parallel background agents while lessons for other tracks were written, so commits are not strictly in track order; each module still has its own commit.
 - 2026-10-16: Added an app logo (logo.svg: white L with rising blocks on an orange gradient), used as the favicon and in the header, at the user's request.
+- 2026-10-16: Made the app installable (PWA) for phones: manifest.webmanifest, PNG icons (192, 512, maskable, Apple touch), theme colour, and sw.js, which caches the app, the CDN libraries and every lesson file for offline use (network-first, so updates still arrive when online). Bump VERSION in sw.js when shell files change.
