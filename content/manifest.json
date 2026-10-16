@@ -412,6 +412,84 @@
        "remember": "Bronze keeps raw history, silver cleans and conforms, gold serves the business; the value is in clear responsibilities, not the names."
       }
      ]
+    },
+    {
+     "key": "pyspark-m09",
+     "num": "09",
+     "name": "Structured Streaming",
+     "file": "content/pyspark/09-structured-streaming.md",
+     "lessons": [
+      {
+       "id": "pyspark-m09-streaming-model",
+       "title": "The Structured Streaming model",
+       "verified": "",
+       "summary": "Structured Streaming treats a stream as an unbounded table that keeps growing.",
+       "remember": "Structured Streaming runs ordinary DataFrame logic incrementally over an ever-growing table, one micro-batch at a time."
+      },
+      {
+       "id": "pyspark-m09-triggers-output-modes",
+       "title": "Triggers and output modes",
+       "verified": "",
+       "summary": "Triggers decide when micro-batches run: - Default (no trigger): start the next batch as soon as the previous one finishes.",
+       "remember": "Triggers set when batches run (availableNow for incremental batch jobs), and output modes set what each batch writes."
+      },
+      {
+       "id": "pyspark-m09-event-time-watermarks",
+       "title": "Event time, watermarks and windows",
+       "verified": "",
+       "summary": "Event time is when something happened (a timestamp in the event); processing time is when Spark sees it.",
+       "remember": "Aggregate on event time, and set a watermark so Spark can finalise windows and forget old state."
+      },
+      {
+       "id": "pyspark-m09-stateful-operations",
+       "title": "Stateful operations and state stores",
+       "verified": "",
+       "summary": "Some streaming operations must remember data across micro-batches.",
+       "remember": "Stateful streaming remembers data per key across batches; always bound it with watermarks or TTLs, and use RocksDB for large state."
+      },
+      {
+       "id": "pyspark-m09-checkpointing",
+       "title": "Checkpointing and recovery",
+       "verified": "",
+       "summary": "Every streaming query writes to a checkpoint location, a folder that records: - Offsets: which source data each micro-batch planned to read (written before processing).",
+       "remember": "The checkpoint is the stream's memory of offsets, commits and state; one per query, on durable storage, and change queries with care."
+      },
+      {
+       "id": "pyspark-m09-stream-joins",
+       "title": "Stream-static and stream-stream joins",
+       "verified": "",
+       "summary": "Two kinds of joins on streams: - Stream-static: each micro-batch of the stream is joined with a static DataFrame or table (for example enriching orders with a product dimension).",
+       "remember": "Stream-static joins enrich each batch statelessly; stream-stream joins buffer state and need watermarks and time bounds."
+      },
+      {
+       "id": "pyspark-m09-sinks-foreachbatch",
+       "title": "Sinks and foreachBatch",
+       "verified": "",
+       "summary": "Built-in sinks: Delta and file formats (exactly-once with checkpoints), Kafka (at-least-once), console and memory (testing), and foreach (per row).",
+       "remember": "foreachBatch hands each micro-batch to batch code, mostly for MERGE; make it idempotent because batches can be retried."
+      },
+      {
+       "id": "pyspark-m09-kafka-eventhubs-kinesis",
+       "title": "Kafka, Event Hubs and Kinesis sources",
+       "verified": "",
+       "summary": "Spark reads message brokers as streams of records with key, value (binary), topic, partition, offset and timestamp columns.",
+       "remember": "Spark reads brokers as offset-tracked binary records, keeps offsets in its checkpoint, and parallelises by topic partition."
+      },
+      {
+       "id": "pyspark-m09-exactly-once",
+       "title": "Exactly-once and backpressure",
+       "verified": "",
+       "summary": "Exactly-once in Structured Streaming means each input record affects the final sink output exactly once, even across failures.",
+       "remember": "Exactly-once needs a replayable source, a checkpoint and an idempotent sink; rate limits per batch are Spark's backpressure."
+      },
+      {
+       "id": "pyspark-m09-auto-loader",
+       "title": "Auto Loader and incremental file ingestion",
+       "verified": "",
+       "summary": "Many sources deliver files into cloud storage: daily extracts, exports, logs.",
+       "remember": "Load landing-zone files incrementally with a checkpointed file stream; on Databricks, Auto Loader adds scalable discovery and schema evolution."
+      }
+     ]
     }
    ]
   },
