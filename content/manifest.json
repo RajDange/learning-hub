@@ -1809,7 +1809,73 @@
    "key": "sql",
    "name": "SQL",
    "planned": 48,
-   "modules": []
+   "modules": [
+    {
+     "key": "sql-m01",
+     "num": "01",
+     "name": "Correctness",
+     "file": "content/sql/01-correctness.md",
+     "lessons": [
+      {
+       "id": "sql-m01-null-logic",
+       "title": "NULL and three-valued logic",
+       "verified": "",
+       "summary": "In SQL, NULL means \"unknown\".",
+       "remember": "NULL comparisons are UNKNOWN and filtered out; use IS NULL, NOT EXISTS and null-safe comparison, and remember Oracle's empty string is NULL."
+      },
+      {
+       "id": "sql-m01-logical-processing-order",
+       "title": "Logical query processing order",
+       "verified": "",
+       "summary": "SQL is written in one order but evaluated logically in another: 1.",
+       "remember": "FROM, WHERE, GROUP BY, HAVING, SELECT, DISTINCT, ORDER BY, then TOP or LIMIT: this logical order explains alias and window-function rules."
+      },
+      {
+       "id": "sql-m01-join-semantics",
+       "title": "Join semantics",
+       "verified": "",
+       "summary": "- INNER JOIN keeps pairs of rows where the ON condition is TRUE.",
+       "remember": "Put outer-join filters in ON, and check key uniqueness before trusting sums after a join."
+      },
+      {
+       "id": "sql-m01-set-operations",
+       "title": "Set operations",
+       "verified": "",
+       "summary": "Set operators combine results of queries with the same number of columns and compatible types, matched by position: - UNION ALL: all rows from both, duplicates kept.",
+       "remember": "Prefer UNION ALL unless duplicates must go, match columns by position carefully, and use EXCEPT both ways to diff tables."
+      }
+     ]
+    },
+    {
+     "key": "sql-m02",
+     "num": "02",
+     "name": "Joins deep dive",
+     "file": "content/sql/02-joins-deep-dive.md",
+     "lessons": [
+      {
+       "id": "sql-m02-semi-anti-joins",
+       "title": "Semi joins and anti joins",
+       "verified": "",
+       "summary": "A semi join returns rows from the left table that have at least one match on the right, without duplicating them and without adding right-side columns.",
+       "remember": "Use EXISTS for \"has a match\" and NOT EXISTS for \"has no match\"; NOT IN breaks when NULLs appear."
+      },
+      {
+       "id": "sql-m02-apply-lateral",
+       "title": "APPLY and LATERAL",
+       "verified": "",
+       "summary": "A normal join combines two independent tables.",
+       "remember": "APPLY and LATERAL run a correlated subquery per left row, ideal for top-N-per-row and per-row table functions."
+      },
+      {
+       "id": "sql-m02-non-equi-self-joins",
+       "title": "Non-equi joins and self joins",
+       "verified": "",
+       "summary": "A non-equi join uses a condition other than equality: ranges (BETWEEN), inequalities, or overlaps.",
+       "remember": "Non-equi joins express ranges and overlaps; include an equality key, use half-open intervals, and prefer LAG over self joins for previous-row logic."
+      }
+     ]
+    }
+   ]
   },
   {
    "key": "python",
