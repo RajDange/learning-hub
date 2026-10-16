@@ -1874,6 +1874,78 @@
        "remember": "Non-equi joins express ranges and overlaps; include an equality key, use half-open intervals, and prefer LAG over self joins for previous-row logic."
       }
      ]
+    },
+    {
+     "key": "sql-m03",
+     "num": "03",
+     "name": "Window functions",
+     "file": "content/sql/03-window-functions.md",
+     "lessons": [
+      {
+       "id": "sql-m03-window-frames",
+       "title": "Window frames: ROWS vs RANGE",
+       "verified": "",
+       "summary": "A window function computes a value per row over a window of related rows: function() OVER (PARTITION BY ...",
+       "remember": "Always state ROWS frames for running calculations; the default RANGE frame groups ties and surprises people."
+      },
+      {
+       "id": "sql-m03-ranking",
+       "title": "Ranking functions",
+       "verified": "",
+       "summary": "Four ranking functions, differing in how they treat ties (rows with equal ORDER BY values): Value order ROWNUMBER RANK DENSERANK ------------ 100 1 1 1 90 2 2 2 90 3 2 2 80 4 4 3 - ROWNUMBER(): unique sequential numbers;",
+       "remember": "ROWNUMBER is unique, RANK leaves gaps after ties, DENSERANK does not; pick the one that matches the business meaning of ties."
+      },
+      {
+       "id": "sql-m03-lag-lead-running-totals",
+       "title": "LAG, LEAD and running totals",
+       "verified": "",
+       "summary": "Offset functions read values from other rows in the same partition: - LAG(col, n, default): value from n rows before (default 1).",
+       "remember": "LAG and LEAD compare a row with its neighbours, and framed SUMs give running totals, all in one pass."
+      },
+      {
+       "id": "sql-m03-gaps-and-islands",
+       "title": "Gaps and islands",
+       "verified": "",
+       "summary": "An island is a run of consecutive values (consecutive days a user was active, consecutive months a contract was valid, consecutive sequence numbers); a gap is a missing range between them.",
+       "remember": "Value minus ROWNUMBER is constant within a run of consecutive values; group by it to find islands, and use LEAD to find gaps."
+      },
+      {
+       "id": "sql-m03-sessionization",
+       "title": "Sessionization",
+       "verified": "",
+       "summary": "Sessionization groups a user's events into sessions: a new session starts when the gap since the previous event exceeds a threshold (for example 30 minutes).",
+       "remember": "Flag a new session when the gap since the previous event exceeds a threshold, then a running sum of flags numbers the sessions."
+      }
+     ]
+    },
+    {
+     "key": "sql-m04",
+     "num": "04",
+     "name": "CTEs and recursion",
+     "file": "content/sql/04-ctes-and-recursion.md",
+     "lessons": [
+      {
+       "id": "sql-m04-ctes",
+       "title": "Common table expressions",
+       "verified": "",
+       "summary": "A common table expression (CTE) names a subquery at the start of a statement with WITH name AS (...), so later parts of the query can refer to it by name.",
+       "remember": "CTEs name query steps for readability; they are usually inlined, not cached, so reuse can mean recomputation."
+      },
+      {
+       "id": "sql-m04-recursive-hierarchies",
+       "title": "Recursive CTEs and hierarchies",
+       "verified": "",
+       "summary": "A recursive CTE refers to itself.",
+       "remember": "A recursive CTE starts from anchor rows and repeatedly joins to itself to walk hierarchies; guard against cycles."
+      },
+      {
+       "id": "sql-m04-bom-graph-traversal",
+       "title": "Bill of materials and graph traversal",
+       "verified": "",
+       "summary": "A bill of materials (BOM) lists the components of a product, each of which may have its own components, with quantities at each level.",
+       "remember": "Exploding a BOM multiplies quantities down a recursive CTE; for general graphs carry the path to avoid cycles."
+      }
+     ]
     }
    ]
   },
