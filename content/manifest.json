@@ -1558,6 +1558,71 @@
        "remember": "Prefer managed identities and federation over stored secrets; keep unavoidable secrets in a vault and grant least privilege."
       }
      ]
+    },
+    {
+     "key": "tools-m10",
+     "num": "10",
+     "name": "ML and AI tooling",
+     "file": "content/tools/10-ml-ai-tooling.md",
+     "lessons": [
+      {
+       "id": "tools-m10-mlflow",
+       "title": "MLflow",
+       "verified": "2026-10",
+       "summary": "MLflow is the most widely used open-source platform for the ML lifecycle (Linux Foundation; version 3.x since mid-2025).",
+       "remember": "MLflow records runs, packages models with signatures, registers versions with aliases, and now traces and evaluates GenAI apps."
+      },
+      {
+       "id": "tools-m10-feature-stores",
+       "title": "Feature store products",
+       "verified": "2026-10",
+       "summary": "A feature store keeps ML features (customer's orders in the last 30 days, average basket size) in two forms: an offline store (warehouse or lake tables for training, with point-in-time correct joins) and an online store ",
+       "remember": "Feature store products manage offline features for training and online features for serving from one definition; adopt one when features are shared and served in real time."
+      },
+      {
+       "id": "tools-m10-vector-databases",
+       "title": "Vector databases and vector search",
+       "verified": "2026-10",
+       "summary": "Vector search finds items whose embeddings are closest to a query embedding, the core of retrieval-augmented generation (RAG), semantic search and recommendations.",
+       "remember": "Vector search uses ANN indexes such as HNSW, IVF or DiskANN; start with vector features in your existing platform and add hybrid keyword search."
+      },
+      {
+       "id": "tools-m10-model-serving",
+       "title": "Model serving platforms",
+       "verified": "2026-10",
+       "summary": "Model serving puts a trained model behind an API so applications can get predictions in real time.",
+       "remember": "Serve models in real time only when needed, using a managed endpoint or a Kubernetes serving framework, with vLLM-style engines for LLMs."
+      }
+     ]
+    },
+    {
+     "key": "tools-m11",
+     "num": "11",
+     "name": "Cross-cloud map",
+     "file": "content/tools/11-cross-cloud-map.md",
+     "lessons": [
+      {
+       "id": "tools-m11-cloud-map-ingest-store",
+       "title": "Cloud map: ingestion, streaming and storage",
+       "verified": "2026-10",
+       "summary": "Each cloud offers a similar set of building blocks under different names.",
+       "remember": "Every cloud has object storage, a streaming service, a CDC service and a batch mover; the names differ more than the ideas."
+      },
+      {
+       "id": "tools-m11-cloud-map-process-orchestrate",
+       "title": "Cloud map: processing and orchestration",
+       "verified": "2026-10",
+       "summary": "For the processing and orchestration layers: Role AWS Azure Google Cloud ------------ Managed Spark Amazon EMR (EC2, EKS, Serverless), AWS Glue Azure Databricks, Fabric Spark, Synapse Spark (earlier service) Dataproc, Se",
+       "remember": "Each cloud pairs managed Spark, serverless SQL, a warehouse, stream processing and an orchestrator; Databricks and Snowflake sit across all three."
+      },
+      {
+       "id": "tools-m11-cloud-map-govern-serve",
+       "title": "Cloud map: governance, BI and ML",
+       "verified": "2026-10",
+       "summary": "For governance, consumption and ML (names as of October 2026): Role AWS Azure / Microsoft Google Cloud ------------ Technical catalog AWS Glue Data Catalog OneLake catalog, Unity Catalog (Azure Databricks) Dataplex Unive",
+       "remember": "Each cloud has a catalog, an access layer, a BI tool and an ML platform; their names change fast, so check current names before designing."
+      }
+     ]
     }
    ]
   }
